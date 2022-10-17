@@ -152,6 +152,8 @@ El acercamiento artístico busca ser agradable e inocente, ya que se trata de un
 ### 4.3. AUDIO
 ###### 
 Dado el ambiente del juego, se dará música en escala mayor  con ritmo, mientras que la música de inicio será anunciando de manera épica el videojuego (parecido al tema de la Champions League), la música que se use mientras se esté en una partida también tendrá un toque de intriga, al tratarse de una competición.
+Por esto mismo se tiene como referencia la temporada 2 de la serie inazuma eleven, la cual mezcla el concepto sobrenatural misterioso con el fútbol. 
+
 ## REFERENCIAS
 - Estructura del GDD: https://github.com/dsaltares/sion-tower/blob/master/doc/gdd/gdd.pdf
 - Reglas oficiales de la Balloon World Cup: https://balloonworldcup.pro/reglas-de-juego/
