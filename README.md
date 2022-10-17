@@ -1,4 +1,4 @@
-# Practica-jer-222-23
+
 # Balloon World Champion
 #### Juegos en Red 19/10/2022
 ##### Daniel Capilla Sánchez
