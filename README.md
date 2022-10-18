@@ -1,7 +1,9 @@
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/URJC.jpeg?raw=true)
 
 # Balloon World Champion
-![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/URJC.jpeg?raw=true)
 #### Juegos en Red 19/10/2022
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Astar%20chiquito.jpeg?raw=true)
 ##### Daniel Capilla Sánchez
 ##### Daniel Álvarez Franco
 ##### Noelia Nayara Maqueda Soto
@@ -105,10 +107,14 @@ Los personajes, jugadores de países, tendrán distintas Habilidades Pasivas, la
 ### 3.1. DIAGRAMA DE FLUJO
 ###### 
 
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Flujo.jpeg?raw=true)
 
 ### 3.2.  PANTALLA PRINCIPAL DE CARGA
 ###### 
 Esta pantalla de carga aparecerá por unos breves segundos antes de que aparezca el menú principal, mostrando el logo de la empresa desarrolladora.
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Astar.jpeg?raw=true)
+
 ### 3.3.  MENÚ PRINCIPAL
 ###### 
 Este es el menú principal que consta de dos opciones:
@@ -116,6 +122,7 @@ Este es el menú principal que consta de dos opciones:
 - Settings: abre el menú de configuración.
 
 ![Menú Principal](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Menu.jpeg?raw=true")
+
 ### 3.4. CONFIGURACIÓN
 ###### 
 En el menú de configuración tenemos las siguientes opciones: 
@@ -123,23 +130,34 @@ En el menú de configuración tenemos las siguientes opciones:
 - Controles: muestra al jugador los controles para poder jugar de manera correcta al videojuego.
 - Créditos: muestra todas las personas que se han encargado en el desarrollo del videojuego.
 
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Settings.jpeg?raw=true)
+
 ### 3.5. SELECCIÓN DE ESCENARIO
 ###### 
 En el menú de selección de escenario, el jugador tendrá la opción de elegir qué escenario le gustaría jugar. Solo podrá elegir entre dos escenarios. Si el jugador desea volver al menú principal, también lo podrá hacer desde este menú. 
 
 ![Selección de Escenario](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Levels.jpeg?raw=true)
+
 ### 3.6. NIVEL
 ###### 
 Se pueden encontrar dos características en el HUD del nivel: 
 - Arriba a la izquierda se encuentra el tiempo restante de la partida hasta que esta finalice.
 - Abajo a la derecha hay un botón para pausar la partida.
 
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Levels.jpeg?raw=true)
+
 ### 3.7. FIN DE NIVEL
 ###### 
 En esta pantalla se muestra que jugador ha logrado salir victorioso y el número de puntos de todos los jugadores. 
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Victory.jpeg?raw=true)
+
 ### 3.8. MENÚ DE PAUSA
 ###### 
 En el menú de pausa, el jugador podrá continuar con su partida en donde la había dejado en el momento antes de entrar al menú, acceder al menú de configuración, o bien salir al menú principal del juego. 
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Pausa.jpeg?raw=true)
+
 ## ARTE
 ### 4.1. META GENERAL DEL ARTE
 ###### 
