@@ -125,6 +125,7 @@ En el menú de configuración tenemos las siguientes opciones:
 ### 3.5. SELECCIÓN DE ESCENARIO
 ###### 
 En el menú de selección de escenario, el jugador tendrá la opción de elegir qué escenario le gustaría jugar. Solo podrá elegir entre dos escenarios. Si el jugador desea volver al menú principal, también lo podrá hacer desde este menú. 
+
 ![Selección de Escenario](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Levels.jpeg?raw=true)
 ### 3.6. NIVEL
 ###### 
