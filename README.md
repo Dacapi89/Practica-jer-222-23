@@ -2,13 +2,21 @@
 
 # Balloon World Champion
 #### Juegos en Red 19/10/2022
+###### Juego de Deportes
 <img src= "https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Astar%20chiquito.jpeg?raw=true" width = "200">
 
-##### Daniel Capilla Sánchez
+##### Daniel Capilla Sánchez 
+Correo: d.capilla.2020@alumnos.urjc.es
+Github: Dacapi89
 ##### Daniel Álvarez Franco
+Correo: nn.maqueda.2020@alumnos.urjc.es 
+Github: MrsNoelya
 ##### Noelia Nayara Maqueda Soto
+Correo:  d.alvarez.2020@alumnos.urjc.es
+Github: DanWfram
 ##### Álvaro Martín Hita
-
+Correo: a.martin.2020@alumnos.urjc.es  
+Github: MakarovHitita
 ## **ÍNDICE**
 -  **INTRODUCCIÓN**    
 1.1. Concepto del Juego    
