@@ -2,8 +2,8 @@
 
 # Balloon World Champion
 #### Juegos en Red 19/10/2022
+<img src= "https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Astar%20chiquito.jpeg?raw=true" width = "200">
 
-![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Astar%20chiquito.jpeg?raw=true)
 ##### Daniel Capilla Sánchez
 ##### Daniel Álvarez Franco
 ##### Noelia Nayara Maqueda Soto
@@ -164,12 +164,19 @@ En el menú de pausa, el jugador podrá continuar con su partida en donde la hab
 El acercamiento artístico busca ser agradable e inocente, ya que se trata de un juego casual de deportes, por ende el arte contendrá en mayor medida escenarios artísticos sobresaturados y alegres. 
 ### 4.2. ARTE 2D
 ###### 
-- Pantalla de menú.     ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Fondo.jpeg?raw=true)
-- Sprites de personajes.  ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Francia.jpeg?raw=true) ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Esp.jpeg?raw=true)
+- Pantalla de menú.     
+- Sprites de personajes. 
 - GUI y botones.
 - Texturas del fondo de ambiente.
-- Tiles del nivel.   ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Tiles.jpeg?raw=true)
+- Tiles del nivel.   
 - Sprites de objetos y entidades.
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Fondo.jpeg?raw=true)
+
+<img src = "https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Francia.jpeg?raw=true" width = "200">
+<img src = "https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Esp.jpeg?raw=true" width = "100">
+
+<img src = "https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Tiles.jpeg?raw=true" width = "200">
 
 ### 4.3. AUDIO
 ###### 
