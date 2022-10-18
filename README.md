@@ -164,11 +164,11 @@ En el menú de pausa, el jugador podrá continuar con su partida en donde la hab
 El acercamiento artístico busca ser agradable e inocente, ya que se trata de un juego casual de deportes, por ende el arte contendrá en mayor medida escenarios artísticos sobresaturados y alegres. 
 ### 4.2. ARTE 2D
 ###### 
-- Pantalla de menú.
-- Sprites de personajes.
+- Pantalla de menú.     ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Fondo.jpeg?raw=true)
+- Sprites de personajes.  ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Francia.jpeg?raw=true) ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Esp.jpeg?raw=true)
 - GUI y botones.
 - Texturas del fondo de ambiente.
-- Tiles del nivel.
+- Tiles del nivel.   ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Tiles.jpeg?raw=true)
 - Sprites de objetos y entidades.
 
 ### 4.3. AUDIO
