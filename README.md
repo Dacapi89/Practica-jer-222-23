@@ -114,7 +114,7 @@ Este es el menú principal que consta de dos opciones:
 - Play: lleva a la selección de escenario del juego.
 - Settings: abre el menú de configuración.
 
-![]https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Menu.jpeg
+![Menú Principal](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Menu.jpeg?raw=true")
 ### 3.4. CONFIGURACIÓN
 ###### 
 En el menú de configuración tenemos las siguientes opciones: 
