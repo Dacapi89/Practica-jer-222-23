@@ -1,6 +1,6 @@
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/URJC.jpeg?raw=true)
 
-# Balloon World Champion
+# Balloon World Championship
 #### Juegos en Red 19/10/2022
 ###### Juego de Deportes
 <img src= "https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Astar%20chiquito.jpeg?raw=true" width = "200">
