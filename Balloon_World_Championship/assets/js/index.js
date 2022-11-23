@@ -1,6 +1,10 @@
 
 
 //Configuracion de la ventana
+function move(object,Xspeed,Yspeed){
+    object.x+=Xspeed;
+    object.y+=Yspeed;
+}
 var config = {
     type: Phaser.AUTO,
     width: 800,
