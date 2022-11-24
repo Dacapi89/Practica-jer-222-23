@@ -14,7 +14,7 @@
     }
     create() {
         this.bola = this.bolas.create(200, 300, 'bomb'); //Creamos una bola
-        this.bola.body.setGravityY(300)
+        this.bola.body.setGravity(0,-200) //Efecto globo se queda suspendido en el aire REFERENCIA: https://phasergames.com/floating-in-phaser-3/ 
         this.bola.setBounce(0.8);
         this.bola.setCollideWorldBounds(true);
         //this.escena.physics.add.collider(this.bola, this.plataformas);
