@@ -86,7 +86,17 @@ function create()
 
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(globo.getBola(), platforms); //Colisiones entre el globo y el suelo
-    this.physics.add.collider(globo.getBola(), player); //Colisiones entre el globo y el jugador
+    //this.physics.add.collider(globo.getBola(), player); //Colisiones entre el globo y el jugador
+    this.physics.add.collider(
+        player,
+        globo.getBola(),
+        function (_player, globo)
+        {
+            if (_player.body.touching.up && globo.body.touching.down)
+            {
+                globo.setVelocity(_player.body.velocity.x,-200);
+            }
+        });
 
     //this.physics.add.collider(player, bola, golpearBola, null, this);
 }
