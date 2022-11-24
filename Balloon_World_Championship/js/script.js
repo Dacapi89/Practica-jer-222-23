@@ -96,7 +96,7 @@ function create()
             {
                 globo.setVelocity(_player.body.velocity.x,-200);
             }
-        });
+        }); //Colision con el player en función de su velocidad REFERENCIA: https://phaser.io/examples/v3/view/physics/arcade/collision-direction#
 
     //this.physics.add.collider(player, bola, golpearBola, null, this);
 }
