@@ -1,24 +1,17 @@
-function move(object,Xspeed,Yspeed){
-    object.x+=Xspeed;
-    object.y+=Yspeed;
-}
-function jump(object){
-
-}
-class playerWASD extends Phaser.Scene{
+class playerArrows extends Phaser.Scene{
     constructor(){
         super(jugador)
     }
     preload(){
-        this.load.spritesheet("player","../../media/visual/sprites/player_spain.png")
+        this.load.spritesheet("playerArrows","../assets/images/sprites/player_spain")
     }
     create(){
-        this.player = this.physics.add.sprite(0,0,"player")
+        this.playerArrows = this.physics.add.sprite(0,0,"playerArrows")
     }
     update(){
-        this.input.keyboard.on('keydown_RIGHT', move(personaje1,6,0))
-        this.input.keyboard.on('keydown_LEFT', move(personaje1,-6,0))
-        this.input.keyboard.on('keydown_UP', jump(personaje1))
+        this.input.keyboard.on('keydown_RIGHT', move(this.playerArrows,6,0))
+        this.input.keyboard.on('keydown_LEFT', move(this.playerArrows,-6,0))
+        this.input.keyboard.on('keydown_UP', jump(this.playerArrows))
     }
 
 }

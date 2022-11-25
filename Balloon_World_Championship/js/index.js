@@ -12,10 +12,16 @@ var config = {
             debug: false
         }
     },
-    scene: [MainMenu]
+    scene: [Level1]
 };
 //Variables globales
+function move(object,Xspeed,Yspeed){
+    object.x+=Xspeed;
+    object.y+=Yspeed;
+}
+function jump(object){
 
+}
 
 //Empieza el game con phaser
 var game = new Phaser.Game(config);

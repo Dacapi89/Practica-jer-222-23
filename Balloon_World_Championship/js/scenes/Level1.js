@@ -2,28 +2,32 @@
 function jump(object){
 
 }
-this.anims.create({
-    key: 'left',
-    frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
-    frameRate: 10,
-    repeat: -1
-});
 class Level1 extends Phaser.Scene{
     constructor(){
-        super(level1)
+        super(Level1)
     }
     preload()
     {   
-        this.load.image("background",'../');        
+        this.load.image("backgroundSky",'assets/images/background/sky.png');
+        this.load.image("backgroundClouds",'assets/images/background/clouds.png');  
+        this.load.image("backgroundAtmosphere",'assets/images/background/cloud_layer.png');  
+        this.load.image("backgroundMountains",'assets/images/background/mountains.png');  
+        this.load.image("backgroundStars",'assets/images/background/stars.png');        
     }
     create()
     {
-        this.scene.add(jugador)
+        this.add.image(0,0,"backgroundSky").setOrigin(0,0).setScrollFactor(0,0)
+        this.bg0=this.add.tileSprite(0,0,320,240,'backgroundAtmosphere').setOrigin(0,0).setScrollFactor(0,0)
+        this.bg1=this.add.tileSprite(0,0,320,240,'backgroundMountains').setOrigin(0,0).setScrollFactor(0,0)
+        this.bg2=this.add.tileSprite(0,0,320,240,'backgroundClouds').setOrigin(0,0).setScrollFactor(0,0)
+        this.bg3=this.add.tileSprite(0,0,320,240,'backgroundStars').setOrigin(0,0).setScrollFactor(0,0)
+        //this.scene.add(playerWASD)
     }
     update()
     {           
-        this.input.keyboard.on('keydown_D', move(personaje2,6,0))
-        this.input.keyboard.on('keydown_A', move(personaje2,-6,0))
-        this.input.keyboard.on('keydown_W', jump(personaje2))
+        this.bg3.tilePositionX-=0.05;
+        this.bg2.tilePositionX-=0.2;
+        this.bg1.tilePositionX-=0.5;
+        this.bg0.tilePositionX-=0.7;
     }
 }
