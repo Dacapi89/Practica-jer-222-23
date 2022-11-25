@@ -16,11 +16,11 @@ class Level1 extends Phaser.Scene{
     }
     create()
     {
-        this.add.image(0,0,"backgroundSky").setOrigin(0,0).setScrollFactor(0,0)
-        this.bg0=this.add.tileSprite(0,0,320,240,'backgroundAtmosphere').setOrigin(0,0).setScrollFactor(0,0)
-        this.bg1=this.add.tileSprite(0,0,320,240,'backgroundMountains').setOrigin(0,0).setScrollFactor(0,0)
-        this.bg2=this.add.tileSprite(0,0,320,240,'backgroundClouds').setOrigin(0,0).setScrollFactor(0,0)
-        this.bg3=this.add.tileSprite(0,0,320,240,'backgroundStars').setOrigin(0,0).setScrollFactor(0,0)
+        this.add.image(0,0,"backgroundSky").setOrigin(0,0).setScrollFactor(0,0).setScale(4)
+        this.bg0=this.add.tileSprite(0,0,320,240,'backgroundAtmosphere').setOrigin(0,0).setScrollFactor(0,0).setScale(4)
+        this.bg1=this.add.tileSprite(0,0,320,240,'backgroundMountains').setOrigin(0,0).setScrollFactor(0,0).setScale(4)
+        this.bg2=this.add.tileSprite(0,0,320,240,'backgroundClouds').setOrigin(0,0).setScrollFactor(0,0).setScale(4)
+        this.bg3=this.add.tileSprite(0,0,320,240,'backgroundStars').setOrigin(0,0).setScrollFactor(0,0).setScale(4)
         //this.scene.add(playerWASD)
     }
     update()

@@ -3,8 +3,8 @@
 //Configuracion de la ventana
 var config = {
     type: Phaser.AUTO,
-    width: 320,
-    height: 240,
+    width: 1280,
+    height: 800,
     physics: {
         default: 'arcade',
         arcade: {
