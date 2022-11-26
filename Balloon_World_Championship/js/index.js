@@ -3,8 +3,11 @@
 //Configuracion de la ventana
 var config = {
     type: Phaser.AUTO,
-    width: 1280,
-    height: 800,
+    width: 320,
+    height: 200,
+    antialias: false,
+    pixelArt: true,
+    roundPixels: false,
     physics: {
         default: 'arcade',
         arcade: {
@@ -12,7 +15,10 @@ var config = {
             debug: false
         }
     },
-    scene: [Level1]
+    scene: [Level1],
+    scale: {
+        zoom: 4
+    }
 };
 //Variables globales
 function move(object,Xspeed,Yspeed){
