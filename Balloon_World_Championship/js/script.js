@@ -83,10 +83,18 @@ function create()
     //Creamos el globo
     globo.create();
     
+    //COLISIONES
 
-    this.physics.add.collider(player, platforms);
-    this.physics.add.collider(globo.getBola(), platforms); //Colisiones entre el globo y el suelo
-    //this.physics.add.collider(globo.getBola(), player); //Colisiones entre el globo y el jugador
+    this.physics.add.collider(player, platforms); //Colisiones entre el jugador y las plataformas.
+
+    this.physics.add.collider(globo.getBola(), platforms, function (globo, suelo) {
+        if(suelo.body.touching.up && globo.body.touching.down) {
+            globo.disableBody(true, true);
+            globo.enableBody(true, 200, 300, true, true);
+            console.log("HAS PERDIDO!!!!");
+        }
+    }); //Colisiones entre el globo y el suelo. Si el globo toca el suelo, se vuelve a lanzar el globo.
+
     this.physics.add.collider(
         player,
         globo.getBola(),
@@ -98,7 +106,6 @@ function create()
             }
         }); //Colision con el player en función de su velocidad REFERENCIA: https://phaser.io/examples/v3/view/physics/arcade/collision-direction#
 
-    //this.physics.add.collider(player, bola, golpearBola, null, this);
 }
 function update()
 {
@@ -125,4 +132,5 @@ function update()
     {
         player.setVelocityY(-320);
     }
+   
 }

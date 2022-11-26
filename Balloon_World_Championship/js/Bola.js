@@ -24,5 +24,8 @@
         //bola.setVelocity(10, -100);
         console.log("colision");
     }
+    reinicio() {
+        
+    }
 }
 export {Bola};
