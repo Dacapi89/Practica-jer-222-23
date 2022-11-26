@@ -18,7 +18,7 @@ class Level1 extends Phaser.Scene{
         this.load.image("tiles","assets/images/background/tilemaps/tileset.png")
         this.load.tilemapTiledJSON("leveln1","levels/level1.json")          
         //players
-
+        this
         //ball
 
 
@@ -35,7 +35,7 @@ class Level1 extends Phaser.Scene{
         const map = this.make.tilemap({ key : "leveln1" })
         this.tileset = map.addTilesetImage("tileSet", "tiles")
         this.tileLayer= map.createLayer("Map",this.tileset)
-        //this.tileLayer.setCollision(true)
+        this.tileLayer.setCollisionByProperty({collision: true})
         //players (setCollideWorldBorder,setvelocity, keypress,anims, etc)
 
         
@@ -43,7 +43,7 @@ class Level1 extends Phaser.Scene{
     update()
     {      
         //background     
-        this.bg3.tilePositionX-=0.05;
+        //this.bg3.tilePositionX-=0.05;
         this.bg2.tilePositionX-=0.2;
         this.bg1.tilePositionX-=0.5;
         this.bg0.tilePositionX-=1;
