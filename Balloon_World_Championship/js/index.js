@@ -1,4 +1,4 @@
-
+import { Level1} from './scenes/Level1.js';
 
 //Configuracion de la ventana
 var config = {
