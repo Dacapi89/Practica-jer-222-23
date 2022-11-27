@@ -6,6 +6,7 @@ class Level1 extends Phaser.Scene{
     constructor(){
         super(Level1)
     }
+    playerWASD = new player("playerWASD","assets/images/sprites/player_spain.png",100,100,"D","A","W")
     preload()
     {    
         //Background
@@ -18,6 +19,7 @@ class Level1 extends Phaser.Scene{
         this.load.image("tiles","assets/images/background/tilemaps/tileset.png")
         this.load.tilemapTiledJSON("leveln1","levels/level1.json")          
         //players
+        this.playerWASD.preload();
         //ball
 
 
@@ -25,7 +27,7 @@ class Level1 extends Phaser.Scene{
     create()
     {
         //background
-        this.add.image(0,0,"backgroundSky").setOrigin(0,0).setScrollFactor(0,0)
+        this.d =this.physics.add.image(0,0,"backgroundSky").setOrigin(0,0).setScrollFactor(0,0)
         this.bg0=this.add.tileSprite(0,0,320,200,'backgroundAtmosphere').setOrigin(0,0).setScrollFactor(0,0)
         this.bg1=this.add.tileSprite(0,0,320,200,'backgroundMountains').setOrigin(0,0).setScrollFactor(0,0)
         this.bg2=this.add.tileSprite(0,0,320,200,'backgroundClouds').setOrigin(0,0).setScrollFactor(0,0)
@@ -36,11 +38,13 @@ class Level1 extends Phaser.Scene{
         this.tileLayer= map.createLayer("Map",this.tileset)
         this.tileLayer.setCollisionByProperty({collision: true})
         //players (setCollideWorldBorder,setvelocity, keypress,anims, etc)
+        this.playerWASD.create(this,0,0);
         //ball 
     }
     update()
     {      
-        //background     
+        //background    
+        this.d.set
         this.bg3.tilePositionX-=0.05;
         this.bg2.tilePositionX-=0.2;
         this.bg1.tilePositionX-=0.5;
