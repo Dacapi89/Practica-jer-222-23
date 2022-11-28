@@ -1,19 +1,20 @@
 class player{
-    constructor(key,fileNamePath,speed,jumpHeight,keyright,keyleft,keyup){ 
-        this.key=key;  
-        this.fileNamePath= fileNamePath;
-        this.speed = speed;
-        this.jumpHeight= jumpHeight;
-        this.keyup= keyup;
-        this.keyleft= keyleft;
-        this.keyright= keyright;
+    constructor(key,fileNamePath,speed,jumpHeight,keyright,keyleft,keyup, score){ 
+        this.key=key;                             //Tag del objeto
+        this.fileNamePath= fileNamePath;         //Ruta de la imagen
+        this.speed = speed;                     //Velocidad de los jugadores
+        this.jumpHeight= jumpHeight;           //Potencia de salto de los jugadores
+        this.keyup= keyup;                    //Tecla para saltar
+        this.keyleft= keyleft;               //Tecla para moverse a la izquierda
+        this.keyright= keyright;            //Tecla para moverse a la derecha
+        this.playerScore = score;          //Puntuación del jugador
     }
     
     preload(escena,width,height){
         escena.load.spritesheet(this.key,this.fileNamePath,{frameWidth: width, frameHeight: height})
     }
     create(escena, x, y){
-        this.player= escena.physics.add.sprite(x,y,this.key);
+        this.player= escena.physics.add.sprite(x,y,this.key);   //Carga la informacion necesarioa para el jugador
         this.player.setCollideWorldBounds(true)
         escena.anims.create({
             key: 'rightRun'+this.key,
@@ -44,7 +45,7 @@ class player{
         });
     }
     update(escena){
-        escena.input.keyboard.on("keydown-"+this.keyright, ()=>{
+        escena.input.keyboard.on("keydown-"+this.keyright, ()=>{   //Asignacion de teclas
             this.player.setVelocityX(this.speed);
             this.player.anims.play("rightRun"+this.key,true)
         })
@@ -68,4 +69,4 @@ class player{
 
     }    
 }
-export {player};
+export {player};  //Exporta la clase player para el level 1
