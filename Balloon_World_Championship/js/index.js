@@ -4,7 +4,7 @@ import { Level1} from './scenes/Level1.js';
 var config = {
     type: Phaser.AUTO,
     width: 320,
-    height: 200,
+    height: 208,
     antialias: false,
     pixelArt: true,
     roundPixels: false,
@@ -12,7 +12,8 @@ var config = {
         default: 'arcade',
         arcade: {
             gravity: { y: 300 },
-            debug: false
+            debug: false,
+            tileBias:16,
         }
     },
     scene: [Level1],
@@ -20,14 +21,5 @@ var config = {
         zoom: 4
     }
 };
-//Variables globales
-function move(object,Xspeed,Yspeed){
-    object.x+=Xspeed;
-    object.y+=Yspeed;
-}
-function jump(object){
-
-}
-
 //Empieza el game con phaser
 var game = new Phaser.Game(config);

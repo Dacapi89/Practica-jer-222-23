@@ -1,30 +1,69 @@
 class player{
-    constructor(key,fileNamePath,speed,jumpHeight,keyleft,keyright,keyup){ 
+    constructor(key,fileNamePath,speed,jumpHeight,keyright,keyleft,keyup){ 
         this.key=key;  
         this.fileNamePath= fileNamePath;
         this.speed = speed;
         this.jumpHeight= jumpHeight;
-        this.keyup= 'keydown_'+keyup;
-        this.keyleft= 'keydown_'+keyleft;
-        this.keyright= 'keydown_'+keyright;
+        this.keyup= keyup;
+        this.keyleft= keyleft;
+        this.keyright= keyright;
     }
-    preload(escena){
-        escena.load.spritesheet(key,fileNamePath)
+    
+    preload(escena,width,height){
+        escena.load.spritesheet(this.key,this.fileNamePath,{frameWidth: width, frameHeight: height})
     }
     create(escena, x, y){
-        this.p= escena.physics.add.sprite(x,y,key).setCollideWorldBounds(true);
+        this.player= escena.physics.add.sprite(x,y,this.key);
+        this.player.setCollideWorldBounds(true)
+        escena.anims.create({
+            key: 'rightRun',
+            frames: escena.anims.generateFrameNumbers(this.key, { start: 0, end: 5 }),
+            frameRate: 10,
+            repeat: -1
+        });
+        
+        escena.anims.create({
+            key: 'rightIdle',
+            frames: escena.anims.generateFrameNumbers(this.key, { start: 6, end: 9 }),
+            frameRate: 10,
+            repeat: -1
+        });
+
+        escena.anims.create({
+            key: 'leftIdle',
+            frames: escena.anims.generateFrameNumbers(this.key, { start: 10, end: 13 }),
+            frameRate: 10,
+            repeat: -1
+        });
+
+        escena.anims.create({
+            key: 'leftRun',
+            frames: escena.anims.generateFrameNumbers(this.key, { start: 14, end: 19 }),
+            frameRate: 10,
+            repeat: -1
+        });
     }
     update(escena){
-        escena.input.keyboard.on(keyleft, move(this.p,speed))
-        escena.input.keyboard.on(keyright, move(this.p,-speed))
-        escena.input.keyboard.on(keyup, jump(this.p))
-    }
-    move(object,Xspeed){
-        object.setVelocityX(Xspeed);
-    }
-    jump(object){
-        if (escena.player.body.touching.down){
-            object.setVelocityY(-this.jumpHeight);
-        }       
-    }
+        escena.input.keyboard.on("keydown-"+this.keyright, ()=>{
+            this.player.setVelocityX(this.speed);
+            this.player.anims.play("rightRun",true)
+        })
+        escena.input.keyboard.on("keyup-"+this.keyright, ()=>{
+            this.player.setVelocityX(0);
+            this.player.anims.play("rightIdle",true)
+        })
+        escena.input.keyboard.on("keydown-"+this.keyleft, ()=>{
+            this.player.setVelocityX(-this.speed);
+            this.player.anims.play("leftRun",true)
+        })
+        escena.input.keyboard.on("keyup-"+this.keyleft, ()=>{
+            this.player.setVelocityX(0);
+            this.player.anims.play("leftIdle",true)
+        })
+        escena.input.keyboard.on("keydown-"+this.keyup, ()=>{
+            this.player.setVelocityY(-this.jumpHeight);
+        })
+
+    }    
 }
+export {player};
