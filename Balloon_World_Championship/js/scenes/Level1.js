@@ -8,8 +8,9 @@ class Level1 extends Phaser.Scene{
     constructor(){
         super(Level1)
     }  
-    globo= new Bola("ball",'assets/images/sprites/ball.png',-200)
-    playerWASD = new player("playerWASD","assets/images/sprites/player_spain.png",100,100,"D","A","W")
+    globo= new Bola("ball",'assets/images/sprites/ball.png',-600)
+    playerWASD = new player("playerWASD","assets/images/sprites/player_spain.png",300,400,"D","A","W")
+    playerArrows = new player("playerArrows","assets/images/sprites/player_blank.png",300,400,"RIGHT","LEFT","UP")
     preload()
     {    
         //Background
@@ -23,6 +24,7 @@ class Level1 extends Phaser.Scene{
         this.load.tilemapTiledJSON("leveln1","levels/level1.json")          
         //players
         this.playerWASD.preload(this,36,64);
+        this.playerArrows.preload(this,36,64);
         //ball
         this.globo.preload(this)
 
@@ -32,29 +34,34 @@ class Level1 extends Phaser.Scene{
     create()
     {
         //background
-        this.d =this.add.image(0,0,"backgroundSky").setOrigin(0,0).setScrollFactor(0,0)
-        this.bg0=this.add.tileSprite(0,0,320,200,'backgroundAtmosphere').setOrigin(0,0).setScrollFactor(0,0)
-        this.bg1=this.add.tileSprite(0,0,320,200,'backgroundMountains').setOrigin(0,0).setScrollFactor(0,0)
-        this.bg2=this.add.tileSprite(0,0,320,200,'backgroundClouds').setOrigin(0,0).setScrollFactor(0,0)
-        this.bg3=this.add.tileSprite(0,0,320,200,'backgroundStars').setOrigin(0,0).setScrollFactor(0,0)       
+        this.d =this.add.image(0,0,"backgroundSky").setOrigin(0,0).setScrollFactor(0,0).setScale(4)
+        this.bg0=this.add.tileSprite(0,0,320,200,'backgroundAtmosphere').setOrigin(0,0).setScrollFactor(0,0).setScale(4)
+        this.bg1=this.add.tileSprite(0,0,320,200,'backgroundMountains').setOrigin(0,0).setScrollFactor(0,0).setScale(4)
+        this.bg2=this.add.tileSprite(0,0,320,200,'backgroundClouds').setOrigin(0,0).setScrollFactor(0,0).setScale(4)
+        this.bg3=this.add.tileSprite(0,0,320,200,'backgroundStars').setOrigin(0,0).setScrollFactor(0,0).setScale(4)      
 
         //players (setCollideWorldBorder,setvelocity, keypress,anims, etc)
         this.playerWASD.create(this,0,0);
         this.player1=this.playerWASD.player;
-
+        this.player1.setScale(3)
+        this.playerArrows.create(this,90,0);
+        this.player2=this.playerArrows.player;
+        this.player2.setScale(3)
         //ball 
         this.globo.create(this,0,0)
         this.bola=this.globo.ball;
+        this.bola.setScale(3)
 
         //tiles
         this.map = this.make.tilemap({ key : "leveln1" })
         this.tileset = this.map.addTilesetImage("tileSet", "tiles")
-        const tileLayer= this.map.createLayer("Map",this.tileset)
+        const tileLayer= this.map.createLayer("Map",this.tileset).setScale(4)
         tileLayer.setCollisionByProperty({collides: true})
         
         
         //colisiones
         this.physics.add.collider(this.player1,tileLayer)
+        this.physics.add.collider(this.player2,tileLayer)
         this.physics.add.collider(this.bola, tileLayer, ()=> {
             if(this.bola.body.onFloor) { //Con el body lo que hago es que cuando la parte del globo toca el suelo, entra en el if
                 this.bola.disableBody(true, true);
@@ -84,7 +91,7 @@ class Level1 extends Phaser.Scene{
         this.bg0.tilePositionX-=1;
         //player
         this.playerWASD.update(this)
-        //ball
+        this.playerArrows.update(this)
     }
 }
 export { Level1 };

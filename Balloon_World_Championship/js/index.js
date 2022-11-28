@@ -3,8 +3,8 @@ import { Level1} from './scenes/Level1.js';
 //Configuracion de la ventana
 var config = {
     type: Phaser.AUTO,
-    width: 320,
-    height: 208,
+    width: 1280,
+    height: 832,
     antialias: false,
     pixelArt: true,
     roundPixels: false,
@@ -17,9 +17,6 @@ var config = {
         }
     },
     scene: [Level1],
-    scale: {
-        zoom: 4
-    }
 };
 //Empieza el game con phaser
 var game = new Phaser.Game(config);
