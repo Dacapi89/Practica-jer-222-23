@@ -207,6 +207,7 @@ class Level1 extends Phaser.Scene {
 
             this.scene.pause("Level1");
             this.scene.launch("pause", "Level1");
+            this.music.stop();
             
         }
 
