@@ -15,11 +15,11 @@ class Level1 extends Phaser.Scene {
         this.playerWASD;
         this.playerArrows;
         this.timer;
-        this.timedEvent;
+        this.text;
         this.scoreWASD;
         this.scoreCursors;
-
-        this.initialTime = 3000;
+        this.minutos = 1;
+        this.segundos = 0;
     }
     preload() {
         this.globo = new Bola("ball", 'assets/images/sprites/ball2.png', -180);
@@ -43,8 +43,8 @@ class Level1 extends Phaser.Scene {
         this.load.image('pause', 'assets/images/UI/Buttons/BUTTON_PAUSE.png');
     
         this.load.audio('game_theme', [
-            'assets/music/game/game_music.ogg',
-            'assets/music/game/game_music.mp3'
+            'assets/music/game/game_music.ogg',  // Música utilizada para la partida: https://youtu.be/dGq3PrpSLU0
+            'assets/music/game/game_music.mp3'  
         ]);
 
     }
@@ -171,14 +171,19 @@ class Level1 extends Phaser.Scene {
         // special keys
         keyP=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
 
-        //creation of the timer, 1 minutes
-        /*this.timer = this.add.text(640, 32)
+        //Cronometro
+        this.time.addEvent({  //Cada segundo llama a la función actualizarTiempo REFERENCIAS: https://www.youtube.com/watch?v=2esow22Z0fc
+            delay: 1000,
+            loop: true,
+            callback: () => {
+                this.actualizarTiempo()
+            }
+        })
+        this.text = this.add.text(40, 32, 'Time ' + this.minutos + ':' + this.segundos ,  {fontSize: '32px', fill: '#000000'});
 
-        this.timedEvent = this.time.delayedCall(this.initialTime, this.finDelJuego(), [], this);*/
-
-        
         //creation of the score
-        this.scoreWASD = this.add.text(300, 32, 'Player 2: 0', {fontSize: '32px', fill: '#000000'});
+
+        this.scoreWASD = this.add.text(500, 32, 'Player 2: 0', {fontSize: '32px', fill: '#000000'});
         this.scoreCursors = this.add.text(800, 32, 'Player 1: 0', {fontSize: '32px', fill: '#000000'});
 
         this.music = this.sound.add('game_theme');
@@ -188,8 +193,7 @@ class Level1 extends Phaser.Scene {
     }
 
     update() {
-        //this.timer.setText('Tiempo Restante: ' + fortmatTime(timedEvent.getProgress()*this.initialTime));
-
+        this.text.setText('Time ' + this.minutos + ':' + this.segundos);
         this.scoreCursors.setText('Player 2: ' + this.playerArrows.playerScore.toString());
         this.scoreWASD.setText('Player 1: ' + this.playerWASD.playerScore.toString());
 
@@ -207,15 +211,7 @@ class Level1 extends Phaser.Scene {
 
             this.scene.pause("Level1");
             this.scene.launch("pause", "Level1");
-            this.music.stop();
-            
-        }
-
-        if (this.playerWASD.playerScore == 3 || this.playerArrows.playerScore == 3){
-            this.finDelJuego();
-        }
-
-        
+        } 
 
     }
 
@@ -233,16 +229,18 @@ class Level1 extends Phaser.Scene {
             this.music.stop();
         }
     }
+    actualizarTiempo() {
 
-    formatTime(segundos){
-        var seconds = this.initialTime - segundos;
-
-        var minutes = Math.floor(seconds/60);
-        var partInSeconds = seconds%60;
-        partInSeconds = partInSeconds.toString().padStart(2,'0');
-        return `${minutes}:${partInSeconds}`;
+        if(this.segundos == 0) {
+            this.minutos--;
+            if (this.minutos < 0) {
+                this.finDelJuego();
+                this.minutos = 0;
+            }
+            this.segundos = 60;
+        }
+        this.segundos--;
     }
-
     
 }
 export { Level1 };

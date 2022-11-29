@@ -16,32 +16,31 @@ export class Results extends Phaser.Scene{
         this.load.image('Continue', 'assets/images/UI/Buttons/BUTTON_CONTINUE.png');
         this.load.image('Exit', 'assets/images/UI/Buttons/BUTTON_EXIT.png');
 
-        this.load.audio('error_theme', [
-            'assets/music/results/error_sound.ogg',
-            'assets/music/results/error_sound.mp3'
+        this.load.audio('result_theme', [
+            'assets/music/results/results_music.ogg', // Música utilizada para la partida: https://www.youtube.com/watch?v=m3wH9K9cDcI
+            'assets/music/results/results_music.mp3'
         ]);
     }
 
     create(){
         this.add.image(640, 416, 'background');
-        this.add.image(600, 725, 'podio');
+        //this.add.image(600, 725, 'podio');
         this.add.image(640, 100, 'Victory');
         this.add.image(350, 300, 'Continue');
         this.add.image(900, 300, 'Exit');
-
+        this.add.image(500, 560, 'playerArrows').setScale(4);
+        this.add.image(700, 560, 'playerWASD').setScale(4);
         this.text = this.add.text(640, 200);
 
         //Añadir teclas especiales
         keyEnter=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
         keyP=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
 
-        this.music = this.sound.add('error_theme');
-
+        this.music = this.sound.add('result_theme');
         this.music.play();
     }
 
     update(){
-        this.text.setText('PNF - 404. No se han encontrado jugadores. No hay registros o han empatado');
 
         // Evento si la tecla ENTER es pulsada
         if (keyEnter.isDown)

@@ -45,6 +45,7 @@ export class Pause extends Phaser.Scene{
             this.scene.stop("pause");
             this.scene.stop("Level1");
 			this.scene.start("mainMenu");
+
 		}
     }
 }

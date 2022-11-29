@@ -8,15 +8,10 @@ export class Start extends Phaser.Scene{
     constructor(){
         super({key:'start'});
     }
-
+    // Gestor de escenas  REFERENCIAS: https://www.youtube.com/watch?v=OBi8UHCcEW8&t=1137s
     preload(){
         this.load.image('logoAstar', 'assets/images/UI/Logo_Astar.png');
         this.load.image('PressToContinue', 'assets/images/UI/Buttons/PRESS_ENTER_TO_CONTINUE.png');
-
-        this.load.audio('start_theme', [
-            'assets/music/title/title_music.ogg',
-            'assets/music/title/title_music.mp3'
-        ]);
 
     }
 
@@ -28,12 +23,6 @@ export class Start extends Phaser.Scene{
 
         //Añadir teclas especiales
         keyEnter=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
-
-        this.music = this.sound.add('start_theme');
-
-        this.music.play();
-        this.music.loop = true;
-        
     }
 
     update(){
@@ -42,7 +31,6 @@ export class Start extends Phaser.Scene{
         if (keyEnter.isDown)
 		{
 			this.scene.start("mainMenu");
-            this.music.stop();
 		}
     }
 }

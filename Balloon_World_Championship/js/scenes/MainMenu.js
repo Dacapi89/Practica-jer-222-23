@@ -15,8 +15,8 @@ export class MainMenu extends Phaser.Scene{
         this.load.image('BotonPlay', 'assets/images/UI/Buttons/BUTTON_PLAY.png');
         this.load.image('credits', 'assets/images/UI/Titles/CREDITS.png');
 
-        this.load.audio('menu_theme', [
-            'assets/music/title/title_music.ogg',
+        this.load.audio('menu_theme', [ //Añadimos música al juego REFERENCIA: https://phaser.io/examples/v2/audio/play-music
+            'assets/music/title/title_music.ogg',  // Música utilizada para la partida: https://www.youtube.com/watch?v=QG6STlj-d7w
             'assets/music/title/title_music.mp3'
         ]);
     }
@@ -27,14 +27,14 @@ export class MainMenu extends Phaser.Scene{
         this.add.image(640, 416, 'background');
         this.add.image(900, 400, 'logoJuego');
         this.add.image(350, 416, 'BotonPlay');
-        this.add.image(200, 50, 'credits');
+        this.add.image(380, 550, 'credits');
 
         //Añadir teclas especiales
         keyO=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.O);
         keyEnter=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
 
         this.music = this.sound.add('menu_theme');
-
+        this.sound.stopAll();
         this.music.play();
         this.music.loop = true;
     }
@@ -49,7 +49,7 @@ export class MainMenu extends Phaser.Scene{
 		}
         else if (keyO.isDown){
             this.scene.start("credits");
-            this.music.stop();
+
         }
     }
 }

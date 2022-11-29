@@ -30,8 +30,8 @@ export class ResultsPlayerWASDWins extends Phaser.Scene{
         this.add.image(640, 100, 'Victory');
         this.add.image(350, 300, 'Continue');
         this.add.image(900, 300, 'Exit');
-        this.add.image(700, 485, 'playerArrows').setScale(4);
-        this.add.image(500, 560, 'playerWASD').setScale(4);
+        this.add.image(500, 560, 'playerArrows').setScale(4);
+        this.add.image(700, 485, 'playerWASD').setScale(4);
 
         //Añadir teclas especiales
         keyEnter=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
