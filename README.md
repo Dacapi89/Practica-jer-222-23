@@ -213,14 +213,22 @@ La **segunda escena** contiene el menú principal del juego con el logo del vide
 ###### 
 La **tercera escena** trata sobre el escenario donde se realiza el torneo de globos de aire. En él, competirán 2 jugadores por haber quién consigue más puntos. El escenario de fondo se  encuentra en movimiento mientras que la plataforma y el suelo está estático.
 
-![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Inicio.png?raw=true)
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Partida.png?raw=true)
 ###### 
 La **cuarta escena** viene de la escena anterior, en concreto del botón de pausa situado en la esquina inferior derecha, en el que hay que pulsar la tecla P para interactuar con él. Este pausa el estado en el que se encuentra la partida dando al jugador dos opciones de momento: continuar con la partida o por el contrario volver al menú principal.
 
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Pausa.png?raw=true)
 ###### 
 La **última escena** enseña el resultado de la partida que se ha jugado previamente ha modo de ranking. En ella hay dos botones uno para volver a jugar (Enter) y otro para ir al menú principal (P).
+
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Ranking.png?raw=true)
-La **escena de los créditos** muestra el nombre de las personas que han intervenido en la creación del videojuego, así como la música usada. 
-(Enter) y otro para ir al menú principal (P).
+
+La **escena de los créditos**, pulsando la tecla O desde el menú principal, muestra el nombre de las personas que han intervenido en la creación del videojuego, así como la música usada. 
+
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Creditos.png?raw=true)
+
+### DIAGRAMA DE FLUJO
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Pantallas.png?raw=true)
+
+
