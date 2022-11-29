@@ -195,3 +195,15 @@ Por esto mismo se tiene como referencia la temporada 2 de la serie inazuma eleve
 - Estructura del GDD: https://github.com/dsaltares/sion-tower/blob/master/doc/gdd/gdd.pdf
 - Reglas oficiales de la Balloon World Cup: https://balloonworldcup.pro/reglas-de-juego/
 
+## ACTUALIZACIÓN FASE 
+###### 
+En esta fase, el equipo de desarrollo y diseño, se ha creado el videojuego Balloon World Championship basandose en el GDD. El videojuego se ha implementado de manera local (hay 2 jugadores que pueden jugar al videojuego desde el mismo teclado y ordenador).
+
+### ESCENAS
+###### 
+La primera escena se trata del logo del grupo a modo de introdución y un mensaje para continuar hacia la siguiente pantalla.
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Inicio.png?raw=true)
+
+
+
