@@ -195,15 +195,29 @@ Por esto mismo se tiene como referencia la temporada 2 de la serie inazuma eleve
 - Estructura del GDD: https://github.com/dsaltares/sion-tower/blob/master/doc/gdd/gdd.pdf
 - Reglas oficiales de la Balloon World Cup: https://balloonworldcup.pro/reglas-de-juego/
 
-## ACTUALIZACIÓN FASE 
+## ACTUALIZACIÓN FASE 2
 ###### 
 En esta fase, el equipo de desarrollo y diseño, se ha creado el videojuego Balloon World Championship basandose en el GDD. El videojuego se ha implementado de manera local (hay 2 jugadores que pueden jugar al videojuego desde el mismo teclado y ordenador).
 
 ### ESCENAS
 ###### 
-La primera escena se trata del logo del grupo a modo de introdución y un mensaje para continuar hacia la siguiente pantalla.
+La **primera escena** se trata del logo del grupo a modo de introdución y un mensaje para continuar hacia la siguiente pantalla.
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Intro.png?raw=true)
+
+###### 
+La **segunda escena** contiene el menú principal del juego con el logo del videojuego. De momento solo hay un botón para interactuar, que es el de PLAY (de manera local). Todos los botones, van a a tener asociados a su derecha la tecla que los acciona. Para las siguientes fases, se tiene pensado en añadir más botones, como el de opciones y el de online.
 
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Inicio.png?raw=true)
 
+###### 
+La **tercera escena** trata sobre el escenario donde se realiza el torneo de globos de aire. En él, competirán 2 jugadores por haber quién consigue más puntos. El escenario de fondo se  encuentra en movimiento mientras que la plataforma y el suelo está estático.
 
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Inicio.png?raw=true)
+###### 
+La **cuarta escena** viene de la escena anterior, en concreto del botón de pausa situado en la esquina inferior derecha, en el que hay que pulsar la tecla P para interactuar con él. Este pausa el estado en el que se encuentra la partida dando al jugador dos opciones de momento: continuar con la partida o por el contrario volver al menú principal.
 
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Pausa.png?raw=true)
+###### 
+La **última escena** enseña el resultado de la partida que se ha jugado previamente ha modo de ranking. En ella hay dos botones uno para volver a jugar (Enter) y otro para ir al menú principal (P).
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Inicio.png?raw=true)
