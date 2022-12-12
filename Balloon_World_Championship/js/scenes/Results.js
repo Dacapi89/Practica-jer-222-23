@@ -28,8 +28,8 @@ export class Results extends Phaser.Scene{
         this.add.image(640, 100, 'Victory');
         this.add.image(350, 300, 'Continue');
         this.add.image(900, 300, 'Exit');
-        this.add.image(500, 560, 'playerArrows').setScale(4);
-        this.add.image(700, 560, 'playerWASD').setScale(4);
+        this.add.image(500, 560, 'playerArrows').setScale(2);
+        this.add.image(700, 560, 'playerWASD').setScale(2);
         this.text = this.add.text(640, 200);
 
         //Añadir teclas especiales

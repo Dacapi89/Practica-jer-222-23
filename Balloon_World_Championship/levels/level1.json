@@ -31,19 +31,19 @@
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.2",
- "tileheight":16,
+ "tileheight":64,
  "tilesets":[
         {
          "columns":7,
          "firstgid":1,
          "image":"assets/images/background/tilemaps/tileset.png",
-         "imageheight":48,
-         "imagewidth":112,
+         "imageheight":192,
+         "imagewidth":448,
          "margin":0,
          "name":"tileSet",
          "spacing":0,
          "tilecount":21,
-         "tileheight":16,
+         "tileheight":64,
          "tiles":[
                 {
                  "id":0,
@@ -235,9 +235,9 @@
                          "value":true
                         }]
                 }],
-         "tilewidth":16
+         "tilewidth":64
         }],
- "tilewidth":16,
+ "tilewidth":64,
  "type":"map",
  "version":"1.9",
  "width":20

@@ -23,8 +23,8 @@ class Level1 extends Phaser.Scene {
     }
     preload() {
         this.globo = new Bola("ball", 'assets/images/sprites/ball2.png', -180);
-        this.playerWASD = new player("playerWASD", "assets/images/sprites/player_spain.png", 300, 400, "D", "A", "W", 0);
-        this.playerArrows = new player("playerArrows", "assets/images/sprites/player_blank.png", 300, 400, "RIGHT", "LEFT", "UP", 0);
+        this.playerWASD = new player("playerWASD", "assets/images/sprites/player_spain.png", 600, 800, "D", "A", "W", 0);
+        this.playerArrows = new player("playerArrows", "assets/images/sprites/player_blank.png", 600, 800, "RIGHT", "LEFT", "UP", 0);
         //Background
         this.load.image("backgroundSky", 'assets/images/background/bgImages/sky.png');
         this.load.image("backgroundClouds", 'assets/images/background/bgImages/clouds.png');
@@ -35,8 +35,8 @@ class Level1 extends Phaser.Scene {
         this.load.image("tiles", "assets/images/background/tilemaps/tileset.png")
         this.load.tilemapTiledJSON("leveln1", "levels/level1.json")
         //players
-        this.playerWASD.preload(this, 36, 64);
-        this.playerArrows.preload(this, 36, 64);
+        this.playerWASD.preload(this, 72, 128);
+        this.playerArrows.preload(this, 72, 128);
         //ball
         this.globo.preload(this)
         //Pause button
@@ -54,30 +54,24 @@ class Level1 extends Phaser.Scene {
         
 
         //background
-        this.d = this.add.image(0, 0, "backgroundSky").setOrigin(0, 0).setScrollFactor(0, 0).setScale(4);
-        this.bg0 = this.add.tileSprite(0, 0, 320, 200, 'backgroundAtmosphere').setOrigin(0, 0).setScrollFactor(0, 0).setScale(4);
-        this.bg1 = this.add.tileSprite(0, 0, 320, 200, 'backgroundMountains').setOrigin(0, 0).setScrollFactor(0, 0).setScale(4);
-        this.bg2 = this.add.tileSprite(0, 0, 320, 200, 'backgroundClouds').setOrigin(0, 0).setScrollFactor(0, 0).setScale(4);
-        this.bg3 = this.add.tileSprite(0, 0, 320, 200, 'backgroundStars').setOrigin(0, 0).setScrollFactor(0, 0).setScale(4);
-
-        //players (setCollideWorldBorder,setvelocity, keypress,anims, etc)
-
+        this.d = this.add.image(0, 0, "backgroundSky").setOrigin(0, 0).setScrollFactor(0, 0);
+        this.bg0 = this.add.tileSprite(0, 0, 1280, 832, 'backgroundAtmosphere').setOrigin(0, 0).setScrollFactor(0, 0);
+        this.bg1 = this.add.tileSprite(0, 0, 1280, 832, 'backgroundMountains').setOrigin(0, 0).setScrollFactor(0, 0);
+        this.bg2 = this.add.tileSprite(0, 0, 1280, 832, 'backgroundClouds').setOrigin(0, 0).setScrollFactor(0, 0);
+        this.bg3 = this.add.tileSprite(0, 0, 1280, 832, 'backgroundStars').setOrigin(0, 0).setScrollFactor(0, 0);
         //Asignación de las variables globales a unas específicas
         this.playerWASD.create(this, 300, 700);
         this.player1 = this.playerWASD.player;
-        this.player1.setScale(2);
         this.playerArrows.create(this, 1300, 650);
         this.player2 = this.playerArrows.player;
-        this.player2.setScale(2);
         //ball 
         this.globo.create(this, 780, 0);
         this.bola = this.globo.ball;
-        this.bola.setScale(2);
 
         //tiles
         this.map = this.make.tilemap({ key: "leveln1" });
         this.tileset = this.map.addTilesetImage("tileSet", "tiles");
-        const tileLayer = this.map.createLayer("Map", this.tileset).setScale(4);
+        const tileLayer = this.map.createLayer("Map", this.tileset);
         tileLayer.setCollisionByProperty({ collides: true });
 
         //pause button
@@ -117,8 +111,6 @@ class Level1 extends Phaser.Scene {
                 }
             }
         }); //Colisiones entre el globo y el suelo. Si el globo toca el suelo, se vuelve a lanzar el globo.
-
-
         this.physics.add.collider(
             this.player1,
             this.bola,
@@ -141,7 +133,6 @@ class Level1 extends Phaser.Scene {
                         this.bola.turnOponent = "player2";
                     }
                 }
-
             }); //Colision con el player en función de su velocidad REFERENCIA: https://phaser.io/examples/v3/view/physics/arcade/collision-direction#
 
         this.physics.add.collider(
