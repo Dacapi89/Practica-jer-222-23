@@ -52,10 +52,10 @@ class Level1 extends Phaser.Scene {
 
         //background
         this.d = this.add.image(0, 0, "backgroundSky").setOrigin(0, 0).setScrollFactor(0, 0);
-        this.bg0 = this.add.tileSprite(0, 0, 960, 624, 'backgroundAtmosphere').setOrigin(0, 0).setScrollFactor(0, 0);
-        this.bg1 = this.add.tileSprite(0, 0, 960, 624, 'backgroundMountains').setOrigin(0, 0).setScrollFactor(0, 0);
-        this.bg2 = this.add.tileSprite(0, 0, 960, 624, 'backgroundClouds').setOrigin(0, 0).setScrollFactor(0, 0);
-        this.bg3 = this.add.tileSprite(0, 0, 960, 624, 'backgroundStars').setOrigin(0, 0).setScrollFactor(0, 0);
+        //this.bg0 = this.add.tileSprite(0, 0, 960, 624, 'backgroundAtmosphere').setOrigin(0, 0).setScrollFactor(0, 0);
+        //this.bg1 = this.add.tileSprite(0, 0, 960, 624, 'backgroundMountains').setOrigin(0, 0).setScrollFactor(0, 0);
+        //this.bg2 = this.add.tileSprite(0, 0, 960, 624, 'backgroundClouds').setOrigin(0, 0).setScrollFactor(0, 0);
+        //this.bg3 = this.add.tileSprite(0, 0, 960, 624, 'backgroundStars').setOrigin(0, 0).setScrollFactor(0, 0);
         //Asignación de las variables globales a unas específicas
         this.playerWASD.create(this, 300, 700);
         this.player1 = this.playerWASD.player;
@@ -186,10 +186,10 @@ class Level1 extends Phaser.Scene {
         this.scoreWASD.setText('Player 1: ' + this.playerWASD.playerScore.toString());
 
         //background    
-        this.bg3.tilePositionX -= 0.05;
-        this.bg2.tilePositionX -= 0.2;
-        this.bg1.tilePositionX -= 0.5;
-        this.bg0.tilePositionX -= 1;
+        //this.bg3.tilePositionX -= 0.05;
+        //this.bg2.tilePositionX -= 0.2;
+        //this.bg1.tilePositionX -= 0.5;
+        //this.bg0.tilePositionX -= 1;
         //player
         this.playerWASD.update(this)
         this.playerArrows.update(this)
