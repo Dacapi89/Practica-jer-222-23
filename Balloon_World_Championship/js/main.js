@@ -9,8 +9,8 @@ import {Credits} from './scenes/Credits.js';
 
 const config ={
     type: Phaser.AUTO,
-    width:1280,
-    height:832,
+    width:960,
+    height:624,
     antialias: false,
     pixelArt: true,
     roundPixels: false,

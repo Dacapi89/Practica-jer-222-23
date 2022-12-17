@@ -4,9 +4,6 @@ import { Bola } from '../objects/Bola.js';
 
 var keyP;
 
-function jump(object) {
-
-}
 class Level1 extends Phaser.Scene {
     constructor() {
         super({key:'Level1'});
@@ -23,7 +20,7 @@ class Level1 extends Phaser.Scene {
     }
     preload() {
         this.globo = new Bola("ball", 'assets/images/sprites/ball2.png', -180);
-        this.playerWASD = new player("playerWASD", "assets/images/sprites/player_spain.png", 600, 800, "D", "A", "W", 0);
+        this.playerWASD = new player("playerWASD", "assets/images/sprites/player_spain.png", 600, 400, "D", "A", "W", 0);
         this.playerArrows = new player("playerArrows", "assets/images/sprites/player_blank.png", 600, 800, "RIGHT", "LEFT", "UP", 0);
         //Background
         this.load.image("backgroundSky", 'assets/images/background/bgImages/sky.png');
@@ -55,10 +52,10 @@ class Level1 extends Phaser.Scene {
 
         //background
         this.d = this.add.image(0, 0, "backgroundSky").setOrigin(0, 0).setScrollFactor(0, 0);
-        this.bg0 = this.add.tileSprite(0, 0, 1280, 832, 'backgroundAtmosphere').setOrigin(0, 0).setScrollFactor(0, 0);
-        this.bg1 = this.add.tileSprite(0, 0, 1280, 832, 'backgroundMountains').setOrigin(0, 0).setScrollFactor(0, 0);
-        this.bg2 = this.add.tileSprite(0, 0, 1280, 832, 'backgroundClouds').setOrigin(0, 0).setScrollFactor(0, 0);
-        this.bg3 = this.add.tileSprite(0, 0, 1280, 832, 'backgroundStars').setOrigin(0, 0).setScrollFactor(0, 0);
+        this.bg0 = this.add.tileSprite(0, 0, 960, 624, 'backgroundAtmosphere').setOrigin(0, 0).setScrollFactor(0, 0);
+        this.bg1 = this.add.tileSprite(0, 0, 960, 624, 'backgroundMountains').setOrigin(0, 0).setScrollFactor(0, 0);
+        this.bg2 = this.add.tileSprite(0, 0, 960, 624, 'backgroundClouds').setOrigin(0, 0).setScrollFactor(0, 0);
+        this.bg3 = this.add.tileSprite(0, 0, 960, 624, 'backgroundStars').setOrigin(0, 0).setScrollFactor(0, 0);
         //Asignación de las variables globales a unas específicas
         this.playerWASD.create(this, 300, 700);
         this.player1 = this.playerWASD.player;

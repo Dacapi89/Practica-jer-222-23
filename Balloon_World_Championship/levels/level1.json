@@ -31,7 +31,7 @@
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.2",
- "tileheight":64,
+ "tileheight":48,
  "tilesets":[
         {
          "columns":7,
@@ -43,7 +43,7 @@
          "name":"tileSet",
          "spacing":0,
          "tilecount":21,
-         "tileheight":64,
+         "tileheight":48,
          "tiles":[
                 {
                  "id":0,
@@ -235,9 +235,9 @@
                          "value":true
                         }]
                 }],
-         "tilewidth":64
+         "tilewidth":48
         }],
- "tilewidth":64,
+ "tilewidth":48,
  "type":"map",
  "version":"1.9",
  "width":20
