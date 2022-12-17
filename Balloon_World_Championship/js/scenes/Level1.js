@@ -62,7 +62,7 @@ class Level1 extends Phaser.Scene {
         this.playerArrows.create(this, 1300, 650);
         this.player2 = this.playerArrows.player;
         //ball 
-        this.globo.create(this, 780, 0);
+        this.globo.create(this, 585, 0);
         this.bola = this.globo.ball;
 
         //tiles
@@ -83,7 +83,7 @@ class Level1 extends Phaser.Scene {
 
                 if (this.bola.turnOponent == "player2") {   //Y el player1 ha sido el último en tocar, el player1 gana un punto
                     this.bola.disableBody(true, true);
-                    this.bola.enableBody(true, 780, 0, true, true);
+                    this.bola.enableBody(true, 585, 0, true, true);
                     console.log("HAS PERDIDO player2!!!!");
                     this.bola.turnOponent = undefined;
                     this.bola.turn = null;
@@ -93,7 +93,7 @@ class Level1 extends Phaser.Scene {
                 }
                 else if (this.bola.turnOponent == "player1" || this.bola.turnOponent == "player1") {  //Y el player2 ha sido el último en tocar, el player2 gana un punto
                     this.bola.disableBody(true, true);
-                    this.bola.enableBody(true, 780, 0, true, true);
+                    this.bola.enableBody(true, 585, 0, true, true);
                     console.log("HAS PERDIDO player1!!!!");
                     this.bola.turnOponent = undefined;
                     this.bola.turn = null;
@@ -103,7 +103,7 @@ class Level1 extends Phaser.Scene {
                 }
                 else if (this.bola.turnOponent == undefined) {  //Ninguno ha tocado el globo todavía
                     this.bola.disableBody(true, true);
-                    this.bola.enableBody(true, 780, 0, true, true);
+                    this.bola.enableBody(true, 585, 0, true, true);
                     console.log("NADIE HA TOCADO; SE SACA OTRA VEZ!!!");
                 }
             }
@@ -116,7 +116,7 @@ class Level1 extends Phaser.Scene {
 
                     if (this.bola.turn == "player1") {                              //Y ese jugador lo toca por segunda vez (NO SE PUEDE 
                         this.bola.disableBody(true, true);                         //TOCAR EL GLOBO 2 VECES POR TURNO), el jugador contrario gana un punto
-                        this.bola.enableBody(true, 780, 0, true, true);
+                        this.bola.enableBody(true, 585, 0, true, true);
                         console.log("HAS PERDIDO player1!!!!");
                         this.playerArrows.playerScore +=1;
                         this.bola.turn = null;
@@ -140,7 +140,7 @@ class Level1 extends Phaser.Scene {
 
                     if (this.bola.turn == "player2") {                           //Y ese jugador lo toca por segunda vez (NO SE PUEDE
                         this.bola.disableBody(true, true);                      //TOCAR EL GLOBO 2 VECES POR TURNO), el jugador contrario gana un punto
-                        this.bola.enableBody(true, 780, 0, true, true);
+                        this.bola.enableBody(true, 585, 0, true, true);
                         console.log("HAS PERDIDO player2!!!!");
                         this.playerWASD.playerScore++;
                         this.bola.turn = null;
