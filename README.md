@@ -231,4 +231,6 @@ La **escena de los créditos**, pulsando la tecla O desde el menú principal, mu
 
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Pantallas.png?raw=true)
 
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Javascript.png?raw=true)
+
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Captura_JavaServ.png?raw=true)
