@@ -233,18 +233,17 @@ La **escena de los créditos**, pulsando la tecla O desde el menú principal, mu
 
 ## ACTUALIZACIÓN FASE 2
 ###### 
-En esta fase, el equipo de desarrollo y diseño, se ha creado el videojuego Balloon World Championship basandose en el GDD. El videojuego se ha implementado de manera local (hay 2 jugadores que pueden jugar al videojuego desde el mismo teclado y ordenador).
-
+En esta fase, el equipo de desarrollo y diseño, se ha implementado un chat y un sistema de login con siguiendo una API rest. 
 ### ESCENAS
 ###### 
-La **primera escena** se trata del logo del grupo a modo de introdución y un mensaje para continuar hacia la siguiente pantalla.
+La **primera escena** se trata de una pantalla de inicio de sesión que permitira al servidor guardar tu paso por este.
 
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Login.png?raw=true)
 
 ###### 
-La **segunda escena** contiene el menú principal del juego con el logo del videojuego. De momento solo hay dos botones para interactuar, que es el de PLAY (de manera local) y el de créditos. Todos los botones, van a a tener asociados a su derecha la tecla que los acciona. Para las siguientes fases, se tiene pensado en añadir más botones, como el de opciones y el de online.
+La **escena del menu principal** contiene el menú principal del juego con el logo del videojuego, sin embargo el cambio a notar se da en la implementacion de un campo de texto a y un botón con la palabra send, tras usarlo aparceran mensajes en la parte superior, el color azul representa los mensajes de tu actual sesion y los rojos indican los mensajes de el otro jugador y tus mensajes tras haber vuelto a entrar en el servidor.
 
-![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Login.png?raw=true)
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Pantalla_De_Inicio.png?raw=true)
 
 ### DIAGRAMAS DE FLUJO
 
