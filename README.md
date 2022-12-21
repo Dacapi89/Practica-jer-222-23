@@ -231,7 +231,7 @@ La **escena de los créditos**, pulsando la tecla O desde el menú principal, mu
 
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Pantallas.png?raw=true)
 
-## ACTUALIZACIÓN FASE 2
+## ACTUALIZACIÓN FASE 3
 ###### 
 En esta fase, el equipo de desarrollo y diseño, se ha implementado un chat y un sistema de login con siguiendo una API rest. 
 ### ESCENAS
