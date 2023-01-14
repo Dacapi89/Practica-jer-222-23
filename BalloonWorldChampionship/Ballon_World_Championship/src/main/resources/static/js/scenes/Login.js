@@ -1,10 +1,5 @@
 // Teclas especiales implementadas en esta escena
-var keyEnter;
-export function loginM() {
- //escena.start("start");
-	alert("CULO");
-}
-var p;
+var sc;
 export class Login extends Phaser.Scene{
     
     // Constructor
@@ -18,42 +13,25 @@ export class Login extends Phaser.Scene{
     preload(){
 			
         this.load.image('Fondo', 'assets/images/background/Fondo.png');
-
     }
-
     create(){
-		p = document.getElementById("boton");
         // Añadir imágenes
         this.add.image(480, 312, 'Fondo');
         //Añadir teclas especiales
-        keyEnter=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
-     	 p.addEventListener("click", console.log("hola"));
+     	 sc = this.scene;
+     	 $('#boton').click(function(){
+			  sc.start("start");
+			  var b = document.getElementById("cp");
+			  b.remove();
+    
+		});
     }
 
     update(){
 		 
-    $("#boton").click(function () {
-
-    })
-			
-
-			//if(p.onclick)
-			
-        // Evento si la tecla ENTER es pulsada
-        if (keyEnter.isDown)
-		{
-			this.scene.start("start");
-		}
 
     }
      
-			login() {
-		
-		p.onclick = this.scene.start("start");
-        console.log("Entrando en Login");
-        this.scene.start("start");
-
-}
 }
 
 function createUser(user) {
@@ -125,36 +103,6 @@ $(document).ready(function () {
         }
     })
 
-    //Handle items checkboxs
-    // info.change(function (event) {
-
-    //     //Get page elements for item
-    //     var checkbox = $(event.target);
-    //     var itemDiv = checkbox.parent();
-    //     var textSpan = itemDiv.find('span');
-
-    //     //Read item info from elements
-    //     var itemDescription = textSpan.text();
-    //     var itemChecked = checkbox.prop('checked');
-    //     var itemId = itemDiv.attr('id').split('-')[1];
-
-    //     //Create updated item
-    //     var updatedItem = {
-    //         id: itemId,
-    //         description: itemDescription,
-    //         checked: itemChecked
-    //     }
-
-    //     //Update item in server
-    //     updateItem(updatedItem);
-
-    //     //Update page when checked
-    //     var style = itemChecked ? 'line-through' : 'none';
-    //     textSpan.css('text-decoration', style);
-
-    // })
-
-    //Handle add button
 
     $("#boton").click(function () {
 
@@ -167,9 +115,5 @@ $(document).ready(function () {
         }
     
         createUser(user) 
-        //this.scene.start("start")//, function (itemWithId) {
-            //When item with id is returned from server
-            //showItem(itemWithId);
-        //});
     })
 })

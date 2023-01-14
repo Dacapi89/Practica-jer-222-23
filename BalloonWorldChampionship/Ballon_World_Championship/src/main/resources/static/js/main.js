@@ -7,7 +7,6 @@ import {ResultsPlayerWASDWins} from './scenes/ResultsPlayerWASDWins.js';
 import {ResultsPlayerCursorsWins} from './scenes/ResultsPlayerCursorsWins.js';
 import {Pause} from './scenes/Pause.js';
 import {Credits} from './scenes/Credits.js';
-import { loginM } from './scenes/Login.js';
 const config ={
     type: Phaser.AUTO,
     width:960,
@@ -28,8 +27,3 @@ const config ={
 }
 
 var game= new Phaser.Game(config);
-
- function loginMain() {
-	 
-	 alert("HABIBI");
- }
