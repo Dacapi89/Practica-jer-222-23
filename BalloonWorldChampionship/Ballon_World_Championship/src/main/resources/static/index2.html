@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Balloon World Championship</title>
+    <script src="js/phaser.min.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="js/APIMsgFunc.js"></script>
+    
+</head>
+<body>
+
+	<div class="containerPrincipal" style="position: absolute; top: -20%; left: -10%;">
+		<div class="form-group">
+			<input id="usuario" type="text" class="form-control" name="username" placeholder="user">
+			<br>
+			<button id ="boton" class="boton" >Login</button> 
+		</div>
+	</div>
+	<script  type="module" src="./js/main.js"></script>
+
+	<div class="wrapper">		
+		<div style="position: relative; left: 960px; top: 624px; height: 30px;">
+			<div style=" bottom:0; margin: 0;  position: absolute; padding:2px;margin-bottom:35px; " id="chat"></div>
+			<button type="button" id="sendButton">Send</button>
+			<input type="text" id="message"/>
+		</div>
+	</div>
+   
+</body>
+</html>
