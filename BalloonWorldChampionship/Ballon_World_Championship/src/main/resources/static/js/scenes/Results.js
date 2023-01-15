@@ -11,7 +11,7 @@ export class Results extends Phaser.Scene{
 
     preload(){
         this.load.image('background', 'assets/images/background/Fondo.png');
-        this.load.image('podio', 'assets/images/sprites/PODIO.png');
+        //this.load.image('podio', 'assets/images/sprites/PODIO.png');
         this.load.image('Victory', 'assets/images/UI/Titles/VICTORY.png');
         this.load.image('Continue', 'assets/images/UI/Buttons/BUTTON_CONTINUE.png');
         this.load.image('Exit', 'assets/images/UI/Buttons/BUTTON_EXIT.png');

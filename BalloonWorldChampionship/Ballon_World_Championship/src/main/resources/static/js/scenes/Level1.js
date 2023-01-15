@@ -3,7 +3,8 @@ import { player } from '../objects/player.js';
 import { Bola } from '../objects/Bola.js';
 
 var keyP;
-
+var connection;
+var player1;
 class Level1 extends Phaser.Scene {
     constructor() {
         super({key:'Level1'});
@@ -58,7 +59,7 @@ class Level1 extends Phaser.Scene {
         //this.bg3 = this.add.tileSprite(0, 0, 960, 624, 'backgroundStars').setOrigin(0, 0).setScrollFactor(0, 0);
         //Asignación de las variables globales a unas específicas
         this.playerWASD.create(this, 200, 500);
-        this.player1 = this.playerWASD.player;
+        player1 = this.playerWASD.player;
         this.playerArrows.create(this, 880, 450);
         this.player2 = this.playerArrows.player;
         //ball 
@@ -76,7 +77,7 @@ class Level1 extends Phaser.Scene {
 
 
         //colisiones
-        this.physics.add.collider(this.player1, tileLayer)
+        this.physics.add.collider(player1, tileLayer)
         this.physics.add.collider(this.player2, tileLayer)
         this.physics.add.collider(this.bola, tileLayer, () => {
             if (this.bola.body.blocked.down) {              //Si la bola toca el suelo...
@@ -109,10 +110,10 @@ class Level1 extends Phaser.Scene {
             }
         }); //Colisiones entre el globo y el suelo. Si el globo toca el suelo, se vuelve a lanzar el globo.
         this.physics.add.collider(
-            this.player1,
+            player1,
             this.bola,
             () => {
-                if (this.player1.body.touching.up && this.bola.body.touching.down) { //Si el globo toca un jugador...
+                if (player1.body.touching.up && this.bola.body.touching.down) { //Si el globo toca un jugador...
 
                     if (this.bola.turn == "player1") {                              //Y ese jugador lo toca por segunda vez (NO SE PUEDE 
                         this.bola.disableBody(true, true);                         //TOCAR EL GLOBO 2 VECES POR TURNO), el jugador contrario gana un punto
@@ -125,7 +126,7 @@ class Level1 extends Phaser.Scene {
                         console.log("Puntuación P2:",this.playerArrows.playerScore);
                     }
                     else {                                                         //Empuja al globo según su dirección X
-                        this.bola.setVelocity(this.player1.body.velocity.x, -200);
+                        this.bola.setVelocity(player1.body.velocity.x, -200);
                         this.bola.turn = "player1";
                         this.bola.turnOponent = "player2";
                     }
@@ -178,13 +179,42 @@ class Level1 extends Phaser.Scene {
 
         this.music.play();
         this.music.loop = true;
+        connection = new WebSocket('ws://192.168.68.106:8090/pos');
+	connection.onopen = function() {
+		console.log("Opening socket");
+	}
     }
 
     update() {
+        $(document).ready(function() {
+
+	connection.onerror = function(e) {
+		console.log("WS error: " + e);
+	}
+	connection.onmessage = function(msg) {
+		console.log("WS message: " + msg.data);
+		var message = JSON.parse(msg.data)
+		//$('#chat').val($('#chat').val() + "\n" + message.name + ": " + message.message);
+		console.log(message);
+	}
+	connection.onclose = function() {
+		console.log("Closing socket");
+	}
+		
+		var pos = player1.body.velocity.x;
+		document.addEventListener("keypress", event => {
+			if(event.key == 'd' || event.key == 'a' || event.key == 'w' ) {
+				connection.send(JSON.stringify(pos));
+				console.log("Mandando posición..")
+			}
+
+		});
+		
+})
+
         this.text.setText('Time ' + this.minutos + ':' + this.segundos);
         this.scoreCursors.setText('Player 2: ' + this.playerArrows.playerScore.toString());
         this.scoreWASD.setText('Player 1: ' + this.playerWASD.playerScore.toString());
-
         //background    
         //this.bg3.tilePositionX -= 0.05;
         //this.bg2.tilePositionX -= 0.2;
@@ -200,6 +230,7 @@ class Level1 extends Phaser.Scene {
             this.scene.pause("Level1");
             this.scene.launch("pause", "Level1");
         } 
+        
 
     }
 
@@ -231,4 +262,5 @@ class Level1 extends Phaser.Scene {
     }
     
 }
+
 export { Level1 };
