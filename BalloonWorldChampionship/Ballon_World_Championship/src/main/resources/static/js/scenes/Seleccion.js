@@ -46,7 +46,7 @@ export class Seleccion extends Phaser.Scene{
         // Evento si la tecla ENTER es pulsada
         if (keyEnter.isDown)
 		{
-			this.scene.start("LevelOn");
+			this.scene.start("LevelOn");			
             this.music.stop();
 		}
         else if (keyO.isDown){

@@ -43,8 +43,8 @@ public class PositionHandler extends TextWebSocketHandler {
 		System.out.println("Message sent: " + node.toString());
 		
 		ObjectNode newNode = mapper.createObjectNode();
-		newNode.put("name", node.get("name").asText());
-		newNode.put("message", node.get("message").asText());
+		newNode.put("x", node.get("x").asText());
+		newNode.put("y", node.get("y").asText());
 		
 		
 		for(WebSocketSession participant : sessions.values()) {

@@ -2,7 +2,6 @@
 import { player } from '../objects/player.js';
 import { Bola } from '../objects/Bola.js';
 
-var pos;
 var keyP;
 var connection;
 var player1;
@@ -181,42 +180,9 @@ class Level1 extends Phaser.Scene {
         this.music.play();
         this.music.loop = true;
         
-        connection = new WebSocket('ws://192.168.68.106:8080/pos');
-	connection.onopen = function() {
-		console.log("Opening socket");
-	}
-    document.addEventListener("keypress", event => {
-			if(event.key == 'd' || event.key == 'a' || event.key == 'w' ) {				
-				connection.send(JSON.stringify(pos));
-				console.log("Mandando posición..")
-			}
-
-		});
-				        $(document).ready(function() {
-
-	connection.onerror = function(e) {
-		console.log("WS error: " + e);
-	}
-	connection.onmessage = function(msg) {
-		console.log("WS message: " + msg.data);
-		var message = JSON.parse(msg.data)
-		//$('#chat').val($('#chat').val() + "\n" + message.name + ": " + message.message);
-		console.log(message);
-	}
-	connection.onclose = function() {
-		console.log("Closing socket");
-	}					
-		
-})    
     }
 
     update() {
-		pos = {
-					x: player1.body.x,
-					y: player1.body.y
-					}
-
-
         this.text.setText('Time ' + this.minutos + ':' + this.segundos);
         this.scoreCursors.setText('Player 2: ' + this.playerArrows.playerScore.toString());
         this.scoreWASD.setText('Player 1: ' + this.playerWASD.playerScore.toString());

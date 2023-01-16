@@ -2,10 +2,11 @@
 import { player } from '../objects/player.js';
 import { Bola } from '../objects/Bola.js';
 
-var pos;
+var vel;
 var keyP;
 var connection;
 var player1;
+var player2;
 export class LevelOnline extends Phaser.Scene {
     constructor() {
         super({key:'LevelOn'});
@@ -62,7 +63,7 @@ export class LevelOnline extends Phaser.Scene {
         this.playerWASD.create(this, 200, 500);
         player1 = this.playerWASD.player;
         this.playerArrows.create(this, 880, 450);
-        this.player2 = this.playerArrows.player;
+        player2 = this.playerArrows.player;
         //ball 
         this.globo.create(this, 585, 0);
         this.bola = this.globo.ball;
@@ -79,7 +80,7 @@ export class LevelOnline extends Phaser.Scene {
 
         //colisiones
         this.physics.add.collider(player1, tileLayer)
-        this.physics.add.collider(this.player2, tileLayer)
+        this.physics.add.collider(player2, tileLayer)
         this.physics.add.collider(this.bola, tileLayer, () => {
             if (this.bola.body.blocked.down) {              //Si la bola toca el suelo...
 
@@ -135,10 +136,10 @@ export class LevelOnline extends Phaser.Scene {
             }); //Colision con el player en función de su velocidad REFERENCIA: https://phaser.io/examples/v3/view/physics/arcade/collision-direction#
 
         this.physics.add.collider(
-            this.player2,
+            player2,
             this.bola,
             () => {
-                if (this.player2.body.touching.up && this.bola.body.touching.down) {
+                if (player2.body.touching.up && this.bola.body.touching.down) {
 
                     if (this.bola.turn == "player2") {                           //Y ese jugador lo toca por segunda vez (NO SE PUEDE
                         this.bola.disableBody(true, true);                      //TOCAR EL GLOBO 2 VECES POR TURNO), el jugador contrario gana un punto
@@ -151,7 +152,7 @@ export class LevelOnline extends Phaser.Scene {
                         console.log("Puntuación P2:",this.playerArrows.playerScore);
                     }
                     else {                                                         //Empuja al globo según su dirección X
-                        this.bola.setVelocity(this.player2.body.velocity.x, -200);
+                        this.bola.setVelocity(player2.body.velocity.x, -200);
                         this.bola.turn = "player2";
                         this.bola.turnOponent = "player1";
                     }
@@ -181,18 +182,41 @@ export class LevelOnline extends Phaser.Scene {
         this.music.play();
         this.music.loop = true;
         
-        connection = new WebSocket('ws://192.168.68.106:8080/pos');
+    connection = new WebSocket('ws://192.168.1.134:8080/pos');    
 	connection.onopen = function() {
 		console.log("Opening socket");
 	}
     document.addEventListener("keypress", event => {
-			if(event.key == 'd' || event.key == 'a' || event.key == 'w' ) {				
-				connection.send(JSON.stringify(pos));
+			if(event.key == 'd') {	
+				vel.x = 60 //velocidad del jugador entre 10 por que le da la gana al programa
+				connection.send(JSON.stringify(vel));
+				console.log("Mandando posición..")
+			}
+			if(event.key == 'a') {	
+				vel.x = -60				
+				connection.send(JSON.stringify(vel));
+				console.log("Mandando posición..")
+			}
+			if(event.key == 'w' && player1.body.blocked.down) {		
+				vel.y = -40		
+				connection.send(JSON.stringify(vel));
 				console.log("Mandando posición..")
 			}
 
 		});
-				        $(document).ready(function() {
+	document.addEventListener("keyup", event => {
+		if(event.key == 'd') {	
+			vel.x = 0		
+			connection.send(JSON.stringify(vel));
+			console.log("Mandando posición..")
+		}
+		if(event.key == 'a') {	
+			vel.x = 0				
+			connection.send(JSON.stringify(vel));
+			console.log("Mandando posición..")
+		}	
+		});
+	$(document).ready(function() {
 
 	connection.onerror = function(e) {
 		console.log("WS error: " + e);
@@ -200,7 +224,7 @@ export class LevelOnline extends Phaser.Scene {
 	connection.onmessage = function(msg) {
 		console.log("WS message: " + msg.data);
 		var message = JSON.parse(msg.data)
-		//$('#chat').val($('#chat').val() + "\n" + message.name + ": " + message.message);
+		player2.setVelocity(message.x, message.y);
 		console.log(message);
 	}
 	connection.onclose = function() {
@@ -211,12 +235,10 @@ export class LevelOnline extends Phaser.Scene {
     }
 
     update() {
-		pos = {
-					x: player1.body.x,
-					y: player1.body.y
-					}
-
-
+		vel = {
+			x: player1.body.velocity.x /10,
+			y: player1.body.velocity.y /10
+		}
         this.text.setText('Time ' + this.minutos + ':' + this.segundos);
         this.scoreCursors.setText('Player 2: ' + this.playerArrows.playerScore.toString());
         this.scoreWASD.setText('Player 1: ' + this.playerWASD.playerScore.toString());
@@ -240,6 +262,8 @@ export class LevelOnline extends Phaser.Scene {
     }
 
     finDelJuego(){
+		connection.close()
+		this.scene.stop();
         if (this.playerWASD.playerScore > this.playerArrows.playerScore){
             this.scene.start('results1');
             this.music.stop();
@@ -252,6 +276,7 @@ export class LevelOnline extends Phaser.Scene {
             this.scene.start('results');
             this.music.stop();
         }
+        
     }
     actualizarTiempo() {
 

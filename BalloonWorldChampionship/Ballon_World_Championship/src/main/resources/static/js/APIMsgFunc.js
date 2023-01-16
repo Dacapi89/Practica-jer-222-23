@@ -1,7 +1,7 @@
 function postMSG(msg, callback) {
     $.ajax({
         method: "POST",
-        url: 'http://192.168.68.106:8080/messages',
+        url: 'http://192.168.1.134:8080/messages',
         data: JSON.stringify(msg),
         processData: false,
         headers: {
@@ -15,7 +15,7 @@ function postMSG(msg, callback) {
 function updateMSG(msg) {
     $.ajax({
         method: 'PUT',
-        url: 'http://192.168.68.106:8080/messages/' + msg.id,
+        url: 'http://192.168.1.134:8080/messages/' + msg.id,
         data: JSON.stringify(msg),
         processData: false,
         headers: {
@@ -28,14 +28,14 @@ function updateMSG(msg) {
 function deleteMSG(msgId) {
     $.ajax({
         method: 'DELETE',
-        url: 'http://192.168.68.106:8080/messages/' + msgId
+        url: 'http://192.168.1.134:8080/messages/' + msgId
     }).done(function (item) {
         console.log("Deleted message " + msgId)
     })
 }
 function loadMSGs(callback) {
     $.ajax({
-        url: 'http://192.168.68.106:8080/messages'
+        url: 'http://192.168.1.134:8080/messages'
     }).done(function (messages) {
         console.log('messages loaded: ' + JSON.stringify(messages));
         callback(messages);

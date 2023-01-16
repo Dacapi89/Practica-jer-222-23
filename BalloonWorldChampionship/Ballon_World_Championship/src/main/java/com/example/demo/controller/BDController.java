@@ -48,7 +48,7 @@ public class BDController {
 		return baseDeDatos.values();
 		
 	}
-	@CrossOrigin(origins = "http://192.168.68.106:8080")
+	@CrossOrigin(origins = "http://192.168.1.134:8080")
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public BD nuevoUser(@RequestBody BD user) {
