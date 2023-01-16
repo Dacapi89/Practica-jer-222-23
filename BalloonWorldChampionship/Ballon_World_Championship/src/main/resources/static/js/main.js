@@ -7,6 +7,10 @@ import {ResultsPlayerWASDWins} from './scenes/ResultsPlayerWASDWins.js';
 import {ResultsPlayerCursorsWins} from './scenes/ResultsPlayerCursorsWins.js';
 import {Pause} from './scenes/Pause.js';
 import {Credits} from './scenes/Credits.js';
+import {Seleccion} from './scenes/Seleccion.js';
+import {LevelOnline} from './scenes/LevelOnline.js';
+import {PauseOnline} from './scenes/PauseOnline.js';
+
 const config ={
     type: Phaser.AUTO,
     width:960,
@@ -14,8 +18,8 @@ const config ={
     antialias: false,
     pixelArt: true,
     roundPixels: false,
-    scene:  [Login, Start, MainMenu, Level1, Results, ResultsPlayerWASDWins, ResultsPlayerCursorsWins, 
-    Pause, Credits],
+    scene:  [ Login, Start, MainMenu, Seleccion,Level1, Results, ResultsPlayerWASDWins, ResultsPlayerCursorsWins, 
+    Pause, Credits, LevelOnline, PauseOnline],
     physics: {
         default: 'arcade',
         arcade: {

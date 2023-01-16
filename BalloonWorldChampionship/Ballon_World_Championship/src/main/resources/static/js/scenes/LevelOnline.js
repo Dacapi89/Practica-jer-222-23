@@ -6,9 +6,9 @@ var pos;
 var keyP;
 var connection;
 var player1;
-class Level1 extends Phaser.Scene {
+export class LevelOnline extends Phaser.Scene {
     constructor() {
-        super({key:'Level1'});
+        super({key:'LevelOn'});
         //Variables globales
         this.globo;   
         this.playerWASD;
@@ -23,7 +23,7 @@ class Level1 extends Phaser.Scene {
     preload() {
         this.globo = new Bola("ball", 'assets/images/sprites/ball2.png', -180);
         this.playerWASD = new player("playerWASD", "assets/images/sprites/player_spain.png", 600, 400, "D", "A", "W", 0);
-        this.playerArrows = new player("playerArrows", "assets/images/sprites/player_blank.png", 600, 400, "RIGHT", "LEFT", "UP", 0);
+        this.playerArrows = new player("playerArrows", "assets/images/sprites/player_blank.png", 600, 400, "NONE", "NONE", "NONE", 0);
         //Background
         this.load.image("backgroundSky", 'assets/images/background/bgImages/sky.png');
         this.load.image("backgroundClouds", 'assets/images/background/bgImages/clouds.png');
@@ -232,8 +232,8 @@ class Level1 extends Phaser.Scene {
         //pause menu
         if (keyP.isDown){
 
-            this.scene.pause("Level1");
-            this.scene.launch("pause", "Level1");
+            this.scene.pause("LevelOn");
+            this.scene.launch("pauseOn", "LevelOn");
         } 
         
 
@@ -268,4 +268,3 @@ class Level1 extends Phaser.Scene {
     
 }
 
-export { Level1 };
