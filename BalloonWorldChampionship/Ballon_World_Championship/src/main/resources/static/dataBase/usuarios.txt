@@ -35,3 +35,5 @@
 1	pause
 1	auaua
 1	sasasas
+1	asas
+1	Daniel89
