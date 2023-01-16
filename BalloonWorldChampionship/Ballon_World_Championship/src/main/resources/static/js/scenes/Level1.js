@@ -2,6 +2,7 @@
 import { player } from '../objects/player.js';
 import { Bola } from '../objects/Bola.js';
 
+var pos;
 var keyP;
 var connection;
 var player1;
@@ -179,14 +180,19 @@ class Level1 extends Phaser.Scene {
 
         this.music.play();
         this.music.loop = true;
-        connection = new WebSocket('ws://192.168.68.106:8090/pos');
+        
+        connection = new WebSocket('ws://192.168.1.134:8090/pos');
 	connection.onopen = function() {
 		console.log("Opening socket");
 	}
-    }
+    document.addEventListener("keypress", event => {
+			if(event.key == 'd' || event.key == 'a' || event.key == 'w' ) {				
+				connection.send(JSON.stringify(pos));
+				console.log("Mandando posición..")
+			}
 
-    update() {
-        $(document).ready(function() {
+		});
+				        $(document).ready(function() {
 
 	connection.onerror = function(e) {
 		console.log("WS error: " + e);
@@ -199,18 +205,17 @@ class Level1 extends Phaser.Scene {
 	}
 	connection.onclose = function() {
 		console.log("Closing socket");
-	}
+	}					
 		
-		var pos = player1.body.velocity.x;
-		document.addEventListener("keypress", event => {
-			if(event.key == 'd' || event.key == 'a' || event.key == 'w' ) {
-				connection.send(JSON.stringify(pos));
-				console.log("Mandando posición..")
-			}
+})    
+    }
 
-		});
-		
-})
+    update() {
+		pos = {
+					x: player1.body.x,
+					y: player1.body.y
+					}
+
 
         this.text.setText('Time ' + this.minutos + ':' + this.segundos);
         this.scoreCursors.setText('Player 2: ' + this.playerArrows.playerScore.toString());

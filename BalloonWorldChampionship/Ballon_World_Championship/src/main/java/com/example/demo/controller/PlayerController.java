@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PlayerController {
-	@CrossOrigin(origins = "http://192.168.68.106:8090")
+	@CrossOrigin(origins = "http://192.168.1.134:8090")
 	@GetMapping("")
 	public String index() {
 		return "index";
