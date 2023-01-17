@@ -245,8 +245,18 @@ La **escena del menu principal** contiene el menú principal del juego con el lo
 
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Pantalla_De_Inicio.png?raw=true)
 
+## ACTUALIZACIÓN FASE 4
+###### 
+En esta fase, el equipo de desarrollo y diseño, se ha implementado los WebSockets en la url/direcciónIP/Pos.
+
+######
+WebSocketPositionHandeler se encarga de distribuir los datos enviados del Cliente1 al Cliente2, y viceversa. Es una comunicación bidireccional. Se abre el socket cuando se inicia una partida online, y se cierra natualmente cuando se acaba. Mientras dura la partida, ambos clientes mandan información, y el servidor notifica de los cambios a ambos clientes.
+
+######
+Aplication, ahora nombrado BallonWorldChampionshipAplication, define la interfaz de WebSocket.
+
 ### DIAGRAMAS DE FLUJO
 
-![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Javascript.png?raw=true)
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F4_Javascript.png?raw=true)
 
-![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_JavaServ.png?raw=true)
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F4_JavaServ.png?raw=true)
