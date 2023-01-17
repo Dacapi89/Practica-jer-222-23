@@ -2,6 +2,7 @@
 // Teclas especiales implementadas en esta escena
 var keyO;
 var keyEnter;
+var keyP;
 
 export class MainMenu extends Phaser.Scene{
 
@@ -14,6 +15,7 @@ export class MainMenu extends Phaser.Scene{
         this.load.image('logoJuego', 'assets/images/UI/Logo_BWC.png');
         this.load.image('BotonPlay', 'assets/images/UI/Buttons/BUTTON_PLAY.png');
         this.load.image('credits', 'assets/images/UI/Buttons/BUTTON_CREDITS.png');
+        this.load.image('deleteUser', 'assets/images/UI/Buttons/BUTTON_DELETE_USER.png');
 
         this.load.audio('menu_theme', [ //Añadimos música al juego REFERENCIA: https://phaser.io/examples/v2/audio/play-music
             'assets/music/title/title_music.ogg',  // Música utilizada para la partida: https://www.youtube.com/watch?v=QG6STlj-d7w
@@ -28,10 +30,12 @@ export class MainMenu extends Phaser.Scene{
         this.add.image(700, 330, 'logoJuego');
         this.add.image(250, 250, 'BotonPlay');
         this.add.image(250, 400, 'credits');
+        //this.add.image(100, 50, 'deleteUser');
 
         //Añadir teclas especiales
         keyO=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.O);
         keyEnter=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+        keyP=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
 
         this.music = this.sound.add('menu_theme');
         this.sound.stopAll();
@@ -51,5 +55,25 @@ export class MainMenu extends Phaser.Scene{
             this.scene.start("credits");
 
         }
+        //else if (keyP.isDown){
+			  //var b = document.getElementById("cp");
+			  //b.style.display = "inline";
+			  //b.style.position = "absolute";
+			  //var b = document.getElementById("cp");
+			  //b.remove();
+			  //b.style.display = "none";
+			  //$('#cp').show(0);
+            //this.scene.start("login");
+			//deleteUser(userId);
+
+        //}
     }
+}
+ function deleteUser(userId) {
+    $.ajax({
+        method: 'DELETE',
+        url: 'http://192.168.68.106:8080/users/' + userId
+    }).done(function (item) {
+        console.log("Deleted user " + userId)
+    })
 }

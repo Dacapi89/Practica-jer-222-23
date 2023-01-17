@@ -22,7 +22,9 @@ export class Login extends Phaser.Scene{
      	 $('#boton').click(function(){
 			  sc.start("start");
 			  var b = document.getElementById("cp");
-			  b.remove();
+			  //b.remove();
+			  //b.style.display = "none";
+			  $('#cp').hide(0);
     
 		});
     }
@@ -39,7 +41,7 @@ function createUser(user) {
     $.ajax({
 		
         method: "POST",
-        url: 'http://192.168.1.134:8080/users',
+        url: 'http://192.168.68.106:8080/users',
         data: JSON.stringify(user),
         processData: false,
         headers: {
@@ -52,7 +54,7 @@ function createUser(user) {
  function deleteUser(userId) {
     $.ajax({
         method: 'DELETE',
-        url: 'http://192.168.1.134:8080/users/' + userId
+        url: 'http://192.168.68.106:8080/users/' + userId
     }).done(function (item) {
         console.log("Deleted user " + userId)
     })
@@ -61,9 +63,9 @@ function createUser(user) {
  function loadUsers() {
     $.ajax({
         method: 'GET',
-        url: 'http://192.168.1.134:8080/users'
+        url: 'http://192.168.68.106:8080/users'
     }).done(function (items) {
-        console.log('Users loaded: ' + JSON.stringify(items));   
+        //console.log('Users loaded: ' + JSON.stringify(items));   
     })
 }
  function showUser(item) {

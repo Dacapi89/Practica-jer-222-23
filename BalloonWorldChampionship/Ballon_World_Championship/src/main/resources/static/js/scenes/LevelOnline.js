@@ -3,7 +3,6 @@ import { player } from '../objects/player.js';
 import { Bola } from '../objects/Bola.js';
 
 var vel;
-var keyP;
 var connection;
 var player1;
 var player2;
@@ -39,8 +38,6 @@ export class LevelOnline extends Phaser.Scene {
         this.playerArrows.preload(this, 72, 128);
         //ball
         this.globo.preload(this)
-        //Pause button
-        this.load.image('pause', 'assets/images/UI/Buttons/BUTTON_PAUSE.png');
     
         this.load.audio('game_theme', [
             'assets/music/game/game_music.ogg',  // Música utilizada para la partida: https://youtu.be/dGq3PrpSLU0
@@ -62,7 +59,7 @@ export class LevelOnline extends Phaser.Scene {
         //Asignación de las variables globales a unas específicas
         this.playerWASD.create(this, 200, 500);
         player1 = this.playerWASD.player;
-        this.playerArrows.create(this, 880, 450);
+        this.playerArrows.create(this, 200, 500);
         player2 = this.playerArrows.player;
         //ball 
         this.globo.create(this, 585, 0);
@@ -73,9 +70,6 @@ export class LevelOnline extends Phaser.Scene {
         this.tileset = this.map.addTilesetImage("tileSet", "tiles");
         const tileLayer = this.map.createLayer("Map", this.tileset);
         tileLayer.setCollisionByProperty({ collides: true });
-
-        //pause button
-        this.add.image(930, 590, 'pause');
 
 
         //colisiones
@@ -159,8 +153,6 @@ export class LevelOnline extends Phaser.Scene {
                 }
             });  
 
-        // special keys
-        keyP=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
 
         //Cronometro
         this.time.addEvent({  //Cada segundo llama a la función actualizarTiempo REFERENCIAS: https://www.youtube.com/watch?v=2esow22Z0fc
@@ -182,7 +174,7 @@ export class LevelOnline extends Phaser.Scene {
         this.music.play();
         this.music.loop = true;
         
-    connection = new WebSocket('ws://192.168.1.134:8080/pos');    
+    connection = new WebSocket('ws://192.168.68.106:8080/pos');    
 	connection.onopen = function() {
 		console.log("Opening socket");
 	}
@@ -250,13 +242,6 @@ export class LevelOnline extends Phaser.Scene {
         //player
         this.playerWASD.update(this)
         this.playerArrows.update(this)
-
-        //pause menu
-        if (keyP.isDown){
-
-            this.scene.pause("LevelOn");
-            this.scene.launch("pauseOn", "LevelOn");
-        } 
         
 
     }

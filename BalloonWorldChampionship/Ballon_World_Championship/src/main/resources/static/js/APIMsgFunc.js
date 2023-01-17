@@ -1,7 +1,11 @@
+	let identificadorIntervaloDeTiempo;
+	var j = 0;
+	var arrayM;
+	//var chat = document.getElementById("chat");
 function postMSG(msg, callback) {
     $.ajax({
         method: "POST",
-        url: 'http://192.168.1.134:8080/messages',
+        url: 'http://192.168.68.106:8080/messages',
         data: JSON.stringify(msg),
         processData: false,
         headers: {
@@ -15,7 +19,7 @@ function postMSG(msg, callback) {
 function updateMSG(msg) {
     $.ajax({
         method: 'PUT',
-        url: 'http://192.168.1.134:8080/messages/' + msg.id,
+        url: 'http://192.168.68.106:8080/messages/' + msg.id,
         data: JSON.stringify(msg),
         processData: false,
         headers: {
@@ -28,27 +32,44 @@ function updateMSG(msg) {
 function deleteMSG(msgId) {
     $.ajax({
         method: 'DELETE',
-        url: 'http://192.168.1.134:8080/messages/' + msgId
+        url: 'http://192.168.68.106:8080/messages/' + msgId
     }).done(function (item) {
         console.log("Deleted message " + msgId)
     })
 }
 function loadMSGs(callback) {
     $.ajax({
-        url: 'http://192.168.1.134:8080/messages'
+		method: 'GET',
+        url: 'http://192.168.68.106:8080/messages'
     }).done(function (messages) {
-        console.log('messages loaded: ' + JSON.stringify(messages));
-        callback(messages);
+		
+        console.log(JSON.stringify(messages));
+		callback(messages);
+		  //for (var i = 0 ; i < messages.length; i++) {
+					   
+            //showExtMSG(chat,messages[i]); 
+              //arrayM = JSON.stringify(messages);    
+    //}
+
     })
 }
+
 function showExtMSG(chat, msg){
-	chat.append('<span style="color: #C21E56">' +msg.content+'</span><br>')
+	chat.append('<span style="color:  #FF0000">' +msg.content+'</span><br>');
+	console.log("ensenando");
 }
 function showIntMSG(chat, msg){
 	chat.append('<span style="color: #89CFF0">' +msg.content+'</span><br>')
 }
+
 $(document).ready(function () {
 	
+	setInterval(	loadMSGs(function(messages){
+		 console.log("llamada");
+	for (var i = 0; i < messages.length; i++) {
+            showExtMSG(chat,messages[i]);          
+    }
+	}),2000);
 	window.onclose = function(){
 		var message = {
 			content : "oh vaya! ya no puedo leerte!"
@@ -65,11 +86,7 @@ $(document).ready(function () {
 			showIntMSG(chat,ans) ;
 		})
 	}
-	loadMSGs(function(messages){
-	for (var i = 0; i < messages.length; i++) {
-            showExtMSG(chat,messages[i]);            
-    }
-	})
+
 	var sendBttn = $('#sendButton')
 	var chat = $('#chat')
 	sendBttn.click(function(){
