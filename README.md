@@ -257,6 +257,6 @@ Aplication, ahora nombrado BallonWorldChampionshipAplication, define la interfaz
 
 ### DIAGRAMAS DE FLUJO
 
-![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_Javascript.png?raw=true)
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F4_Javascript.png?raw=true)
 
-![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F2_JavaServ.png?raw=true)
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F4_JavaServ.png?raw=true)
