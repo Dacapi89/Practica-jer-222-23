@@ -30,7 +30,7 @@ export class MainMenu extends Phaser.Scene{
         this.add.image(700, 330, 'logoJuego');
         this.add.image(250, 250, 'BotonPlay');
         this.add.image(250, 400, 'credits');
-        //this.add.image(100, 50, 'deleteUser');
+        this.add.image(100, 50, 'deleteUser');
 
         //Añadir teclas especiales
         keyO=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.O);
@@ -55,24 +55,34 @@ export class MainMenu extends Phaser.Scene{
             this.scene.start("credits");
 
         }
-        //else if (keyP.isDown){
+        else if (keyP.isDown){
 			  //var b = document.getElementById("cp");
 			  //b.style.display = "inline";
 			  //b.style.position = "absolute";
 			  //var b = document.getElementById("cp");
 			  //b.remove();
 			  //b.style.display = "none";
-			  //$('#cp').show(0);
-            //this.scene.start("login");
-			//deleteUser(userId);
+
+        //var elem = $(event.target);
+        //if (elem.is('button')) {
+            //var itemDiv = elem.parent();
+            //var userId = itemDiv.attr('id').split('-')[1];
+            //itemDiv.remove()
 
         //}
+
+			  $('#cp').show(0);
+            this.scene.start("login");
+			deleteUser(1);
+			console.log("Delete user en cliente...")
+
+        }
     }
 }
  function deleteUser(userId) {
     $.ajax({
         method: 'DELETE',
-        url: 'http://192.168.68.106:8080/users/' + userId
+        url: 'http://'+location.host+'/users/' + userId
     }).done(function (item) {
         console.log("Deleted user " + userId)
     })

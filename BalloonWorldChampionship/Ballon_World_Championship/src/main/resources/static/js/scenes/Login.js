@@ -1,5 +1,6 @@
 // Teclas especiales implementadas en esta escena
 var sc;
+var usuario;
 export class Login extends Phaser.Scene{
     
     // Constructor
@@ -19,6 +20,7 @@ export class Login extends Phaser.Scene{
         this.add.image(480, 312, 'Fondo');
         //Añadir teclas especiales
      	 sc = this.scene;
+
      	 $('#boton').click(function(){
 			  sc.start("start");
 			  var b = document.getElementById("cp");
@@ -41,21 +43,23 @@ function createUser(user) {
     $.ajax({
 		
         method: "POST",
-        url: 'http://192.168.68.106:8080/users',
+        url: 'http://'+location.host+'/users',
         data: JSON.stringify(user),
         processData: false,
         headers: {
             "Content-Type": "application/json"
         }
     }).done(function (user) {
-        console.log("User created: " + JSON.stringify(user));       
+        console.log("User created: " + JSON.stringify(user));   
+        usuario = user;
+        console.log(user);    
     })
 }
  function deleteUser(userId) {
     $.ajax({
         method: 'DELETE',
-        url: 'http://192.168.68.106:8080/users/' + userId
-    }).done(function (item) {
+        url: 'http://'+location.host+'/users' + userId
+    }).done(function (BD) {
         console.log("Deleted user " + userId)
     })
 }
@@ -63,7 +67,7 @@ function createUser(user) {
  function loadUsers() {
     $.ajax({
         method: 'GET',
-        url: 'http://192.168.68.106:8080/users'
+        url: 'http://'+location.host+'/users'
     }).done(function (items) {
         //console.log('Users loaded: ' + JSON.stringify(items));   
     })

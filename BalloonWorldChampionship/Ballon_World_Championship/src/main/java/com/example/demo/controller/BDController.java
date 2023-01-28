@@ -36,19 +36,19 @@ public class BDController {
 	Map<Long, BD> items = new ConcurrentHashMap<>(); 
 	AtomicLong nextId = new AtomicLong(0);
 	long id;
-	
+	static final String ip = "http://192.168.68.106:8080";
 
 	String path = "src\\main\\resources\\static\\dataBase\\usuarios.txt";
-	
+	@CrossOrigin(origins = ip)
 	@GetMapping
 	public Collection<BD> users() {
-
+		System.out.println("LISTA ."+items);
 		cargar();
 		//return at.mostrar();
 		return baseDeDatos.values();
 		
 	}
-	@CrossOrigin(origins = "http://192.168.68.106:8080")
+	@CrossOrigin(origins = ip)
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public BD nuevoUser(@RequestBody BD user) {
@@ -66,6 +66,7 @@ public class BDController {
 		      bw.close();
 		      fw.close();
 		      System.out.println("Successfully wrote to the file.");
+		      System.out.println("LISTA NUEVA  ."+items);
 			
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -77,7 +78,7 @@ public class BDController {
 	//https://es.stackoverflow.com/questions/68526/agregar-contenido-a-un-archivo-sin-sobrescribir-el-contenido
 	@GetMapping("/{id}")
 	public ResponseEntity<BD> getItem(@PathVariable long id) {
-
+		System.out.println("Estoy en GET.");
 		BD savedUser = baseDeDatos.get(id);
 
 		if (savedUser != null) {
@@ -86,15 +87,18 @@ public class BDController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
+	@CrossOrigin(origins = ip)
 	@DeleteMapping("/{id}")
 	public ResponseEntity<BD> borraItem(@PathVariable long id) {
-
+		System.out.println("Estoy en borrado.");
 		BD savedUser = baseDeDatos.get(id);
 
 		if (savedUser != null) {
 			items.remove(savedUser.getId());
+			System.out.println("Borrado existoso."+items);
 			return new ResponseEntity<>(savedUser, HttpStatus.OK);
 		} else {
+			System.out.println("No se ha podido borrar.");
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}

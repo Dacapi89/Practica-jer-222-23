@@ -174,7 +174,7 @@ export class LevelOnline extends Phaser.Scene {
         this.music.play();
         this.music.loop = true;
         
-    connection = new WebSocket('ws://192.168.68.106:8080/pos');    
+    connection = new WebSocket('ws://'+location.host+'/pos');    
 	connection.onopen = function() {
 		console.log("Opening socket");
 	}
