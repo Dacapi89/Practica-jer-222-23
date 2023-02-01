@@ -1,6 +1,7 @@
 // Teclas especiales implementadas en esta escena
 var sc;
-var usuario;
+export var usuarioLogin;
+
 export class Login extends Phaser.Scene{
     
     // Constructor
@@ -14,6 +15,7 @@ export class Login extends Phaser.Scene{
     preload(){
 			
         this.load.image('Fondo', 'assets/images/background/Fondo.png');
+
     }
     create(){
         // Añadir imágenes
@@ -23,9 +25,6 @@ export class Login extends Phaser.Scene{
 
      	 $('#boton').click(function(){
 			  sc.start("start");
-			  var b = document.getElementById("cp");
-			  //b.remove();
-			  //b.style.display = "none";
 			  $('#cp').hide(0);
     
 		});
@@ -33,7 +32,6 @@ export class Login extends Phaser.Scene{
 
     update(){
 		 
-
     }
      
 }
@@ -51,18 +49,11 @@ function createUser(user) {
         }
     }).done(function (user) {
         console.log("User created: " + JSON.stringify(user));   
-        usuario = user;
-        console.log(user);    
+        usuarioLogin = user;
+        //console.log(user);    
     })
 }
- function deleteUser(userId) {
-    $.ajax({
-        method: 'DELETE',
-        url: 'http://'+location.host+'/users' + userId
-    }).done(function (BD) {
-        console.log("Deleted user " + userId)
-    })
-}
+
 //Load items from server
  function loadUsers() {
     $.ajax({
@@ -99,15 +90,7 @@ $(document).ready(function () {
     var info = $('#info')
 
     //Handle delete buttons
-    info.click(function (event) {
-        var elem = $(event.target);
-        if (elem.is('button')) {
-            var itemDiv = elem.parent();
-            var userId = itemDiv.attr('id').split('-')[1];
-            itemDiv.remove()
-            deleteUser(userId);
-        }
-    })
+
 
 
     $("#boton").click(function () {

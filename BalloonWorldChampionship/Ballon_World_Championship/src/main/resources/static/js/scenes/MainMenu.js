@@ -3,7 +3,7 @@
 var keyO;
 var keyEnter;
 var keyP;
-
+import { usuarioLogin } from "./Login.js";
 export class MainMenu extends Phaser.Scene{
 
     constructor(){
@@ -41,6 +41,8 @@ export class MainMenu extends Phaser.Scene{
         this.sound.stopAll();
         this.music.play();
         this.music.loop = true;
+        
+        //console.log(usuarioLogin);
     }
 
     update(){
@@ -56,24 +58,9 @@ export class MainMenu extends Phaser.Scene{
 
         }
         else if (keyP.isDown){
-			  //var b = document.getElementById("cp");
-			  //b.style.display = "inline";
-			  //b.style.position = "absolute";
-			  //var b = document.getElementById("cp");
-			  //b.remove();
-			  //b.style.display = "none";
-
-        //var elem = $(event.target);
-        //if (elem.is('button')) {
-            //var itemDiv = elem.parent();
-            //var userId = itemDiv.attr('id').split('-')[1];
-            //itemDiv.remove()
-
-        //}
-
 			  $('#cp').show(0);
             this.scene.start("login");
-			deleteUser(1);
+			deleteUser(usuarioLogin.id);
 			console.log("Delete user en cliente...")
 
         }
