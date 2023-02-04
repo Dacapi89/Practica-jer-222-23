@@ -39,18 +39,10 @@ function deleteMSG(msgId) {
 }
 function loadMSGs(callback) {
     $.ajax({
-		method: 'GET',
         url: 'http://'+location.host+'/messages'
     }).done(function (messages) {
-		
         console.log(JSON.stringify(messages));
 		callback(messages);
-		  //for (var i = 0 ; i < messages.length; i++) {
-					   
-            //showExtMSG(chat,messages[i]); 
-              //arrayM = JSON.stringify(messages);    
-    //}
-
     })
 }
 
