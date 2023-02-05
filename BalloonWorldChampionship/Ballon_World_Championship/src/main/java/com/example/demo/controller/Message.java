@@ -3,18 +3,18 @@ package com.example.demo.controller;
 public class Message {
 	private long Id;
 	private String Content;
-	private int NameId;
+	private String Name;
 	public String getContent() {
 		return Content;
 	}	
 	public void setContent(String str) {
 		Content = str;
 	}
-	public int getNameId() {
-		return NameId;
+	public String getName() {
+		return Name;
 	}
-	public void setName(int n) {
-		NameId = n;
+	public void setName(String n) {
+		Name = n;
 	}
 	public long getId() {
 		return Id;
