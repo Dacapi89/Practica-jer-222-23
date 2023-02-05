@@ -13,7 +13,7 @@ export class MainMenu extends Phaser.Scene{
     preload(){
         this.load.image('background', 'assets/images/background/Fondo.png');
         this.load.image('logoJuego', 'assets/images/UI/Logo_BWC.png');
-        this.load.image('BotonPlay', 'assets/images/UI/Buttons/BUTTON_PLAY.png');
+        this.load.image('play', 'assets/images/UI/Buttons/BUTTON_PLAY.png');
         this.load.image('credits', 'assets/images/UI/Buttons/BUTTON_CREDITS.png');
         this.load.image('deleteUser', 'assets/images/UI/Buttons/BUTTON_DELETE_USER.png');
 
@@ -24,11 +24,10 @@ export class MainMenu extends Phaser.Scene{
     }
 
     create(){
-
         // Añadir imágenes
         this.add.image(480, 312, 'background');
         this.add.image(700, 330, 'logoJuego');
-        this.add.image(250, 250, 'BotonPlay');
+        this.add.image(250, 250, 'play');
         this.add.image(250, 400, 'credits');
         this.add.image(100, 50, 'deleteUser');
 
@@ -50,7 +49,7 @@ var sendBttn = $('#sendButton')
 	sendBttn.click(function(){
 		var message = {
 			content : $("#message").val(),
-			name : "dani como se sacan los nombres????"
+			name : usuarioLogin.user
 		};
 		postMSG(message,function(ans){
 			console.log("enviado")

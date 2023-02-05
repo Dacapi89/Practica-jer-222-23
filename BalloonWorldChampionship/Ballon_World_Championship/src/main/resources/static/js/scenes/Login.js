@@ -23,8 +23,8 @@ export class Login extends Phaser.Scene{
         //Añadir teclas especiales
      	 sc = this.scene;
 
-     	 $('#boton').click(function(){
-			  sc.start("start");
+     	 $('#boton').click(function(){	
+			  sc.start("start");	
 			  $('#cp').hide(0);
     
 		});
@@ -95,7 +95,8 @@ $(document).ready(function () {
 
     $("#boton").click(function () {
 
-        var value = input.val();
+        var value = input.val(); 
+        usuarioLogin = value;       
         input.val('');
     
         var user = {
