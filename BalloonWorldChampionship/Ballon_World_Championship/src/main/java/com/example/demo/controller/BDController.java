@@ -43,7 +43,7 @@ public class BDController {
 	public ArchivoTexto at = new ArchivoTexto();
 	AtomicLong nextId = new AtomicLong(0);
 	long id;
-	static final String ip = "http://192.168.68.106:8080";
+	static final String ip = "http://192.168.1.134:8080";
 	String linea;
 	String path = "src\\main\\resources\\static\\dataBase\\usuarios.txt";
 	@CrossOrigin(origins = ip)

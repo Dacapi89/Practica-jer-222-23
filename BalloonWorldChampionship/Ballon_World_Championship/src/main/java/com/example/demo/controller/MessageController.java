@@ -20,15 +20,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/messages")
 public class MessageController {
+	static final String ip = "http://192.168.1.134:8080";
 	Map<Long, Message> messages = new ConcurrentHashMap<>(); 
 	AtomicLong nextId = new AtomicLong(0);
-	boolean player1IsOn;
-	boolean player2IsOn;
+	@CrossOrigin(origins = ip)
 	@GetMapping
 	public Collection<Message> getMSGs() {
 		return messages.values();
 	}
-	
 	@GetMapping("/{id}")
 	public ResponseEntity<Message> getMSG(@PathVariable long id) {
 
@@ -40,7 +39,7 @@ public class MessageController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	@CrossOrigin(origins = "http://192.168.68.106:8080")
+	@CrossOrigin(origins = ip)
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Message postMSG(@RequestBody Message message) {
@@ -51,7 +50,7 @@ public class MessageController {
 
 		return message;
 	}
-	
+	@CrossOrigin(origins = ip)
 	@PutMapping("/{id}")
 	public ResponseEntity<Message> updateMSG(@PathVariable long id, @RequestBody Message updatedMSG) {
 
@@ -66,7 +65,7 @@ public class MessageController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	
+	@CrossOrigin(origins = ip)
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Message> deleteMSG(@PathVariable long id) {
 

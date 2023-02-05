@@ -43,6 +43,21 @@ export class MainMenu extends Phaser.Scene{
         this.music.loop = true;
         
         //console.log(usuarioLogin);
+        $('body').append('<div class="wrapper">		<div style="position: relative; left: 960px; top: 624px; height: 30px;"><div style=" bottom:0; margin: 0;  position: absolute; padding:2px;margin-bottom:35px; " id="chat"></div><button type="button" id="sendButton">Send</button><input type="text" id="message"/></div></div>')
+$(document).ready(function () {
+var sendBttn = $('#sendButton')
+	var chat = $('#chat')
+	sendBttn.click(function(){
+		var message = {
+			content : $("#message").val(),
+			name : "dani como se sacan los nombres????"
+		};
+		postMSG(message,function(ans){
+			console.log("enviado")
+		})
+	})
+	
+})
     }
 
     update(){
@@ -66,9 +81,10 @@ export class MainMenu extends Phaser.Scene{
         }
         loadMSGs(function(messages){
 		console.log("llamada");
+		$('#chat').html("");
 		for (var i = 0; i < messages.length; i++) {
-            showExtMSG(chat,messages[i]);          
-    }
+            $('#chat').append(messages[i].name + ": " + messages[i].content + "<br>");       
+    	}
 	})
     }
 }
@@ -123,16 +139,3 @@ function loadMSGs(callback) {
 		callback(messages);
     })
 }
-$(document).ready(function () {
-var sendBttn = $('#sendButton')
-	var chat = $('#chat')
-	sendBttn.click(function(){
-		var message = {
-			content : $("#message").val()
-		};
-		postMSG(message,function(ans){
-			showIntMSG(chat,ans) ;
-		})
-	})
-	
-})
