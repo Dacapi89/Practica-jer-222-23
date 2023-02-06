@@ -100,7 +100,8 @@ $(document).ready(function () {
         input.val('');
     
         var user = {
-            user: value
+            user: value,
+            score: 0
             
         }
     

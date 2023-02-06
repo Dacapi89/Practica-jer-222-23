@@ -25,10 +25,12 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
 
 
 
@@ -43,7 +45,7 @@ public class BDController {
 	public ArchivoTexto at = new ArchivoTexto();
 	AtomicLong nextId = new AtomicLong(0);
 	long id;
-	static final String ip = "http://192.168.1.134:8080";
+	static final String ip = "http://192.168.68.104:8080";
 	String linea;
 	String path = "src\\main\\resources\\static\\dataBase\\usuarios.txt";
 	@CrossOrigin(origins = ip)
@@ -71,7 +73,7 @@ public class BDController {
 		try {
 			  fw = new FileWriter(path, true);
 			  bw = new BufferedWriter(fw);
-		      bw.write(Long.toString(id)+ "\t"+user.getUser() + "\n");
+		      bw.write(Long.toString(id)+ "\t"+user.getUser() +"\t"+ user.getScore()+ "\n");
 		      bw.close();
 		      fw.close();
 		      System.out.println("Successfully wrote to the file.");
@@ -114,7 +116,30 @@ public class BDController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
+	@CrossOrigin(origins = ip)
+	@PutMapping("/{id}")
+	public ResponseEntity<BD> actulizaItem(@PathVariable long id, @RequestBody BD userActualizado) {
+
+		BD savedItem = baseDeDatos.get(userActualizado.getId());
+
+		if (savedItem != null) {
+
+			baseDeDatos.put(id, userActualizado);
+
+			return new ResponseEntity<>(userActualizado, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}
 	//Codigo sacado de https://es.stackoverflow.com/questions/163537/eliminar-fila-segun-texto-en-un-txt-java para eliminar la última linea de un fichero de texto
+	public void cambiarFilas( String cadena) throws IOException{
+	    Path pathe = Paths.get(path);
+	    List<String> lineas = Files.readAllLines(pathe);
+	    lineas = lineas.stream()
+	                    .filter(linea->!linea.contains(cadena))
+	                    .collect(Collectors.toList());
+	    Files.write(pathe, lineas);
+	}
 	public void eliminarFilas( String cadena) throws IOException{
 	    Path pathe = Paths.get(path);
 	    List<String> lineas = Files.readAllLines(pathe);
@@ -138,6 +163,7 @@ public class BDController {
 				while(atributo.hasMoreElements()) {
 					base.setId(Long.parseLong(atributo.nextElement().toString()));
 					base.setUser(atributo.nextElement().toString());
+					base.setScore(Integer.parseInt(atributo.nextElement().toString()));
 					baseDeDatos.put(base.getId(),base);
 				}
 				

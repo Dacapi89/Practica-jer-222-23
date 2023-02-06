@@ -1,38 +1,11 @@
-1	uwu
-2	a
-1	a
-1	A
-1	A
-1	a
-1	a
-2	a
-1	a
-1	a
-1	s
-1	l
-1	d
-1	d
-1	d
-1	d
-1	d
-1	d
-1	d
-1	d
-1	d
-1	d
-1	d
-2	d
-1	d
-2	d
-1	d
-2	d
-3	p
-4	d
-5	a
-1	a
-2	d
-3	d
-1	d
-1	p
-2	a
-3	a
+1	Jefe	0
+2	pePE	0
+1	Pequeño	0
+2	pp	0
+1	yu	0
+1	yuuuu	0
+1	tuu	0
+1	DIO	0
+1	BRANDO	0
+1	JOJO	0
+2	jOSE	0

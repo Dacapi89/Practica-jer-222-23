@@ -1,6 +1,7 @@
 
 import { player } from '../objects/player.js';
 import { Bola } from '../objects/Bola.js';
+import { usuarioLogin } from "./Login.js";
 
 var keyP;
 var connection;
@@ -16,8 +17,8 @@ class Level1 extends Phaser.Scene {
         this.text;
         this.scoreWASD;
         this.scoreCursors;
-        this.minutos = 1;
-        this.segundos = 0;
+        this.minutos = 0;
+        this.segundos = 10;
     }
     preload() {
         this.globo = new Bola("ball", 'assets/images/sprites/ball2.png', -180);
@@ -50,7 +51,7 @@ class Level1 extends Phaser.Scene {
     create() {
 
         
-
+		
         //background
         this.d = this.add.image(0, 0, "backgroundSky").setOrigin(0, 0).setScrollFactor(0, 0);
         //this.bg0 = this.add.tileSprite(0, 0, 960, 624, 'backgroundAtmosphere').setOrigin(0, 0).setScrollFactor(0, 0);
@@ -206,6 +207,8 @@ class Level1 extends Phaser.Scene {
     }
 
     finDelJuego(){
+		usuarioLogin.score = this.playerArrows.playerScore;
+		updateUser(usuarioLogin);
         if (this.playerWASD.playerScore > this.playerArrows.playerScore){
             this.scene.start('results1');
             this.music.stop();
@@ -233,5 +236,17 @@ class Level1 extends Phaser.Scene {
     }
     
 }
-
+function updateUser(user) {
+    $.ajax({
+        method: 'PUT',
+        url: 'http://'+location.host+'/users/' + user.id,
+        data: JSON.stringify(user),
+        processData: false,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).done(function (item) {
+        console.log("Updated item: " + JSON.stringify(user))
+    })
+}
 export { Level1 };

@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/messages")
 public class MessageController {
-	static final String ip = "http://192.168.1.134:8080";
+	static final String ip = "http://192.168.68.104:8080";
 	Map<Long, Message> messages = new ConcurrentHashMap<>(); 
 	AtomicLong nextId = new AtomicLong(0);
 	@CrossOrigin(origins = ip)
