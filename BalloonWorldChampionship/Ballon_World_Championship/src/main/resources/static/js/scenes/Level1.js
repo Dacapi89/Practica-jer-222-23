@@ -19,6 +19,7 @@ class Level1 extends Phaser.Scene {
         this.scoreCursors;
         this.minutos = 0;
         this.segundos = 10;
+        this.scoreMax = 0;
     }
     preload() {
         this.globo = new Bola("ball", 'assets/images/sprites/ball2.png', -180);
@@ -207,8 +208,13 @@ class Level1 extends Phaser.Scene {
     }
 
     finDelJuego(){
+		if(this.scoreMax < this.playerArrows.playerScore)
+		{
 		usuarioLogin.score = this.playerArrows.playerScore;
 		updateUser(usuarioLogin);
+		this.scoreMAx = this.playerArrows.playerScore;
+		}
+
         if (this.playerWASD.playerScore > this.playerArrows.playerScore){
             this.scene.start('results1');
             this.music.stop();
@@ -245,8 +251,8 @@ function updateUser(user) {
         headers: {
             "Content-Type": "application/json"
         }
-    }).done(function (item) {
-        console.log("Updated item: " + JSON.stringify(user))
+    }).done(function (user) {
+        console.log("Updated user: " + JSON.stringify(user))
     })
 }
 export { Level1 };

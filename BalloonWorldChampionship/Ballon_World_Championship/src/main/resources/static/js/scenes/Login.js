@@ -104,7 +104,7 @@ $(document).ready(function () {
             score: 0
             
         }
-    
+    	console.log(user.id);
         createUser(user) 
     })
 })

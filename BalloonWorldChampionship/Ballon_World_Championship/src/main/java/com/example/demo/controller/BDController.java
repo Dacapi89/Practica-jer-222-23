@@ -45,7 +45,7 @@ public class BDController {
 	public ArchivoTexto at = new ArchivoTexto();
 	AtomicLong nextId = new AtomicLong(0);
 	long id;
-	static final String ip = "http://192.168.68.104:8080";
+	static final String ip = "http://192.168.68.106:8080";
 	String linea;
 	String path = "src\\main\\resources\\static\\dataBase\\usuarios.txt";
 	@CrossOrigin(origins = ip)
@@ -54,8 +54,7 @@ public class BDController {
 		
 		cargar();
 		//return at.mostrar();
-		System.out.println(baseDeDatos);
-		System.out.println("Enseñando la última linea...");
+		
 		return baseDeDatos.values();
 		
 	}
@@ -66,8 +65,21 @@ public class BDController {
 		
 
 		long id = nextId.incrementAndGet();
+		if(baseDeDatos.containsKey(id)) {
+			System.out.println("YA ESTA EN LA BASE DE DATOS");
+			id = baseDeDatos.size()+1;
+		}
 		user.setId(id);
 		baseDeDatos.put(id, user);
+		long aux = 1;
+		for(long i = 1; i < baseDeDatos.size();i++)
+		{
+			if(user.getUser().equals(baseDeDatos.get(i).getUser()))
+			{
+				aux = baseDeDatos.get(i).getId();
+			}
+		}
+		System.out.println(baseDeDatos.get(aux).getUser());
 		FileWriter fw = null;
 		BufferedWriter bw = null;
 		try {
@@ -78,7 +90,6 @@ public class BDController {
 		      fw.close();
 		      System.out.println("Successfully wrote to the file.");
 		      System.out.println("LISTA NUEVA  ."+baseDeDatos);
-		      linea = leerUltimaLinea();
 			
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -90,7 +101,7 @@ public class BDController {
 	//https://es.stackoverflow.com/questions/68526/agregar-contenido-a-un-archivo-sin-sobrescribir-el-contenido
 	@GetMapping("/{id}")
 	public ResponseEntity<BD> getItem(@PathVariable long id) {
-		System.out.println("Estoy en GET.");
+
 		BD savedUser = baseDeDatos.get(id);
 
 		if (savedUser != null) {
@@ -105,11 +116,11 @@ public class BDController {
 		System.out.println("Estoy en borrado.");
 		System.out.println("Número de id: " + id);
 		BD savedUser = baseDeDatos.get(id);
-
+		System.out.println(savedUser);
 		if (savedUser != null) {
 			baseDeDatos.remove(savedUser.getId());
 			System.out.println("Borrado existoso."+baseDeDatos);
-			eliminarFilas(linea);
+			eliminarFilas(buscarUsuario(savedUser.getUser()));
 			return new ResponseEntity<>(savedUser, HttpStatus.OK);
 		} else {
 			System.out.println("No se ha podido borrar.");
@@ -118,28 +129,38 @@ public class BDController {
 	}
 	@CrossOrigin(origins = ip)
 	@PutMapping("/{id}")
-	public ResponseEntity<BD> actulizaItem(@PathVariable long id, @RequestBody BD userActualizado) {
+	public ResponseEntity<BD> actulizaScore(@RequestBody BD userActualizado) throws IOException {
+		
+		System.out.println(userActualizado);
+		BD savedUser = baseDeDatos.get(userActualizado.getId());
+		System.out.println(savedUser);
+		if (savedUser != null) {
 
-		BD savedItem = baseDeDatos.get(userActualizado.getId());
-
-		if (savedItem != null) {
-
-			baseDeDatos.put(id, userActualizado);
-
+			baseDeDatos.put(userActualizado.getId(), userActualizado);
+			System.out.println(baseDeDatos);
+			modificarScore(buscarUsuario(userActualizado.getUser()), userActualizado);
 			return new ResponseEntity<>(userActualizado, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	//Codigo sacado de https://es.stackoverflow.com/questions/163537/eliminar-fila-segun-texto-en-un-txt-java para eliminar la última linea de un fichero de texto
-	public void cambiarFilas( String cadena) throws IOException{
-	    Path pathe = Paths.get(path);
+	public void modificarScore(String cadena, BD ua) throws IOException
+	{
+		FileWriter fw = null;
+		BufferedWriter bw = null;
+	    fw = new FileWriter(path, true);
+		bw = new BufferedWriter(fw);
+		Path pathe = Paths.get(path);
 	    List<String> lineas = Files.readAllLines(pathe);
 	    lineas = lineas.stream()
 	                    .filter(linea->!linea.contains(cadena))
 	                    .collect(Collectors.toList());
 	    Files.write(pathe, lineas);
+	    bw.write(Long.toString(ua.getId())+ "\t"+ua.getUser() +"\t"+ ua.getScore()+ "\n");
+	      bw.close();
+	      fw.close();
 	}
+	//Codigo sacado de https://es.stackoverflow.com/questions/163537/eliminar-fila-segun-texto-en-un-txt-java para eliminar la última linea de un fichero de texto
 	public void eliminarFilas( String cadena) throws IOException{
 	    Path pathe = Paths.get(path);
 	    List<String> lineas = Files.readAllLines(pathe);
@@ -177,27 +198,27 @@ public class BDController {
 		//Codigo base utilizado para leer el archivo de texto: https://www.youtube.com/watch?v=uqZEOO5MU_M	
 	}
 	
-	public String leerUltimaLinea() throws IOException {
-		
-		String path = "src\\main\\resources\\static\\dataBase\\usuarios.txt";
-		File file = new File(path);
-		String lastLine = null;
-		
-		if (file.exists()) {
-			BufferedReader br = new BufferedReader(new FileReader(file));
-			String last = null;
-			
-				last = br.readLine();
-			
-			while (last != null) {
-			lastLine = last;
-			last = br.readLine();
+
+	
+	public String buscarUsuario(String request) {
+		String li ="";
+		 	try {
+		 		String path = "src\\main\\resources\\static\\dataBase\\usuarios.txt";
+				
+				final BufferedReader reader = new BufferedReader(new FileReader(path));
+				String line = "";
+				
+				while((line = reader.readLine())!= null){
+					if(line.indexOf(request)!= -1){
+						li = line;
+						System.out.println(""+line);
+					}
+				}reader.close();
+				
+		 	} catch (FileNotFoundException e) {e.printStackTrace();
+			} catch (IOException           e) {e.printStackTrace();
 			}
-			System.out.println(lastLine);
-			} else {
-			System.out.println("No found file");
-			System.exit(1);
-			}
-		return lastLine;
+		 	return li;
 	}
-}
+
+} //Código base utilizado para buscar el nombre de usuario en el archivo de texto: https://foro.elhacker.net/java/buscar_texto_de_un_fichero-t283733.0.html
