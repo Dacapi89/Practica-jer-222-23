@@ -9,11 +9,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
@@ -37,19 +42,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/users")
+//@RequestMapping("/users")
 public class BDController {
 	
 
-	Map<Long, BD> baseDeDatos = new ConcurrentHashMap<>(); 
-	public ArchivoTexto at = new ArchivoTexto();
+	Map<Long, BD> baseDeDatos = new ConcurrentHashMap<>();
 	AtomicLong nextId = new AtomicLong(0);
 	long id;
 	static final String ip = "http://192.168.68.106:8080";
-	String linea;
 	String path = "src\\main\\resources\\static\\dataBase\\usuarios.txt";
 	@CrossOrigin(origins = ip)
-	@GetMapping
+	@GetMapping("/ranking")
+	public Object[] ranking() throws IOException {
+
+		List<BD> usuariosOrdenados = new ArrayList<>(baseDeDatos.values());
+		Collections.sort(usuariosOrdenados);
+		return usuariosOrdenados.toArray();
+		
+	}
+	@CrossOrigin(origins = ip)
+	@GetMapping("/users")
 	public Collection<BD> users() throws IOException {
 		
 		cargar();
@@ -59,27 +71,30 @@ public class BDController {
 		
 	}
 	@CrossOrigin(origins = ip)
-	@PostMapping
+	@PostMapping("/users")
 	@ResponseStatus(HttpStatus.CREATED)
 	public BD nuevoUser(@RequestBody BD user) {
 		
 
 		long id = nextId.incrementAndGet();
 		if(baseDeDatos.containsKey(id)) {
-			System.out.println("YA ESTA EN LA BASE DE DATOS");
+			//System.out.println("YA ESTA EN LA BASE DE DATOS");
 			id = baseDeDatos.size()+1;
 		}
 		user.setId(id);
 		baseDeDatos.put(id, user);
-		long aux = 1;
-		for(long i = 1; i < baseDeDatos.size();i++)
-		{
-			if(user.getUser().equals(baseDeDatos.get(i).getUser()))
-			{
-				aux = baseDeDatos.get(i).getId();
-			}
-		}
-		System.out.println(baseDeDatos.get(aux).getUser());
+		
+		
+		//System.out.println(r.toString());
+		//long aux = 1;
+		//for(long i = 1; i < baseDeDatos.size();i++)
+		//{
+			//if(user.getUser().equals(baseDeDatos.get(i).getUser()))
+			//{
+				//aux = baseDeDatos.get(i).getId();
+			//}
+		//}
+		//System.out.println(baseDeDatos.get(aux).getUser());
 		FileWriter fw = null;
 		BufferedWriter bw = null;
 		try {
@@ -99,7 +114,7 @@ public class BDController {
 	}
 	//Escribir en archivos: https://www.youtube.com/watch?v=wUucJvsdL3c,
 	//https://es.stackoverflow.com/questions/68526/agregar-contenido-a-un-archivo-sin-sobrescribir-el-contenido
-	@GetMapping("/{id}")
+	@GetMapping("/users/{id}")
 	public ResponseEntity<BD> getItem(@PathVariable long id) {
 
 		BD savedUser = baseDeDatos.get(id);
@@ -111,12 +126,10 @@ public class BDController {
 		}
 	}
 	@CrossOrigin(origins = ip)
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/users/{id}")
 	public ResponseEntity<BD> borraItem(@PathVariable long id) throws IOException {
 		System.out.println("Estoy en borrado.");
-		System.out.println("Número de id: " + id);
 		BD savedUser = baseDeDatos.get(id);
-		System.out.println(savedUser);
 		if (savedUser != null) {
 			baseDeDatos.remove(savedUser.getId());
 			System.out.println("Borrado existoso."+baseDeDatos);
@@ -128,12 +141,13 @@ public class BDController {
 		}
 	}
 	@CrossOrigin(origins = ip)
-	@PutMapping("/{id}")
+	@PutMapping("/users/{id}")
 	public ResponseEntity<BD> actulizaScore(@RequestBody BD userActualizado) throws IOException {
 		
 		System.out.println(userActualizado);
 		BD savedUser = baseDeDatos.get(userActualizado.getId());
 		System.out.println(savedUser);
+
 		if (savedUser != null) {
 
 			baseDeDatos.put(userActualizado.getId(), userActualizado);
@@ -197,6 +211,7 @@ public class BDController {
 		}
 		//Codigo base utilizado para leer el archivo de texto: https://www.youtube.com/watch?v=uqZEOO5MU_M	
 	}
+
 	
 
 	

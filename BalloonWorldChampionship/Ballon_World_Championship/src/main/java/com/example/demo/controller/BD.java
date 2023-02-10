@@ -3,7 +3,7 @@ package com.example.demo.controller;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BD {
+public class BD implements Comparable<BD> {
 
 	private String user;
 	private long id;
@@ -35,4 +35,11 @@ public class BD {
 	public String toString() {
 		return "BD [id= " + id + ", user= " + user + ", score= " + score +"]";
 	}
+	 @Override
+	    public int compareTo(BD o) {
+	        if (this.score != o.getScore()) {
+	            return o.getScore() - this.score;
+	        }
+	        return this.user.compareTo(o.getUser());
+	    }
 }
