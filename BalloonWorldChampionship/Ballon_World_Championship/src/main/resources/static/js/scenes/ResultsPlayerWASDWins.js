@@ -1,6 +1,6 @@
 
 // Teclas especiales implementadas en esta escena
-var keyEnter;
+var continuar;
 
 export class ResultsPlayerWASDWins extends Phaser.Scene{
 
@@ -24,24 +24,20 @@ export class ResultsPlayerWASDWins extends Phaser.Scene{
     create(){
         this.add.image(480, 312, 'background');
         this.add.image(480, 100, 'Victory');
-        this.add.image(480, 280, 'Continue');
+        continuar = this.add.image(480, 280, 'Continue');
         //this.add.image(500, 560, 'playerArrows');
         this.add.image(480, 485, 'playerWASD').setScale(2);
 
-        //Añadir teclas especiales
-        keyEnter=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+        continuar.setInteractive();
+        
+        continuar.on("pointerdown", ()=>{
+			this.scene.start("mainMenu");
+            this.music.stop();
+		})
 
         this.music = this.sound.add('result_theme');
 
         this.music.play();
     }
 
-    update(){
-        // Evento si la tecla ENTER es pulsada
-        if (keyEnter.isDown)
-        {
-            this.scene.start("mainMenu");
-            this.music.stop();
-        }
-        }
 }

@@ -1,6 +1,6 @@
 
 // Teclas especiales implementadas en esta escena
-var keyEnter;
+var empezar;
 
 export class Start extends Phaser.Scene{
     
@@ -11,7 +11,7 @@ export class Start extends Phaser.Scene{
     // Gestor de escenas  REFERENCIAS: https://www.youtube.com/watch?v=OBi8UHCcEW8&t=1137s
     preload(){
         this.load.image('logoAstar', 'assets/images/UI/Logo_Astar.png');
-        this.load.image('PressToContinue', 'assets/images/UI/Titles/PRESS_ENTER_TO_CONTINUE.png');
+        this.load.image('PressToContinue', 'assets/images/UI/Titles/CLICK_TO_CONTINUE.png');
 
     }
 
@@ -19,17 +19,13 @@ export class Start extends Phaser.Scene{
 
         // Añadir imágenes
         this.add.image(480, 260, 'logoAstar');
-        this.add.image(480, 480, 'PressToContinue');
-        //Añadir teclas especiales
-        keyEnter=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
-    }
-
-    update(){
-
-        // Evento si la tecla ENTER es pulsada
-        if (keyEnter.isDown)
-		{
+        empezar = this.add.image(480, 480, 'PressToContinue');
+        
+		empezar.setInteractive();
+        
+        empezar.on("pointerdown", ()=>{
 			this.scene.start("mainMenu");
-		}
+		})
     }
+
 }

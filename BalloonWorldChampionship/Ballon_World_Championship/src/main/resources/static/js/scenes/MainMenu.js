@@ -1,8 +1,10 @@
 
 // Teclas especiales implementadas en esta escena
-var keyO;
-var keyEnter;
-var keyP;
+var jugar;
+var creditos;
+var controles;
+var dUser;
+
 import { usuarioLogin } from "./Login.js";
 export class MainMenu extends Phaser.Scene{
 
@@ -16,6 +18,7 @@ export class MainMenu extends Phaser.Scene{
         this.load.image('play', 'assets/images/UI/Buttons/BUTTON_PLAY.png');
         this.load.image('credits', 'assets/images/UI/Buttons/BUTTON_CREDITS.png');
         this.load.image('deleteUser', 'assets/images/UI/Buttons/BUTTON_DELETE_USER.png');
+        this.load.image('controls', 'assets/images/UI/Buttons/BUTTON_CONTROLS.png');
 
         this.load.audio('menu_theme', [ //Añadimos música al juego REFERENCIA: https://phaser.io/examples/v2/audio/play-music
             'assets/music/title/title_music.ogg',  // Música utilizada para la partida: https://www.youtube.com/watch?v=QG6STlj-d7w
@@ -27,19 +30,43 @@ export class MainMenu extends Phaser.Scene{
         // Añadir imágenes
         this.add.image(480, 312, 'background');
         this.add.image(700, 330, 'logoJuego');
-        this.add.image(250, 250, 'play');
-        this.add.image(250, 400, 'credits');
-        this.add.image(100, 50, 'deleteUser');
-
-        //Añadir teclas especiales
-        keyO=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.O);
-        keyEnter=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
-        keyP=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
+        jugar = this.add.image(250, 250, 'play');
+        creditos = this.add.image(250, 400, 'credits');
+        dUser = this.add.image(110, 50, 'deleteUser').setScale(0.5);
+        controles = this.add.image(850, 50, 'controls').setScale(0.5);
+        
+		jugar.setInteractive();
+		creditos.setInteractive();
+		controles.setInteractive();
+		
+		jugar.on("pointerdown", ()=>{
+			this.scene.start("selec");
+		})
+		
+		creditos.on("pointerdown", ()=>{
+			this.scene.start("credits");
+		})
+		
+		controles.on("pointerdown", ()=>{
+			this.scene.start("control");
+		})
 
         this.music = this.sound.add('menu_theme');
         this.sound.stopAll();
         this.music.play();
         this.music.loop = true;
+        
+        //keyP=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
+        
+        dUser.setInteractive();
+        
+        dUser.on("pointerdown", ()=>{
+			$('#cp').show(0);
+            this.scene.start("login");
+			deleteUser(usuarioLogin.id);
+			console.log("Delete user en cliente...")
+		})
+        
         
         //console.log(usuarioLogin);
         $('body').append('<div class="wrapper">		<div style="position: relative; left: 960px; top: 624px; height: 30px;"><div style=" bottom:0; margin: 0;  position: absolute; padding:2px;margin-bottom:35px; " id="chat"></div><button type="button" id="sendButton">Send</button><input type="text" id="message"/></div></div>')
@@ -57,27 +84,19 @@ var sendBttn = $('#sendButton')
 	})
 	
 })
-    }
+}
 
     update(){
 
         // Evento si la tecla ENTER es pulsada
-        if (keyEnter.isDown)
-		{
-			this.scene.start("selec");
-            this.music.stop();
-		}
-        else if (keyO.isDown){
-            this.scene.start("credits");
-
-        }
-        else if (keyP.isDown){
+        /*if (keyP.isDown){
 			  $('#cp').show(0);
             this.scene.start("login");
 			deleteUser(usuarioLogin.id);
 			console.log("Delete user en cliente...")
 
-        }
+        }*/
+        
         loadMSGs(function(messages){
 		console.log("llamada");
 		$('#chat').html("");

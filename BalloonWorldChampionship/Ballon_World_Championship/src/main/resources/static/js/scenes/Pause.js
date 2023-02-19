@@ -1,7 +1,7 @@
 
 // Teclas especiales implementadas en esta escena
-var keyEnter;
-var keyO;
+var continuar;
+var menuPrincipal;
 
 export class Pause extends Phaser.Scene{
 
@@ -20,17 +20,27 @@ export class Pause extends Phaser.Scene{
 
         // Añadir imágenes
         this.add.image(480, 312, 'background');
-        this.add.image(480, 100, 'Pause');
-        this.add.image(250, 350, 'Continue');
-        this.add.image(700, 350, 'BMainMenu');
+        this.add.image(480, 100, 'Pause').setScale(2);
+        continuar = this.add.image(250, 350, 'Continue');
+        menuPrincipal = this.add.image(700, 350, 'BMainMenu');
 
-        //Añadir teclas especiales
-        keyEnter=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
-        keyO=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.O);
+        continuar.setInteractive();
+        menuPrincipal.setInteractive();
+        
+        continuar.on("pointerdown", ()=>{
+			this.scene.stop("pause");
+			this.scene.resume("Level1");
+		})
+		
+		menuPrincipal.on("pointerdown", ()=>{
+			 this.scene.stop("pause");
+            this.scene.stop("Level1");
+			this.scene.start("mainMenu");
+		})
     
     }
 
-    update(){
+    /*update(){
 
         // Evento si la tecla O es pulsada
         if (keyEnter.isDown)
@@ -47,5 +57,5 @@ export class Pause extends Phaser.Scene{
 			this.scene.start("mainMenu");
 
 		}
-    }
+    }*/
 }

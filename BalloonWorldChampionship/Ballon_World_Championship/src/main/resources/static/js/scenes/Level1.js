@@ -3,7 +3,7 @@ import { player } from '../objects/player.js';
 import { Bola } from '../objects/Bola.js';
 import { usuarioLogin } from "./Login.js";
 
-var keyP;
+var pausa;
 var connection;
 var player1;
 class Level1 extends Phaser.Scene {
@@ -75,7 +75,7 @@ class Level1 extends Phaser.Scene {
         tileLayer.setCollisionByProperty({ collides: true });
 
         //pause button
-        this.add.image(930, 590, 'pause');
+        pausa = this.add.image(930, 590, 'pause').setScale(0.5);
 
 
         //colisiones
@@ -159,8 +159,12 @@ class Level1 extends Phaser.Scene {
                 }
             });  
 
-        // special keys
-        keyP=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
+        pausa.setInteractive();
+        
+        pausa.on("pointerdown", ()=>{
+			this.scene.start("pause");
+			this.scene.launch("pause", "Level1");
+		})
 
         //Cronometro
         this.time.addEvent({  //Cada segundo llama a la función actualizarTiempo REFERENCIAS: https://www.youtube.com/watch?v=2esow22Z0fc
@@ -196,13 +200,6 @@ class Level1 extends Phaser.Scene {
         //player
         this.playerWASD.update(this)
         this.playerArrows.update(this)
-
-        //pause menu
-        if (keyP.isDown){
-
-            this.scene.pause("Level1");
-            this.scene.launch("pause", "Level1");
-        } 
         
 
     }

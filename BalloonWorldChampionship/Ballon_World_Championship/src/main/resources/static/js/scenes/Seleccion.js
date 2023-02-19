@@ -1,8 +1,8 @@
 
 // Teclas especiales implementadas en esta escena
-var keyO;
-var keyEnter;
-var keyP;
+var local;
+var online;
+var back;
 
 export class Seleccion extends Phaser.Scene{
 
@@ -26,36 +26,30 @@ export class Seleccion extends Phaser.Scene{
 
         // Añadir imágenes
         this.add.image(480, 312, 'background');
-        this.add.image(700, 280, 'BotonLocal');
-        this.add.image(250, 280, 'BotonOnline');
-        this.add.image(30, 30, 'Return');
+        local = this.add.image(700, 280, 'BotonLocal');
+        online = this.add.image(250, 280, 'BotonOnline');
+        back = this.add.image(30, 30, 'Return').setScale(0.5);
 
-        //Añadir teclas especiales
-        keyO=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.O);
-        keyEnter=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
-        keyP=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
+        local.setInteractive();
+        online.setInteractive();
+        back.setInteractive();
 
         this.music = this.sound.add('menu_theme');
         this.sound.stopAll();
         this.music.play();
         this.music.loop = true;
+        
+        local.on("pointerdown", ()=>{
+			this.scene.start("Level1");
+		})
+		
+		online.on("pointerdown", ()=>{
+			this.scene.start("LevelOn");
+		})
+		
+		back.on("pointerdown", ()=>{
+			this.scene.start("mainMenu");
+		})
     }
 
-    update(){
-
-        // Evento si la tecla ENTER es pulsada
-        if (keyEnter.isDown)
-		{
-			this.scene.start("LevelOn");			
-            this.music.stop();
-		}
-        else if (keyO.isDown){
-            this.scene.start("Level1");
-
-        }
-        else if (keyP.isDown){
-            this.scene.start("mainMenu");
-
-        }
-    }
 }

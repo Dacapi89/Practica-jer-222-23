@@ -15,11 +15,15 @@ export class Login extends Phaser.Scene{
     preload(){
 			
         this.load.image('Fondo', 'assets/images/background/Fondo.png');
+        this.load.image('Ingresar', 'assets/images/UI/Titles/NAME.png');
 
     }
     create(){
         // Añadir imágenes
         this.add.image(480, 312, 'Fondo');
+        this.add.image(480, 100, 'Ingresar');
+        
+        
         //Añadir teclas especiales
      	 sc = this.scene;
 
@@ -28,10 +32,6 @@ export class Login extends Phaser.Scene{
 			  $('#cp').hide(0);
     
 		});
-    }
-
-    update(){
-		 
     }
      
 }

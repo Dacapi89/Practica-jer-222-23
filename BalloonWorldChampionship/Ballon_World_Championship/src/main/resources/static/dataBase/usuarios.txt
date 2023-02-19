@@ -1,7 +1,0 @@
-1	Dani	0
-2	Jose	1
-3	lulu	0
-4	Maria	2
-5	pp	0
-6	OscarTrejo	0
-7	Leopoldo	13
