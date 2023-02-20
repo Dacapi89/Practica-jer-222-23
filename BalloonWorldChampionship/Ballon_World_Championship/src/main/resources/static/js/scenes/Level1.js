@@ -4,11 +4,10 @@ import { Bola } from '../objects/Bola.js';
 import { usuarioLogin } from "./Login.js";
 
 var pausa;
-var connection;
 var player1;
 class Level1 extends Phaser.Scene {
     constructor() {
-        super({key:'Level1'});
+        super({key:'level1'});
         //Variables globales
         this.globo;   
         this.playerWASD;
@@ -162,8 +161,8 @@ class Level1 extends Phaser.Scene {
         pausa.setInteractive();
         
         pausa.on("pointerdown", ()=>{
-			this.scene.start("pause");
-			this.scene.launch("pause", "Level1");
+			this.scene.launch("pause");
+			this.scene.pause("level1");
 		})
 
         //Cronometro

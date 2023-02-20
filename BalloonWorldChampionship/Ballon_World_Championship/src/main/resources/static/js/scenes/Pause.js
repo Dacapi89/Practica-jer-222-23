@@ -28,13 +28,16 @@ export class Pause extends Phaser.Scene{
         menuPrincipal.setInteractive();
         
         continuar.on("pointerdown", ()=>{
+			this.scene.resume("level1");
 			this.scene.stop("pause");
-			this.scene.resume("Level1");
+			
 		})
 		
 		menuPrincipal.on("pointerdown", ()=>{
 			 this.scene.stop("pause");
-            this.scene.stop("Level1");
+			 this.scene.restart("level1");
+            this.scene.stop("level1");
+            
 			this.scene.start("mainMenu");
 		})
     

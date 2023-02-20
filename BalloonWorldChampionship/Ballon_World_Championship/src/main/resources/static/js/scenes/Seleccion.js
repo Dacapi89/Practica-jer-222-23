@@ -40,7 +40,7 @@ export class Seleccion extends Phaser.Scene{
         this.music.loop = true;
         
         local.on("pointerdown", ()=>{
-			this.scene.start("Level1");
+			this.scene.start("level1");
 		})
 		
 		online.on("pointerdown", ()=>{

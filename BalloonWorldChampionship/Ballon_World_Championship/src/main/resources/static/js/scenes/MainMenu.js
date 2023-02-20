@@ -27,6 +27,7 @@ export class MainMenu extends Phaser.Scene{
     }
 
     create(){
+		$('#chatWrapper').show(0);
         // Añadir imágenes
         this.add.image(480, 312, 'background');
         this.add.image(700, 330, 'logoJuego');
@@ -41,14 +42,17 @@ export class MainMenu extends Phaser.Scene{
 		
 		jugar.on("pointerdown", ()=>{
 			this.scene.start("selec");
+			$('#chatWrapper').hide(0);
 		})
 		
 		creditos.on("pointerdown", ()=>{
 			this.scene.start("credits");
+			$('#chatWrapper').hide(0);
 		})
 		
 		controles.on("pointerdown", ()=>{
 			this.scene.start("control");
+			$('#chatWrapper').hide(0);
 		})
 
         this.music = this.sound.add('menu_theme');
@@ -63,14 +67,14 @@ export class MainMenu extends Phaser.Scene{
         dUser.on("pointerdown", ()=>{
 			$('#cp').show(0);
             this.scene.start("login");
+            $('#chatWrapper').hide(0);
 			deleteUser(usuarioLogin.id);
 			console.log("Delete user en cliente...")
 		})
         
         
         //console.log(usuarioLogin);
-        $('body').append('<div class="wrapper">		<div style="position: relative; left: 960px; top: 624px; height: 30px;"><div style=" bottom:0; margin: 0;  position: absolute; padding:2px;margin-bottom:35px; " id="chat"></div><button type="button" id="sendButton">Send</button><input type="text" id="message"/></div></div>')
-$(document).ready(function () {
+        $(document).ready(function () {
 var sendBttn = $('#sendButton')
 	var chat = $('#chat')
 	sendBttn.click(function(){

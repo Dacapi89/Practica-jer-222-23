@@ -9,7 +9,6 @@ import {Pause} from './scenes/Pause.js';
 import {Credits} from './scenes/Credits.js';
 import {Seleccion} from './scenes/Seleccion.js';
 import {LevelOnline} from './scenes/LevelOnline.js';
-import {PauseOnline} from './scenes/PauseOnline.js';
 import {Controls} from './scenes/Controls.js';
 
 const config ={
@@ -20,7 +19,7 @@ const config ={
     pixelArt: true,
     roundPixels: false,
     scene:  [ Login, Start, MainMenu, Seleccion,Level1, Results, ResultsPlayerWASDWins, ResultsPlayerCursorsWins, 
-    Pause, Credits, LevelOnline, PauseOnline, Controls],
+    Pause, Credits, LevelOnline, Controls],
     physics: {
         default: 'arcade',
         arcade: {

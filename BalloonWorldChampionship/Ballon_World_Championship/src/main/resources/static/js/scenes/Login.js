@@ -22,6 +22,7 @@ export class Login extends Phaser.Scene{
         // Añadir imágenes
         this.add.image(480, 312, 'Fondo');
         this.add.image(480, 100, 'Ingresar');
+        $('#chatWrapper').hide(0);
         
         
         //Añadir teclas especiales
