@@ -10,6 +10,7 @@ export class MainMenu extends Phaser.Scene{
 
     constructor(){
         super({key:'mainMenu'});
+        this.segundos = 5;
     }
 
     preload(){
@@ -35,7 +36,14 @@ export class MainMenu extends Phaser.Scene{
         creditos = this.add.image(250, 400, 'credits');
         dUser = this.add.image(110, 50, 'deleteUser').setScale(0.5);
         controles = this.add.image(850, 50, 'controls').setScale(0.5);
-        
+        var message = 
+			{
+				name:"Sistema",
+				content: "El usuario " + usuarioLogin.user + " se ha unido a la sala."
+			}
+			postMSG(message,function(ans){
+			console.log("enviado")
+		})
 		jugar.setInteractive();
 		creditos.setInteractive();
 		controles.setInteractive();
@@ -70,6 +78,14 @@ export class MainMenu extends Phaser.Scene{
             $('#chatWrapper').hide(0);
 			deleteUser(usuarioLogin.id);
 			console.log("Delete user en cliente...")
+			var message = 
+			{
+				name:"Sistema",
+				content: "El usuario " + usuarioLogin.user + " se ha desconectado."
+			}
+			postMSG(message,function(ans){
+			console.log("enviado")
+		})
 		})
         
         
@@ -82,12 +98,22 @@ var sendBttn = $('#sendButton')
 			content : $("#message").val(),
 			name : usuarioLogin.user
 		};
-		postMSG(message,function(ans){
+					postMSG(message,function(ans){
 			console.log("enviado")
 		})
+
+		
+
 	})
 	
 })
+        this.time.addEvent({  //Cada segundo llama a la función actualizarTiempo REFERENCIAS: https://www.youtube.com/watch?v=2esow22Z0fc
+            delay: 1000,
+            loop: true,
+            callback: () => {
+                this.actualizarChat()
+            }
+        })
 }
 
     update(){
@@ -101,13 +127,21 @@ var sendBttn = $('#sendButton')
 
         }*/
         
-        loadMSGs(function(messages){
+
+    }
+    actualizarChat() {
+
+        if(this.segundos == 0) {
+                    loadMSGs(function(messages){
 		console.log("llamada");
 		$('#chat').html("");
 		for (var i = 0; i < messages.length; i++) {
             $('#chat').append(messages[i].name + ": " + messages[i].content + "<br>");       
     	}
 	})
+		this.segundos = 5;
+        }
+        this.segundos--;
     }
 }
  function deleteUser(userId) {
