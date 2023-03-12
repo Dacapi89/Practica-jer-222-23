@@ -10,7 +10,7 @@ export class MainMenu extends Phaser.Scene{
 
     constructor(){
         super({key:'mainMenu'});
-        this.segundos = 5;
+        this.segundos = 2;
     }
 
     preload(){
@@ -78,6 +78,7 @@ export class MainMenu extends Phaser.Scene{
             $('#chatWrapper').hide(0);
 			deleteUser(usuarioLogin.id);
 			console.log("Delete user en cliente...")
+			//this.time.removeAllEvents()
 			var message = 
 			{
 				name:"Sistema",
@@ -90,23 +91,7 @@ export class MainMenu extends Phaser.Scene{
         
         
         //console.log(usuarioLogin);
-        $(document).ready(function () {
-var sendBttn = $('#sendButton')
-	var chat = $('#chat')
-	sendBttn.click(function(){
-		var message = {
-			content : $("#message").val(),
-			name : usuarioLogin.user
-		};
-					postMSG(message,function(ans){
-			console.log("enviado")
-		})
-
-		
-
-	})
 	
-})
         this.time.addEvent({  //Cada segundo llama a la función actualizarTiempo REFERENCIAS: https://www.youtube.com/watch?v=2esow22Z0fc
             delay: 1000,
             loop: true,
@@ -139,7 +124,7 @@ var sendBttn = $('#sendButton')
             $('#chat').append(messages[i].name + ": " + messages[i].content + "<br>");       
     	}
 	})
-		this.segundos = 5;
+		this.segundos = 2;
         }
         this.segundos--;
     }
@@ -195,3 +180,12 @@ function loadMSGs(callback) {
 		callback(messages);
     })
 }
+	$('#sendButton').click(function(){
+		var message = {
+			content : $("#message").val(),
+			name : usuarioLogin.user
+		};
+			postMSG(message,function(ans){
+			console.log("enviado")
+		})
+	})
