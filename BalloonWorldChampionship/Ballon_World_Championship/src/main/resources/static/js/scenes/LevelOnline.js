@@ -1,9 +1,9 @@
 
 import { player } from '../objects/player.js';
 import { Bola } from '../objects/Bola.js';
-
+import { connection } from "./WaitingRoom.js";
 var vel;
-var connection;
+//var connection;
 var player1;
 var player2;
 export class LevelOnline extends Phaser.Scene {
@@ -173,11 +173,11 @@ export class LevelOnline extends Phaser.Scene {
 
         this.music.play();
         this.music.loop = true;
-        
+    /*    
     connection = new WebSocket('ws://'+location.host+'/pos');    
 	connection.onopen = function() {
 		console.log("Opening socket");
-	}
+	}*/
     document.addEventListener("keypress", event => {
 			if(event.key == 'd') {	
 				vel.x = 60 //velocidad del jugador entre 10 por que le da la gana al programa

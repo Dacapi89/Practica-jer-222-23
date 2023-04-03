@@ -3,7 +3,7 @@
 //var local;
 var online;
 var back;
-
+export var connection;
 export class WaitingRoom extends Phaser.Scene{
 
     constructor(){
@@ -50,10 +50,27 @@ export class WaitingRoom extends Phaser.Scene{
 		back.on("pointerdown", ()=>{
 			this.scene.start("selec");
 		})
+		
 		connection = new WebSocket('ws://'+location.host+'/pos');    
 		connection.onopen = function() {
 		console.log("Opening socket");
 		}
+			$(document).ready(function() {
+
+	connection.onerror = function(e) {
+		console.log("WS error: " + e);
+	}
+	connection.onmessage = function(msg) {
+		console.log("WS message: " + msg.data);
+		var message = JSON.parse(msg.data)
+		player2.setVelocity(message.x, message.y);
+		console.log(message);
+	}
+	connection.onclose = function() {
+		console.log("Closing socket");
+	}					
+		
+})
     }
     
 
