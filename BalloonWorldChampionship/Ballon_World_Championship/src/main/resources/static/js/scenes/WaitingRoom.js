@@ -1,18 +1,18 @@
 
 // Teclas especiales implementadas en esta escena
-var local;
+//var local;
 var online;
 var back;
 
 export class WaitingRoom extends Phaser.Scene{
 
     constructor(){
-        super({key:'wait'});
+        super({key:'waitRoom'});
     }
 
     preload(){
         this.load.image('background', 'assets/images/background/Fondo.png');
-        this.load.image('BotonLocal', 'assets/images/UI/Buttons/BUTTON_LOCAL.png');
+        //this.load.image('BotonLocal', 'assets/images/UI/Buttons/BUTTON_LOCAL.png');
         this.load.image('BotonOnline', 'assets/images/UI/Buttons/BUTTON_ONLINE.png');
         this.load.image('Return', 'assets/images/UI/Buttons/BUTTON_RETURN.png');
 
@@ -26,11 +26,11 @@ export class WaitingRoom extends Phaser.Scene{
 
         // Añadir imágenes
         this.add.image(480, 312, 'background');
-        local = this.add.image(700, 280, 'BotonLocal');
+        //local = this.add.image(700, 280, 'BotonLocal');
         online = this.add.image(250, 280, 'BotonOnline');
         back = this.add.image(30, 30, 'Return').setScale(0.5);
 
-        local.setInteractive();
+        //local.setInteractive();
         online.setInteractive();
         back.setInteractive();
 
@@ -39,9 +39,9 @@ export class WaitingRoom extends Phaser.Scene{
         this.music.play();
         this.music.loop = true;
         
-        local.on("pointerdown", ()=>{
-			this.scene.start("level1");
-		})
+        //local.on("pointerdown", ()=>{
+		//	this.scene.start("level1");
+		//})
 		
 		online.on("pointerdown", ()=>{
 			this.scene.start("LevelOn");
@@ -50,6 +50,11 @@ export class WaitingRoom extends Phaser.Scene{
 		back.on("pointerdown", ()=>{
 			this.scene.start("selec");
 		})
+		connection = new WebSocket('ws://'+location.host+'/pos');    
+		connection.onopen = function() {
+		console.log("Opening socket");
+		}
     }
+    
 
 }

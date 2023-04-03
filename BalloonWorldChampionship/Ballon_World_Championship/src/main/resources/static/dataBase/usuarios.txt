@@ -1,10 +1,1 @@
-+1	Daniel	0
-2	Pepe	0
-4	alca	2
-4	n m m	0
-4	ssss	0
-4	Hakimi	0
-4	asdas	0
-4	sdfsd	0
-4	fdsdf	0
-4	dsda	0
+

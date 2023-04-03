@@ -3,7 +3,7 @@
 var local;
 var online;
 var back;
-
+var connection;
 export class Seleccion extends Phaser.Scene{
 
     constructor(){
@@ -44,7 +44,7 @@ export class Seleccion extends Phaser.Scene{
 		})
 		
 		online.on("pointerdown", ()=>{
-			this.scene.start("wait");
+			this.scene.start("waitRoom");
 		})
 		
 		back.on("pointerdown", ()=>{
