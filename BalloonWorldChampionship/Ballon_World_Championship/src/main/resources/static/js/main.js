@@ -10,6 +10,7 @@ import {Credits} from './scenes/Credits.js';
 import {Seleccion} from './scenes/Seleccion.js';
 import {LevelOnline} from './scenes/LevelOnline.js';
 import {Controls} from './scenes/Controls.js';
+import {WaitingRoom} from './scenes/WaitingRoom.js';
 
 const config ={
     type: Phaser.AUTO,
@@ -19,7 +20,7 @@ const config ={
     pixelArt: true,
     roundPixels: false,
     scene:  [ Login, Start, MainMenu, Seleccion,Level1, Results, ResultsPlayerWASDWins, ResultsPlayerCursorsWins, 
-    Pause, Credits, LevelOnline, Controls],
+    Pause, Credits, LevelOnline, Controls, WaitingRoom],
     physics: {
         default: 'arcade',
         arcade: {

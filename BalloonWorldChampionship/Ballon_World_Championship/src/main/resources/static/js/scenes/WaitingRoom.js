@@ -4,10 +4,10 @@ var local;
 var online;
 var back;
 
-export class Seleccion extends Phaser.Scene{
+export class WaitingRoom extends Phaser.Scene{
 
     constructor(){
-        super({key:'selec'});
+        super({key:'wait'});
     }
 
     preload(){
@@ -44,11 +44,11 @@ export class Seleccion extends Phaser.Scene{
 		})
 		
 		online.on("pointerdown", ()=>{
-			this.scene.start("wait");
+			this.scene.start("LevelOn");
 		})
 		
 		back.on("pointerdown", ()=>{
-			this.scene.start("mainMenu");
+			this.scene.start("selec");
 		})
     }
 

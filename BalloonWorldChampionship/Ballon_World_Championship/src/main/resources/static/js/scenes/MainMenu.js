@@ -49,6 +49,14 @@ export class MainMenu extends Phaser.Scene{
 		controles.setInteractive();
 		
 		jugar.on("pointerdown", ()=>{
+			var message = 
+			{
+				name:"Sistema",
+				content: "El usuario " + usuarioLogin.user + " se ha desconectado."
+			}
+			postMSG(message,function(ans){
+			console.log("enviado")
+		})
 			this.scene.start("selec");
 			$('#chatWrapper').hide(0);
 		})
@@ -88,7 +96,7 @@ export class MainMenu extends Phaser.Scene{
 			console.log("enviado")
 		})
 		})
-        
+        $(document)
         
         //console.log(usuarioLogin);
 	
@@ -99,10 +107,33 @@ export class MainMenu extends Phaser.Scene{
                 this.actualizarChat()
             }
         })
+        window.addEventListener("beforeunload", function (e) {
+
+      ejecutar();
+
+      (e || window.event).returnValue = null;
+
+      return null;
+
+    });
+
+    function ejecutar() {
+		var message = 
+			{
+				name:"Sistema",
+				content: "El usuario " + usuarioLogin.user + " se ha desconectado."
+			}
+			postMSG(message,function(ans){
+			console.log("enviado")
+		})
+		}
 }
 
     update(){
+		
+	 
 
+        
         // Evento si la tecla ENTER es pulsada
         /*if (keyP.isDown){
 			  $('#cp').show(0);
@@ -111,6 +142,7 @@ export class MainMenu extends Phaser.Scene{
 			console.log("Delete user en cliente...")
 
         }*/
+        
         
 
     }
