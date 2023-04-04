@@ -23,8 +23,8 @@ export class ResultsPlayerCursorsWins extends Phaser.Scene{
 
     create(){
         this.add.image(480, 312, 'background');
-        this.add.image(480, 100, 'Victory');
-        continuar = this.add.image(480, 280, 'Continue');
+        this.add.image(480, 100, 'Victory').setScale(2);
+        continuar = this.add.image(480, 250, 'Continue');
         this.add.image(480, 485, 'playerArrows').setScale(2);
         //this.add.image(500, 560, 'playerWASD');
 

@@ -34,12 +34,13 @@ export class Seleccion extends Phaser.Scene{
         online.setInteractive();
         back.setInteractive();
 
-        this.music = this.sound.add('menu_theme');
-        this.sound.stopAll();
-        this.music.play();
-        this.music.loop = true;
+        //this.music = this.sound.add('menu_theme');
+        //this.sound.stopAll();
+        //this.music.play();
+        //this.music.loop = true;
         
         local.on("pointerdown", ()=>{
+			this.sound.stopAll();
 			this.scene.start("level1");
 		})
 		

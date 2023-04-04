@@ -1,21 +1,24 @@
 
 // Teclas especiales implementadas en esta escena
-//var local;
-var online;
 var back;
 var sessions = false;
+
+import { usuarioLogin } from "./Login.js";
+
 export var connection;
 export class WaitingRoom extends Phaser.Scene{
 
     constructor(){
         super({key:'waitRoom'});
     }
+    
 
     preload(){
         this.load.image('background', 'assets/images/background/Fondo.png');
-        //this.load.image('BotonLocal', 'assets/images/UI/Buttons/BUTTON_LOCAL.png');
-        this.load.image('BotonOnline', 'assets/images/UI/Buttons/BUTTON_ONLINE.png');
+        this.load.image('WaitingR', 'assets/images/UI/Titles/WAITING_ROOM.png');
         this.load.image('Return', 'assets/images/UI/Buttons/BUTTON_RETURN.png');
+        this.load.image('UserBackground', 'assets/images/UI/User.png');
+        this.load.image('Matching', 'assets/images/UI/Titles/MATCHING.png');
 
         this.load.audio('menu_theme', [ //Añadimos música al juego REFERENCIA: https://phaser.io/examples/v2/audio/play-music
             'assets/music/title/title_music.ogg',  // Música utilizada para la partida: https://www.youtube.com/watch?v=QG6STlj-d7w
@@ -27,30 +30,24 @@ export class WaitingRoom extends Phaser.Scene{
 
         // Añadir imágenes
         this.add.image(480, 312, 'background');
-        //local = this.add.image(700, 280, 'BotonLocal');
-        online = this.add.image(250, 280, 'BotonOnline');
+        this.add.image(480, 100, 'WaitingR').setScale(2);
         back = this.add.image(30, 30, 'Return').setScale(0.5);
+        this.add.image(270, 330, 'UserBackground');
+        this.add.image(700, 330, 'Matching');
 
-        //local.setInteractive();
-        online.setInteractive();
         back.setInteractive();
-
-        this.music = this.sound.add('menu_theme');
-        this.sound.stopAll();
-        this.music.play();
-        this.music.loop = true;
         
-        //local.on("pointerdown", ()=>{
-		//	this.scene.start("level1");
-		//})
-		
-		online.on("pointerdown", ()=>{
-			this.scene.start("LevelOn");
-		})
+        this.usuario = this.add.text(100, 300, usuarioLogin.user,  {fontSize:'60px', fill: '#ffffff'});
+
+        //this.music = this.sound.add('menu_theme');
+        //this.sound.stopAll();
+        //this.music.play();
+        //this.music.loop = true;
 
 		back.on("pointerdown", ()=>{
+			this.sound.stopAll();
 			connection.close();
-			this.scene.start("selec");
+			this.scene.start("mainMenu");
 		})
 		
 		connection = new WebSocket('ws://'+location.host+'/pos');    

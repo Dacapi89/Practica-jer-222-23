@@ -21,8 +21,8 @@ export class Results extends Phaser.Scene{
 
     create(){
         this.add.image(480, 312, 'background');
-        this.add.image(480, 100, 'Victory');
-        continuar = this.add.image(250, 280, 'Continue');
+        this.add.image(480, 100, 'Victory').setScale(2);
+        continuar = this.add.image(480, 250, 'Continue');
         this.add.image(400, 480, 'playerArrows').setScale(2);
         this.add.image(560, 480, 'playerWASD').setScale(2);
         this.text = this.add.text(640, 200);
