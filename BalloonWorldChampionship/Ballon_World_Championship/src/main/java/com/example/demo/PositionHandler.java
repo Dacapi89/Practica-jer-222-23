@@ -16,17 +16,43 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 public class PositionHandler extends TextWebSocketHandler {
 	private Map<String, WebSocketSession> sessions = new ConcurrentHashMap<>();
 	private ObjectMapper mapper = new ObjectMapper();
+	boolean usuarios = false;
 	
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
 		System.out.println("New user: " + session.getId());
 		sessions.put(session.getId(), session);
+		if (sessions.size() == 2)
+		{
+			usuarios = true;
+		}
+		ObjectNode newNode = mapper.createObjectNode();
+		newNode.put("sessions", usuarios);
+		for(WebSocketSession participant : sessions.values()) {
+			
+			participant.sendMessage(new TextMessage(newNode.toString()));
+			
+		}
+		System.out.println("Cosa: " + newNode);
+		
 	}
 	
 	@Override
 	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
 		System.out.println("Session closed: " + session.getId());
 		sessions.remove(session.getId());
+		if (sessions.size() < 2)
+		{
+			usuarios = false;
+		}
+		ObjectNode newNode = mapper.createObjectNode();
+		newNode.put("sessions", usuarios);
+		for(WebSocketSession participant : sessions.values()) {
+			
+			participant.sendMessage(new TextMessage(newNode.toString()));
+			
+		}
+		System.out.println("Cosa: " + newNode);
 	}
 	
 	@Override

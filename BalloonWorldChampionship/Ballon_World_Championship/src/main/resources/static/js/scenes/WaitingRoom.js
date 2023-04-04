@@ -3,6 +3,7 @@
 //var local;
 var online;
 var back;
+var sessions = false;
 export var connection;
 export class WaitingRoom extends Phaser.Scene{
 
@@ -46,8 +47,9 @@ export class WaitingRoom extends Phaser.Scene{
 		online.on("pointerdown", ()=>{
 			this.scene.start("LevelOn");
 		})
-		
+
 		back.on("pointerdown", ()=>{
+			connection.close();
 			this.scene.start("selec");
 		})
 		
@@ -63,15 +65,24 @@ export class WaitingRoom extends Phaser.Scene{
 	connection.onmessage = function(msg) {
 		console.log("WS message: " + msg.data);
 		var message = JSON.parse(msg.data)
-		player2.setVelocity(message.x, message.y);
+		//player2.setVelocity(message.x, message.y);
 		console.log(message);
+		sessions = message.sessions;
+		console.log(message.sessions);
 	}
 	connection.onclose = function() {
 		console.log("Closing socket");
 	}					
 		
-})
+	})
     }
     
+	update()
+	{
+		if (sessions == true)
+		{
+			this.scene.start("LevelOn");
+		}
+	}
 
 }
