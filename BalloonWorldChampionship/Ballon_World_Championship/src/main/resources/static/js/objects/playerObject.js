@@ -1,4 +1,4 @@
-class player{
+class playerObject{
     constructor(key,fileNamePath,speed,jumpHeight,keyright,keyleft,keyup, score){ 
         this.key=key;                             //Tag del objeto
         this.fileNamePath= fileNamePath;         //Ruta de la imagen
@@ -69,4 +69,4 @@ class player{
 
     }    
 }
-export {player};  //Exporta la clase player para el level 1
+export {playerObject};  //Exporta la clase player para el level 1

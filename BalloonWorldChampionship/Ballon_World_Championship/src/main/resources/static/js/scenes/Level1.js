@@ -1,5 +1,5 @@
 
-import { player } from '../objects/player.js';
+import { playerObject } from '../objects/playerObject.js';
 import { Bola } from '../objects/Bola.js';
 import { usuarioLogin } from "./Login.js";
 
@@ -10,8 +10,8 @@ class Level1 extends Phaser.Scene {
         super({key:'level1'});
         //Variables globales
         this.globo;   
-        this.playerWASD;
-        this.playerArrows;
+        this.playerObject1;
+        this.playerObject2;
         this.timer;
         this.text;
         this.scoreWASD;
@@ -22,8 +22,8 @@ class Level1 extends Phaser.Scene {
     }
     preload() {
         this.globo = new Bola("ball", 'assets/images/sprites/ball2.png', -180);
-        this.playerWASD = new player("playerWASD", "assets/images/sprites/player_spain.png", 600, 400, "D", "A", "W", 0);
-        this.playerArrows = new player("playerArrows", "assets/images/sprites/player_blank.png", 600, 400, "RIGHT", "LEFT", "UP", 0);
+        this.playerObject1 = new playerObject("playerWASD", "assets/images/sprites/player_spain.png", 600, 400, "D", "A", "W", 0);
+        this.playerObject2 = new playerObject("playerArrows", "assets/images/sprites/player_blank.png", 600, 400, "RIGHT", "LEFT", "UP", 0);
         //Background
         this.load.image("backgroundSky", 'assets/images/background/bgImages/sky.png');
         this.load.image("backgroundClouds", 'assets/images/background/bgImages/clouds.png');
@@ -34,8 +34,8 @@ class Level1 extends Phaser.Scene {
         this.load.image("tiles", "assets/images/background/tilemaps/tileset.png")
         this.load.tilemapTiledJSON("leveln1", "levels/level1.json")
         //players
-        this.playerWASD.preload(this, 72, 128);
-        this.playerArrows.preload(this, 72, 128);
+        this.playerObject1.preload(this, 72, 128);
+        this.playerObject2.preload(this, 72, 128);
         //ball
         this.globo.preload(this)
         //Pause button
@@ -59,10 +59,10 @@ class Level1 extends Phaser.Scene {
         //this.bg2 = this.add.tileSprite(0, 0, 960, 624, 'backgroundClouds').setOrigin(0, 0).setScrollFactor(0, 0);
         //this.bg3 = this.add.tileSprite(0, 0, 960, 624, 'backgroundStars').setOrigin(0, 0).setScrollFactor(0, 0);
         //Asignación de las variables globales a unas específicas
-        this.playerWASD.create(this, 200, 500);
-        player1 = this.playerWASD.player;
-        this.playerArrows.create(this, 880, 450);
-        this.player2 = this.playerArrows.player;
+        this.playerObject1.create(this, 200, 500);
+        player1 = this.playerObject1.player;
+        this.playerObject2.create(this, 880, 450);
+        this.player2 = this.playerObject2.player;
         //ball 
         this.globo.create(this, 585, 0);
         this.bola = this.globo.ball;
@@ -89,9 +89,9 @@ class Level1 extends Phaser.Scene {
                     console.log("HAS PERDIDO player2!!!!");
                     this.bola.turnOponent = undefined;
                     this.bola.turn = null;
-                    this.playerWASD.playerScore++;
-                    console.log("Puntuación P1:",this.playerWASD.playerScore);
-                    console.log("Puntuación P2:",this.playerArrows.playerScore);
+                    this.playerObject1.playerScore++;
+                    console.log("Puntuación P1:",this.playerObject1.playerScore);
+                    console.log("Puntuación P2:",this.playerObject2.playerScore);
                 }
                 else if (this.bola.turnOponent == "player1" || this.bola.turnOponent == "player1") {  //Y el player2 ha sido el último en tocar, el player2 gana un punto
                     this.bola.disableBody(true, true);
@@ -99,9 +99,9 @@ class Level1 extends Phaser.Scene {
                     console.log("HAS PERDIDO player1!!!!");
                     this.bola.turnOponent = undefined;
                     this.bola.turn = null;
-                    this.playerArrows.playerScore++;
-                    console.log("Puntuación P1:",this.playerWASD.playerScore);
-                    console.log("Puntuación P2:",this.playerArrows.playerScore);
+                    this.playerObject2.playerScore++;
+                    console.log("Puntuación P1:",this.playerObject1.playerScore);
+                    console.log("Puntuación P2:",this.playerObject2.playerScore);
                 }
                 else if (this.bola.turnOponent == undefined) {  //Ninguno ha tocado el globo todavía
                     this.bola.disableBody(true, true);
@@ -120,11 +120,11 @@ class Level1 extends Phaser.Scene {
                         this.bola.disableBody(true, true);                         //TOCAR EL GLOBO 2 VECES POR TURNO), el jugador contrario gana un punto
                         this.bola.enableBody(true, 585, 0, true, true);
                         console.log("HAS PERDIDO player1!!!!");
-                        this.playerArrows.playerScore +=1;
+                        this.playerObject2.playerScore +=1;
                         this.bola.turn = null;
                         this.bola.turnOponent = undefined;
-                        console.log("Puntuación P1:",this.playerWASD.playerScore);
-                        console.log("Puntuación P2:",this.playerArrows.playerScore);
+                        console.log("Puntuación P1:",this.playerObject1.playerScore);
+                        console.log("Puntuación P2:",this.playerObject2.playerScore);
                     }
                     else {                                                         //Empuja al globo según su dirección X
                         this.bola.setVelocity(player1.body.velocity.x, -200);
@@ -144,11 +144,11 @@ class Level1 extends Phaser.Scene {
                         this.bola.disableBody(true, true);                      //TOCAR EL GLOBO 2 VECES POR TURNO), el jugador contrario gana un punto
                         this.bola.enableBody(true, 585, 0, true, true);
                         console.log("HAS PERDIDO player2!!!!");
-                        this.playerWASD.playerScore++;
+                        this.playerObject1.playerScore++;
                         this.bola.turn = null;
                         this.bola.turnOponent = undefined;
-                        console.log("Puntuación P1:",this.playerWASD.playerScore);
-                        console.log("Puntuación P2:",this.playerArrows.playerScore);
+                        console.log("Puntuación P1:",this.playerObject1.playerScore);
+                        console.log("Puntuación P2:",this.playerObject2.playerScore);
                     }
                     else {                                                         //Empuja al globo según su dirección X
                         this.bola.setVelocity(this.player2.body.velocity.x, -200);
@@ -189,8 +189,8 @@ class Level1 extends Phaser.Scene {
 
     update() {
         this.text.setText('Time ' + this.minutos + ':' + this.segundos);
-        this.scoreCursors.setText('Player 2: ' + this.playerArrows.playerScore.toString());
-        this.scoreWASD.setText('Player 1: ' + this.playerWASD.playerScore.toString());
+        this.scoreCursors.setText('Player 2: ' + this.playerObject2.playerScore.toString());
+        this.scoreWASD.setText('Player 1: ' + this.playerObject1.playerScore.toString());
         //background    
         //this.bg3.tilePositionX -= 0.05;
         //this.bg2.tilePositionX -= 0.2;
@@ -204,18 +204,18 @@ class Level1 extends Phaser.Scene {
     }
 
     finDelJuego(){
-		if(this.scoreMax < this.playerArrows.playerScore)
+		if(this.scoreMax < this.playerObject2.playerScore)
 		{
-		usuarioLogin.score = this.playerArrows.playerScore;
+		usuarioLogin.score = this.playerObject2.playerScore;
 		updateUser(usuarioLogin);
-		this.scoreMAx = this.playerArrows.playerScore;
+		this.scoreMAx = this.playerObject2.playerScore;
 		}
 
-        if (this.playerWASD.playerScore > this.playerArrows.playerScore){
+        if (this.playerObject1.playerScore > this.playerObject2.playerScore){
             this.scene.start('results1');
             this.music.stop();
         }
-        else if (this.playerWASD.playerScore < this.playerArrows.playerScore){
+        else if (this.playerObject1.playerScore < this.playerObject2.playerScore){
             this.scene.start('results2');
             this.music.stop();
         }
