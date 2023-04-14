@@ -197,8 +197,8 @@ class Level1 extends Phaser.Scene {
         //this.bg1.tilePositionX -= 0.5;
         //this.bg0.tilePositionX -= 1;
         //player
-        this.playerWASD.update(this)
-        this.playerArrows.update(this)
+        this.playerObject1.update(this)
+        this.playerObject2.update(this)
         
 
     }
