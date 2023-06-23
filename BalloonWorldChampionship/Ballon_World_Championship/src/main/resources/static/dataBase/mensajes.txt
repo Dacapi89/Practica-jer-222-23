@@ -243,3 +243,31 @@
 4	User zz has connected.
 5	User zz has disconnected.
 6	User xx has disconnected.
+1	User zz has connected.
+2	User zz has disconnected.
+3	User xx has connected.
+4	User xx has disconnected.
+5	El usuario zz se ha desconectado.
+6	El usuario zz se ha desconectado.
+7	El usuario xx se ha desconectado.
+8	El usuario xx se ha desconectado.
+9	User zz has connected.
+10	User xx has connected.
+11	User zz has disconnected.
+12	User xx has disconnected.
+13	User zz has connected.
+14	User zz has disconnected.
+15	User xx has connected.
+16	User xx has disconnected.
+17	El usuario zz se ha desconectado.
+18	El usuario zz se ha desconectado.
+19	El usuario xx se ha desconectado.
+20	El usuario xx se ha desconectado.
+21	User xx has connected.
+22	User dasd has connected.
+23	User dasd has disconnected.
+24	User xx has disconnected.
+25	User dasd has connected.
+26	User xx has connected.
+27	User dasd has disconnected.
+28	User xx has disconnected.

@@ -113,8 +113,10 @@ export class WaitingRoom extends Phaser.Scene{
 		}
 		if (empezar)
 		{
+			empezar = false;
 			this.sound.stopAll();
 			this.scene.start("LevelOn");
+			
 		}
 	}
 
