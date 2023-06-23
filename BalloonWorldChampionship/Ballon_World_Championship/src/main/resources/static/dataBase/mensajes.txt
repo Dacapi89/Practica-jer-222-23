@@ -237,3 +237,9 @@
 3	User zz has connected.
 4	User zz has disconnected.
 5	User xx has disconnected.
+1	El usuario zz se ha desconectado.
+2	El usuario xx se ha desconectado.
+3	User xx has connected.
+4	User zz has connected.
+5	User zz has disconnected.
+6	User xx has disconnected.

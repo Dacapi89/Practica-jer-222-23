@@ -231,6 +231,7 @@ export class LevelOnline extends Phaser.Scene {
 
     update() {
 		msg = {
+			count: 0,
 			x: player1.body.x,
 			y: player1.body.y,
 			velx: player1.body.velocity.x /10,
