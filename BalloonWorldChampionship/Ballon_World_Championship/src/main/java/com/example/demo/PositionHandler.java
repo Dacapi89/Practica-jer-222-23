@@ -17,18 +17,25 @@ public class PositionHandler extends TextWebSocketHandler {
 	private Map<String, WebSocketSession> sessions = new ConcurrentHashMap<>();
 	private ObjectMapper mapper = new ObjectMapper();
 	boolean usuarios = false;
-	int empezar = 0;
+	int count = 0;
 	
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
 		System.out.println("New user: " + session.getId());
 		sessions.put(session.getId(), session);
+		//Hay actualmente os jugadores en la sala de espera
 		if (sessions.size() == 2)
 		{
 			usuarios = true;
 		}
 		ObjectNode newNode = mapper.createObjectNode();
+		//newNode.put("sessions", usuarios);
 		newNode.put("sessions", usuarios);
+		newNode.put("count", 0);
+		newNode.put("x", 0);
+		newNode.put("y", 0);
+		newNode.put("velx", 0);
+		newNode.put("vely", 0);
 		for(WebSocketSession participant : sessions.values()) {
 			
 			participant.sendMessage(new TextMessage(newNode.toString()));
@@ -47,7 +54,12 @@ public class PositionHandler extends TextWebSocketHandler {
 			usuarios = false;
 		}
 		ObjectNode newNode = mapper.createObjectNode();
+		//newNode.put("sessions", usuarios);
 		newNode.put("sessions", usuarios);
+		newNode.put("count", 0);
+		newNode.put("x", 0);
+		newNode.put("y", 0);
+		newNode.put("velx", 0);
 		for(WebSocketSession participant : sessions.values()) {
 			
 			participant.sendMessage(new TextMessage(newNode.toString()));
@@ -61,23 +73,36 @@ public class PositionHandler extends TextWebSocketHandler {
 		
 		System.out.println("Message received: " + message.getPayload());
 		JsonNode node = mapper.readTree(message.getPayload());
-		//empezar = node.get("count").asInt();
-		
-		
+		count += node.get("count").asInt();
+		System.out.println("Count: " + count);
+		if(count == 2)
+		{
+			sendReady(session);
+			count = 0;
+		}
 		sendOtherParticipants(session, node);
+
 	}
-
+	private void sendReady(WebSocketSession session) throws IOException
+	{
+		ObjectNode newNode = mapper.createObjectNode();
+		newNode.put("count", count);
+		for(WebSocketSession participant : sessions.values()) {
+			
+			participant.sendMessage(new TextMessage(newNode.toString()));
+			
+		}
+	}
 	private void sendOtherParticipants(WebSocketSession session, JsonNode node) throws IOException {
-
-		System.out.println("Message sent: " + node.toString());
 		
 		ObjectNode newNode = mapper.createObjectNode();
-		newNode.put("count", node.get("count").asText());
+		newNode.put("sessions", usuarios);
+		newNode.put("count", count);
 		newNode.put("x", node.get("x").asText());
 		newNode.put("y", node.get("y").asText());
 		newNode.put("velx", node.get("velx").asText());
 		newNode.put("vely", node.get("vely").asText());
-		
+		System.out.println("Message sent: " + newNode.toString());
 		
 		for(WebSocketSession participant : sessions.values()) {
 			if(!participant.getId().equals(session.getId())) {

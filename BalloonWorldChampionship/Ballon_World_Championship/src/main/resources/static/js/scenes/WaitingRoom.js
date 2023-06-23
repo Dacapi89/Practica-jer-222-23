@@ -2,6 +2,7 @@
 // Teclas especiales implementadas en esta escena
 var back;
 var sessions = false;
+var empezar = false;
 var msg;
 var start;
 import { usuarioLogin } from "./Login.js";
@@ -11,7 +12,6 @@ export class WaitingRoom extends Phaser.Scene{
 
     constructor(){
         super({key:'waitRoom'});
-        this.empezar = 0;
     }
     
 
@@ -54,12 +54,19 @@ export class WaitingRoom extends Phaser.Scene{
 			connection.close();
 			this.scene.start("mainMenu");
 		})
+				msg = {
+			count: 0,
+			x:0,
+			y:0,
+			velx:0,
+			vely:0
+
+		}
 		start.on("pointerdown", ()=>{
 
-			msg.count = msg.count + 1
+			msg.count = 1;
 			connection.send(JSON.stringify(msg));
-			start.setActive(false);
-			console.log(this.empezar)
+
 			console.log("Mandando respuesta...")
 		})		
 		connection = new WebSocket('ws://'+location.host+'/pos');    
@@ -75,9 +82,13 @@ export class WaitingRoom extends Phaser.Scene{
 		console.log("WS message: " + msg.data);
 		var message = JSON.parse(msg.data)
 		//player2.setVelocity(message.x, message.y);
-		console.log(message.count);
+		console.log(message);
 		sessions = message.sessions;
-		this.empezar = message.count;
+		//this.empezar = message.count;
+		if (message.count == 2)
+		{
+			empezar = true;
+		}
 
 	}
 	connection.onclose = function() {
@@ -89,20 +100,18 @@ export class WaitingRoom extends Phaser.Scene{
     
 	update()
 	{
-		msg = {
-			count: this.empezar,
-			x: 0,
-			y: 0,
-			velx: 0,
-			vely: 0
-		}
+
 		if (sessions == true)
 		{
 			//this.scene.start("LevelOn");
 			start.setActive(true);
 			start.setVisible(true);
 		}
-		if (this.empezar == 2)
+		else{
+				start.setActive(false);
+				start.setVisible(false);
+		}
+		if (empezar)
 		{
 			this.sound.stopAll();
 			this.scene.start("LevelOn");
