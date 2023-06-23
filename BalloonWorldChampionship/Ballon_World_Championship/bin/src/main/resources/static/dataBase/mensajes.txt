@@ -1,0 +1,32 @@
+3	El usuario Pepe se ha desconectado.
+2	El usuario Pepe se ha desconectado.
+1	El usuario Pepe se ha desconectado.
+4	User Ramon has connected.
+5	User Alfredo has connected.
+6	Adolfo
+7	que
+8	feo
+9	a bueno
+10	se me cuida
+11	User Alfredo has disconnected.
+12	User Ramon has disconnected.
+13	User Ramon has connected.
+14	User Alfredo has connected.
+15	User Alfredo has disconnected.
+16	User Ramon has disconnected.
+17	User Alfredo has connected.
+18	User Ramon has connected.
+19	User dfsd has connected.
+20	User dfsd has disconnected.
+21	User Alfredo has disconnected.
+3	El usuario Ramon se ha desconectado.
+2	El usuario Ramon se ha desconectado.
+1	El usuario Ramon se ha desconectado.
+5	El usuario Alfredo se ha desconectado.
+4	El usuario Alfredo se ha desconectado.
+6	El usuario Alfredo se ha desconectado.
+7	El usuario dfsd se ha desconectado.
+8	User kakeru has connected.
+9	User kakeru has disconnected.
+10	User ama has connected.
+11	User ama has disconnected.
