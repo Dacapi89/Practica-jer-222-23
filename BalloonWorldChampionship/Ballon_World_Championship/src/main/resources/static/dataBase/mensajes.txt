@@ -1,267 +1,32 @@
-1	El usuario undefined se ha desconectado.
-2	El usuario Daniel se ha unido a la sala.
-3	Pepe putero
-4	El usuario Daniel se ha desconectado.
-5	El usuario Jose se ha unido a la sala.
-6	El usuario Jose se ha desconectado.
-1	El usuario undefined se ha unido a la sala.
-1	El usuario undefined se ha desconectado.
-2	El usuario Jefe se ha unido a la sala.
-3	putas
-4	El usuario Jefe se ha desconectado.
-5	El usuario undefined se ha unido a la sala.
-1	El usuario undefined se ha desconectado.
-2	El usuario Fernando se ha unido a la sala.
-3	El usuario Fernando se ha desconectado.
-4	El usuario undefined se ha unido a la sala.
-5	El usuario undefined se ha desconectado.
-6	El usuario pp se ha unido a la sala.
-7	El usuario pp se ha desconectado.
-8	El usuario pp se ha desconectado.
-9	El usuario pp se ha desconectado.
-1	El usuario Daniel se ha unido a la sala.
-2	El usuario Daniel se ha desconectado.
-1	El usuario Daniel se ha desconectado.
-2	El usuario Daniel se ha unido a la sala.
-1	El usuario Daniel se ha desconectado.
-2	El usuario Daniel se ha unido a la sala.
-3	El usuario Daniel se ha desconectado.
-4	El usuario JoseJuan se ha unido a la sala.
-5	El usuario JoseJuan se ha desconectado.
-1	El usuario JoseJuan se ha desconectado.
-2	El usuario Daniel se ha unido a la sala.
-3	El usuario Daniel se ha desconectado.
-1	El usuario Daniel se ha desconectado.
-2	El usuario Pepe se ha unido a la sala.
 3	El usuario Pepe se ha desconectado.
+2	El usuario Pepe se ha desconectado.
 1	El usuario Pepe se ha desconectado.
-2	El usuario Kaki se ha unido a la sala.
-3	El usuario Kaki se ha desconectado.
-1	El usuario Kaki se ha desconectado.
-2	El usuario orga se ha unido a la sala.
-3	El usuario orga se ha desconectado.
-1	El usuario orga se ha desconectado.
-2	El usuario goku se ha unido a la sala.
-3	El usuario goku se ha desconectado.
-4	El usuario vegeta se ha unido a la sala.
-5	El usuario vegeta se ha desconectado.
-6	El usuario goku se ha unido a la sala.
-7	El usuario goku se ha desconectado.
-8	El usuario goku se ha unido a la sala.
-1	El usuario vegeta se ha desconectado.
-2	El usuario 7 se ha unido a la sala.
-3	El usuario 7 se ha desconectado.
-4	El usuario goku se ha desconectado.
-5	El usuario goku se ha desconectado.
-6	El usuario goku se ha desconectado.
-7	El usuario 6 se ha unido a la sala.
-8	putero
-9	El usuario 6 se ha desconectado.
-1	El usuario 6 se ha desconectado.
-2	El usuario 7 se ha desconectado.
-3	El usuario Naruto se ha unido a la sala.
-4	El usuario Sasuke se ha unido a la sala.
-5	El usuario Naruto se ha desconectado.
-6	El usuario Sasuke se ha desconectado.
-1	El usuario Naruto se ha desconectado.
-2	El usuario Sasuke se ha desconectado.
-3	El usuario naruto se ha unido a la sala.
-4	El usuario sasuke se ha unido a la sala.
-5	naruto putero
-6	tu también ma g
-7	El usuario sasuke se ha desconectado.
-8	El usuario naruto se ha desconectado.
-1	El usuario sasuke se ha desconectado.
-2	El usuario naruto se ha desconectado.
-3	El usuario jarfa se ha unido a la sala.
-4	El usuario ieter se ha unido a la sala.
-5	El usuario jarfa se ha desconectado.
-6	El usuario ieter se ha desconectado.
-1	El usuario jarfa se ha desconectado.
-2	El usuario ieter se ha desconectado.
-3	El usuario asdf  se ha unido a la sala.
-4	El usuario asdfasdf se ha unido a la sala.
-5	El usuario asdf  se ha desconectado.
-6	El usuario asdfasdf se ha desconectado.
-1	El usuario asdf  se ha desconectado.
-2	El usuario asdfasdf se ha desconectado.
-3	El usuario asd se ha unido a la sala.
-4	El usuario dasdds se ha unido a la sala.
-5	El usuario asd se ha desconectado.
-6	El usuario dasdds se ha desconectado.
-1	El usuario asd se ha desconectado.
-2	El usuario dasdds se ha desconectado.
-3	El usuario adad se ha unido a la sala.
-4	El usuario wewew se ha unido a la sala.
-5	El usuario adad se ha desconectado.
-6	El usuario wewew se ha desconectado.
-1	El usuario adad se ha desconectado.
-2	El usuario wewew se ha desconectado.
-3	El usuario fdf se ha unido a la sala.
-4	El usuario eee se ha unido a la sala.
-5	El usuario fdf se ha desconectado.
-6	El usuario eee se ha desconectado.
-1	El usuario fdf se ha desconectado.
-2	El usuario eee se ha desconectado.
-3	El usuario dasd se ha unido a la sala.
-4	El usuario eewe se ha unido a la sala.
-5	El usuario dasd se ha desconectado.
-6	El usuario eewe se ha desconectado.
-1	El usuario dasd se ha desconectado.
-2	El usuario eewe se ha desconectado.
-3	El usuario sAD se ha unido a la sala.
-4	El usuario ADFASDF se ha unido a la sala.
-5	El usuario sAD se ha desconectado.
-6	El usuario ADFASDF se ha desconectado.
-1	El usuario sAD se ha desconectado.
-2	El usuario ADFASDF se ha desconectado.
-3	El usuario sdfasfd se ha unido a la sala.
-4	El usuario fdf se ha unido a la sala.
-5	El usuario sdfasfd se ha desconectado.
-6	El usuario fdf se ha desconectado.
-1	El usuario sdfasfd se ha desconectado.
-2	El usuario fdf se ha desconectado.
-3	El usuario asdfasdf se ha unido a la sala.
-4	El usuario sdfasf se ha unido a la sala.
-5	El usuario sdfasf se ha desconectado.
-6	El usuario asdfasdf se ha desconectado.
-1	El usuario sdfasf se ha desconectado.
-2	El usuario asdfasdf se ha desconectado.
-3	El usuario dasd se ha unido a la sala.
-4	El usuario dasd se ha unido a la sala.
-5	El usuario dasd se ha desconectado.
-6	El usuario dasd se ha desconectado.
-1	El usuario dasd se ha desconectado.
-2	El usuario dasd se ha desconectado.
-3	El usuario sadasd se ha unido a la sala.
-4	El usuario dddd se ha unido a la sala.
-5	El usuario sadasd se ha desconectado.
-6	El usuario dddd se ha desconectado.
-1	El usuario sadasd se ha desconectado.
-2	El usuario dddd se ha desconectado.
-3	El usuario fd se ha unido a la sala.
-4	El usuario fd se ha unido a la sala.
-5	El usuario fd se ha desconectado.
-6	El usuario fd se ha desconectado.
-1	El usuario fd se ha desconectado.
-2	El usuario fd se ha desconectado.
-3	El usuario sdfgsd se ha unido a la sala.
-4	El usuario dgfasd se ha unido a la sala.
-5	El usuario sdfgsd se ha desconectado.
-6	El usuario dgfasd se ha desconectado.
-1	El usuario sdfgsd se ha desconectado.
-2	El usuario dgfasd se ha desconectado.
-3	El usuario sdfg sdf se ha unido a la sala.
-4	El usuario gsdfg se ha unido a la sala.
-5	El usuario sdfg sdf se ha desconectado.
-6	El usuario gsdfg se ha desconectado.
-1	El usuario sdfg sdf se ha desconectado.
-2	El usuario gsdfg se ha desconectado.
-3	El usuario sdfsdf se ha unido a la sala.
-4	El usuario wsdfsd se ha unido a la sala.
-5	El usuario wsdfsd se ha desconectado.
-6	El usuario sdfsdf se ha desconectado.
-1	El usuario wsdfsd se ha desconectado.
-2	El usuario sdfsdf se ha desconectado.
-3	El usuario sdfggf se ha unido a la sala.
-4	El usuario egdsfg se ha unido a la sala.
-5	El usuario egdsfg se ha desconectado.
-6	El usuario sdfggf se ha desconectado.
-1	El usuario egdsfg se ha desconectado.
-2	El usuario sdfggf se ha desconectado.
-3	El usuario fghdfgh se ha unido a la sala.
-4	El usuario dfghdfg se ha unido a la sala.
-5	El usuario fghdfgh se ha desconectado.
-6	El usuario dfghdfg se ha desconectado.
-1	El usuario fghdfgh se ha desconectado.
-2	El usuario dfghdfg se ha desconectado.
-3	El usuario fghdf se ha unido a la sala.
-4	El usuario dfghdfg se ha unido a la sala.
-5	El usuario fghdf se ha desconectado.
-6	El usuario dfghdfg se ha desconectado.
-1	El usuario fghdf se ha desconectado.
-2	El usuario dfghdfg se ha desconectado.
-3	El usuario zfgsd se ha unido a la sala.
-4	El usuario sdfg se ha unido a la sala.
-5	El usuario zfgsd se ha desconectado.
-6	El usuario sdfg se ha desconectado.
-1	El usuario zfgsd se ha desconectado.
-2	El usuario sdfg se ha desconectado.
-3	El usuario sdfg se ha unido a la sala.
-4	El usuario sdfg se ha unido a la sala.
-5	El usuario sdfg se ha desconectado.
-6	El usuario sdfg se ha desconectado.
-1	El usuario sdfg se ha desconectado.
-2	El usuario sdfg se ha desconectado.
-3	El usuario asda se ha unido a la sala.
-4	El usuario asdasd se ha unido a la sala.
-5	El usuario asdasd se ha desconectado.
-6	El usuario asda se ha desconectado.
-1	El usuario asdasd se ha desconectado.
-2	El usuario asda se ha desconectado.
-3	El usuario asdasd se ha unido a la sala.
-4	El usuario asdasd se ha unido a la sala.
-5	El usuario asdasd se ha desconectado.
-6	El usuario asdasd se ha desconectado.
-1	El usuario asdasd se ha desconectado.
-2	El usuario asdasd se ha desconectado.
-3	El usuario fdfd se ha unido a la sala.
-4	El usuario asdfa se ha unido a la sala.
-5	El usuario asdfa se ha desconectado.
-6	El usuario fdfd se ha desconectado.
-1	El usuario asdfa se ha desconectado.
-2	El usuario fdfd se ha desconectado.
-3	El usuario jbjjkjkn se ha unido a la sala.
-4	El usuario klmkl se ha unido a la sala.
-5	El usuario klmkl se ha desconectado.
-6	El usuario jbjjkjkn se ha desconectado.
-1	El usuario klmkl se ha desconectado.
-2	El usuario jbjjkjkn se ha desconectado.
-3	El usuario dfs se ha unido a la sala.
-4	El usuario asdf se ha unido a la sala.
-5	El usuario dfs se ha desconectado.
-6	El usuario asdf se ha desconectado.
-1	El usuario dfs se ha desconectado.
-2	El usuario asdf se ha desconectado.
-3	El usuario asdf se ha unido a la sala.
-4	El usuario sdfg se ha unido a la sala.
-5	El usuario asdf se ha desconectado.
-6	El usuario sdfg se ha desconectado.
-1	El usuario sdfg se ha desconectado.
-2	El usuario asdf se ha unido a la sala.
-3	El usuario asdf se ha desconectado.
-4	El usuario asdf se ha unido a la sala.
-5	El usuario asdf se ha desconectado.
-1	El usuario asdf se ha desconectado.
-2	El usuario wqeqee se ha unido a la sala.
-3	El usuario asd se ha unido a la sala.
-4	El usuario wqeqee se ha desconectado.
-5	El usuario asd se ha desconectado.
-1	El usuario jefe se ha unido a la sala.
-2	El usuario Dani se ha unido a la sala.
-3	Como estan los maquinas
-4	El usuario jefe se ha desconectado.
-5	El usuario Dani se ha desconectado.
-1	El usuario Dani se ha desconectado.
-2	El usuario jefe se ha desconectado.
-3	El usuario fdfdfd se ha unido a la sala.
-4	El usuario asdf se ha unido a la sala.
-5	El usuario fdfdfd se ha desconectado.
-6	El usuario asdf se ha desconectado.
-1	El usuario asdf se ha desconectado.
-2	El usuario fdfdfd se ha desconectado.
-3	El usuario fdfdf se ha unido a la sala.
-4	El usuario sdfafd se ha unido a la sala.
-5	El usuario fdfdf se ha desconectado.
-6	El usuario sdfafd se ha desconectado.
-1	El usuario fdfdf se ha desconectado.
-2	El usuario sdfafd se ha desconectado.
-3	El usuario dsadad se ha unido a la sala.
-4	El usuario dsadad se ha desconectado.
-5	El usuario dasdasd se ha unido a la sala.
-6	El usuario dasdasd se ha desconectado.
-1	El usuario undefined se ha unido a la sala.
-2	asdfasdf
-1	El usuario undefined se ha desconectado.
-2	El usuario r se ha unido a la sala.
-3	asdasd
+4	User Ramon has connected.
+5	User Alfredo has connected.
+6	Adolfo
+7	que
+8	feo
+9	a bueno
+10	se me cuida
+11	User Alfredo has disconnected.
+12	User Ramon has disconnected.
+13	User Ramon has connected.
+14	User Alfredo has connected.
+15	User Alfredo has disconnected.
+16	User Ramon has disconnected.
+17	User Alfredo has connected.
+18	User Ramon has connected.
+19	User dfsd has connected.
+20	User dfsd has disconnected.
+21	User Alfredo has disconnected.
+3	El usuario Ramon se ha desconectado.
+2	El usuario Ramon se ha desconectado.
+1	El usuario Ramon se ha desconectado.
+5	El usuario Alfredo se ha desconectado.
+4	El usuario Alfredo se ha desconectado.
+6	El usuario Alfredo se ha desconectado.
+7	El usuario dfsd se ha desconectado.
+8	User kakeru has connected.
+9	User kakeru has disconnected.
+10	User ama has connected.
+11	User ama has disconnected.

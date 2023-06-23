@@ -38,8 +38,8 @@ export class MainMenu extends Phaser.Scene{
         controles = this.add.image(850, 50, 'controls').setScale(0.5);
         var message = 
 			{
-				name:"Sistema",
-				content: "El usuario " + usuarioLogin.user + " se ha unido a la sala."
+				name:"Server",
+				content: "User " + usuarioLogin.user + " has connected."
 			}
 			postMSG(message,function(ans){
 			console.log("enviado")
@@ -51,8 +51,8 @@ export class MainMenu extends Phaser.Scene{
 		jugar.on("pointerdown", ()=>{
 			var message = 
 			{
-				name:"Sistema",
-				content: "El usuario " + usuarioLogin.user + " se ha desconectado."
+				name:"Server",
+				content: "User " + usuarioLogin.user + " has disconnected."
 			}
 			postMSG(message,function(ans){
 			console.log("enviado")
