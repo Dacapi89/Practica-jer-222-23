@@ -22,4 +22,5 @@ public class Message {
 	public void setId(long l) {
 		Id = l;
 	}
+	
 }

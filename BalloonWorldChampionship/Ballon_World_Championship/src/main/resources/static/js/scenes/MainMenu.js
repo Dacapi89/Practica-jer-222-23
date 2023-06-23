@@ -220,4 +220,5 @@ function loadMSGs(callback) {
 			postMSG(message,function(ans){
 			console.log("enviado")
 		})
+		$("#message").val("");
 	})

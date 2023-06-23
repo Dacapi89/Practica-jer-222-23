@@ -49,7 +49,7 @@ public class BDController {
 	Map<Long, BD> baseDeDatos = new ConcurrentHashMap<>();
 	AtomicLong nextId = new AtomicLong(0);
 	long id;
-	static final String ip = "http://192.168.1.134:8080";
+	static final String ip = "http://192.168.68.108:8080";
 	String path = "src\\main\\resources\\static\\dataBase\\usuarios.txt";
 	@CrossOrigin(origins = ip)
 	@GetMapping("/ranking")
@@ -73,7 +73,7 @@ public class BDController {
 	@CrossOrigin(origins = ip)
 	@PostMapping("/users")
 	@ResponseStatus(HttpStatus.CREATED)
-	public BD nuevoUser(@RequestBody BD user) {
+	public ResponseEntity<BD> nuevoUser(@RequestBody BD user) {
 		
 
 		long id = nextId.incrementAndGet();
@@ -83,17 +83,18 @@ public class BDController {
 		}
 		user.setId(id);
 		baseDeDatos.put(id, user);
-		
-		
+
 		//System.out.println(r.toString());
 		//long aux = 1;
-		//for(long i = 1; i < baseDeDatos.size();i++)
-		//{
-			//if(user.getUser().equals(baseDeDatos.get(i).getUser()))
-			//{
+		for(long i = 1; i < baseDeDatos.size();i++)
+		{
+			if(user.getUser().equals(baseDeDatos.get(i).getUser()))
+			{
 				//aux = baseDeDatos.get(i).getId();
-			//}
-		//}
+				System.out.println("Ya está en la base de datos.");
+				//return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			}
+		}
 		//System.out.println(baseDeDatos.get(aux).getUser());
 		FileWriter fw = null;
 		BufferedWriter bw = null;
@@ -109,8 +110,8 @@ public class BDController {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-
-		return user;
+		
+		return new ResponseEntity<>(user,HttpStatus.OK);
 	}
 	//Escribir en archivos: https://www.youtube.com/watch?v=wUucJvsdL3c,
 	//https://es.stackoverflow.com/questions/68526/agregar-contenido-a-un-archivo-sin-sobrescribir-el-contenido

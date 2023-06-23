@@ -15,7 +15,7 @@ export class Login extends Phaser.Scene{
     preload(){
 			
         this.load.image('Fondo', 'assets/images/background/Fondo.png');
-        this.load.image('Ingresar', 'assets/images/UI/Titles/NAME.png');
+        this.load.image('Ingresar', 'assets/images/UI/Titles/LOGIN.png');
 
     }
     create(){
@@ -23,15 +23,19 @@ export class Login extends Phaser.Scene{
         this.add.image(480, 312, 'Fondo');
         this.add.image(480, 100, 'Ingresar');
         $('#chatWrapper').hide(0);
-        
+
         
         //Añadir teclas especiales
      	 sc = this.scene;
 
-     	 $('#boton').click(function(){	
-			  sc.start("start");	
-			  $('#cp').hide(0);
+     	 $('#boton').click(function(){
+			  if(usuarioLogin != "")
+			  {
+				sc.start("start");	
+			  	$('#cp').hide(0);
     
+			  }	
+
 		});
     }
      
@@ -48,11 +52,13 @@ function createUser(user) {
         headers: {
             "Content-Type": "application/json"
         }
-    }).done(function (user) {
+    }).done(function (user,status) {
         console.log("User created: " + JSON.stringify(user));   
         usuarioLogin = user;
-        //console.log(user);    
+        //console.log(user);  
+        //console.log(user,status);  
     })
+
 }
 
 //Load items from server
@@ -99,13 +105,16 @@ $(document).ready(function () {
         var value = input.val(); 
         usuarioLogin = value;       
         input.val('');
-    
+    	
         var user = {
             user: value,
             score: 0
             
         }
-    	console.log(user.id);
-        createUser(user) 
+        if (user.user != "")
+        {
+			createUser(user); 
+		}
+        
     })
 })

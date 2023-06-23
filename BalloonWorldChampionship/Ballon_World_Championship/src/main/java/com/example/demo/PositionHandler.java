@@ -17,6 +17,7 @@ public class PositionHandler extends TextWebSocketHandler {
 	private Map<String, WebSocketSession> sessions = new ConcurrentHashMap<>();
 	private ObjectMapper mapper = new ObjectMapper();
 	boolean usuarios = false;
+	int empezar = 0;
 	
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
@@ -60,6 +61,8 @@ public class PositionHandler extends TextWebSocketHandler {
 		
 		System.out.println("Message received: " + message.getPayload());
 		JsonNode node = mapper.readTree(message.getPayload());
+		//empezar = node.get("count").asInt();
+		
 		
 		sendOtherParticipants(session, node);
 	}
@@ -69,6 +72,7 @@ public class PositionHandler extends TextWebSocketHandler {
 		System.out.println("Message sent: " + node.toString());
 		
 		ObjectNode newNode = mapper.createObjectNode();
+		newNode.put("count", node.get("count").asText());
 		newNode.put("x", node.get("x").asText());
 		newNode.put("y", node.get("y").asText());
 		newNode.put("velx", node.get("velx").asText());

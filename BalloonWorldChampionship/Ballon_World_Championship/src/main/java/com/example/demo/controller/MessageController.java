@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -20,9 +22,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/messages")
 public class MessageController {
-	static final String ip = "http://192.168.1.134:8080";
+	static final String ip = "http://192.168.68.108:8080";
 	Map<Long, Message> messages = new ConcurrentHashMap<>(); 
 	AtomicLong nextId = new AtomicLong(0);
+	String path = "src\\main\\resources\\static\\dataBase\\mensajes.txt";
 	@CrossOrigin(origins = ip)
 	@GetMapping
 	public Collection<Message> getMSGs() {
@@ -47,6 +50,19 @@ public class MessageController {
 		long id = nextId.incrementAndGet();
 		message.setId(id);
 		messages.put(id, message);
+		FileWriter fw = null;
+		BufferedWriter bw = null;
+		try {
+			  fw = new FileWriter(path, true);
+			  bw = new BufferedWriter(fw);
+		      bw.write(Long.toString(id)+'\t'+message.getContent()+"\n");
+		      bw.close();
+		      fw.close();
+		      System.out.println("Successfully wrote to the file.");
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 
 		return message;
 	}
