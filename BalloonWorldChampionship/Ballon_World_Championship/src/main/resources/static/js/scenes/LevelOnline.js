@@ -2,10 +2,12 @@
 import { playerObject } from '../objects/playerObject.js';
 import { Bola } from '../objects/Bola.js';
 import { connection } from "./WaitingRoom.js";
+import { usuarioLogin } from './Login.js';
 var msg;
 //var connection;
 var player1;
 var player2;
+var player2Name;
 export class LevelOnline extends Phaser.Scene {
     constructor() {
         super({key:'LevelOn'});
@@ -49,7 +51,16 @@ export class LevelOnline extends Phaser.Scene {
     
     create() {
 
-        
+        	loadUserName(function(messages) {
+			if (usuarioLogin.user == messages[messages.length-1].user)
+			{
+				player2Name = messages[messages.length-2].user
+			}
+			else
+			{
+				player2Name = messages[messages.length-1].user
+			}
+		})
 
         //background
         this.d = this.add.image(0, 0, "backgroundSky").setOrigin(0, 0).setScrollFactor(0, 0);
@@ -238,8 +249,8 @@ export class LevelOnline extends Phaser.Scene {
 			vely: player1.body.velocity.y /10
 		}
         this.text.setText('Time ' + this.minutos + ':' + this.segundos);
-        this.scoreCursors.setText('Player 2: ' + this.playerObject2.playerScore.toString());
-        this.scoreWASD.setText('Player 1: ' + this.playerObject1.playerScore.toString());
+        this.scoreCursors.setText(player2Name +': ' + this.playerObject2.playerScore.toString());
+        this.scoreWASD.setText(usuarioLogin.user+': ' + this.playerObject1.playerScore.toString());
         //background    
         //this.bg3.tilePositionX -= 0.05;
         //this.bg2.tilePositionX -= 0.2;
@@ -270,7 +281,6 @@ export class LevelOnline extends Phaser.Scene {
         
     }
     actualizarTiempo() {
-
         if(this.segundos == 0) {
             this.minutos--;
             if (this.minutos < 0) {
@@ -283,4 +293,11 @@ export class LevelOnline extends Phaser.Scene {
     }
     
 }
-
+function loadUserName(callback) {
+    $.ajax({
+        url: 'http://'+location.host+'/users'
+    }).done(function (messages) {
+        //console.log(JSON.stringify(messages));
+		callback(messages);
+    })
+}

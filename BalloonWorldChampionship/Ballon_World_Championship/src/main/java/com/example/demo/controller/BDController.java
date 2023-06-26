@@ -86,15 +86,15 @@ public class BDController {
 
 		//System.out.println(r.toString());
 		//long aux = 1;
-		for(long i = 1; i < baseDeDatos.size();i++)
-		{
-			if(user.getUser().equals(baseDeDatos.get(i).getUser()))
-			{
+		//for(long i = 1; i < baseDeDatos.size();i++)
+		//{
+			//if(user.getUser().equals(baseDeDatos.get(i).getUser()))
+			//{
 				//aux = baseDeDatos.get(i).getId();
-				System.out.println("Ya está en la base de datos.");
+				//System.out.println("Ya está en la base de datos.");
 				//return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-			}
-		}
+			//}
+		//}
 		//System.out.println(baseDeDatos.get(aux).getUser());
 		FileWriter fw = null;
 		BufferedWriter bw = null;
