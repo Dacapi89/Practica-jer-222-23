@@ -1,6 +1,7 @@
 
 // Teclas especiales implementadas en esta escena
 var continuar;
+var ranking;
 
 export class ResultsPlayerCursorsWins extends Phaser.Scene{
 
@@ -14,6 +15,7 @@ export class ResultsPlayerCursorsWins extends Phaser.Scene{
         this.load.image('Continue', 'assets/images/UI/Buttons/BUTTON_CONTINUE.png');
         this.load.image("playerWASD", "assets/images/sprites/player_spain.png");
         this.load.image("playerArrows", "assets/images/sprites/player_blank.png");
+        this.load.image('Ranking', 'assets/images/UI/Buttons/RANKING.png');
 
         this.load.audio('result_theme', [
             'assets/music/results/results_music.ogg',
@@ -24,7 +26,8 @@ export class ResultsPlayerCursorsWins extends Phaser.Scene{
     create(){
         this.add.image(480, 312, 'background');
         this.add.image(480, 100, 'Victory').setScale(2);
-        continuar = this.add.image(480, 250, 'Continue');
+        continuar = this.add.image(250, 250, 'Continue').setScale(0.75);
+        ranking = this.add.image(650, 250, 'Ranking').setScale(0.75);
         this.add.image(480, 485, 'playerArrows').setScale(2);
         //this.add.image(500, 560, 'playerWASD');
 
