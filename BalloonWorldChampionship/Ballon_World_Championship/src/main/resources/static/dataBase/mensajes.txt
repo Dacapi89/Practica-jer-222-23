@@ -271,3 +271,16 @@
 26	User xx has connected.
 27	User dasd has disconnected.
 28	User xx has disconnected.
+1	User pkl has connected.
+2	User pkl has disconnected.
+3	User pkl has connected.
+4	El usuario pkl se ha desconectado.
+5	El usuario pkl se ha desconectado.
+1	User Jefardo89 has connected.
+2	Hola
+3	User NoMeVoyABorrarXD has connected.
+4	supa
+5	El usuario Jefardo89 se ha desconectado.
+6	El usuario NoMeVoyABorrarXD se ha desconectado.
+7	User Gey has connected.
+8	El usuario Gey se ha desconectado.

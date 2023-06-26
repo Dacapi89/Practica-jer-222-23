@@ -118,6 +118,7 @@ export class MainMenu extends Phaser.Scene{
     });
 
     function ejecutar() {
+		deleteUser(usuarioLogin.id);
 		var message = 
 			{
 				name:"Sistema",
