@@ -207,7 +207,7 @@ class Level1 extends Phaser.Scene {
 		if(this.scoreMax < this.playerObject2.playerScore)
 		{
 		usuarioLogin.score = this.playerObject2.playerScore;
-		updateUser(usuarioLogin);
+		
 		this.scoreMAx = this.playerObject2.playerScore;
 		}
 
@@ -238,17 +238,5 @@ class Level1 extends Phaser.Scene {
     }
     
 }
-function updateUser(user) {
-    $.ajax({
-        method: 'PUT',
-        url: 'http://'+location.host+'/users/' + user.id,
-        data: JSON.stringify(user),
-        processData: false,
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).done(function (user) {
-        console.log("Updated user: " + JSON.stringify(user))
-    })
-}
+
 export { Level1 };

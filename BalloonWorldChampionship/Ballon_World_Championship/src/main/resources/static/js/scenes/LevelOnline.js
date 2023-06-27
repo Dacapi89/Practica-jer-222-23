@@ -8,6 +8,7 @@ var msg;
 var player1;
 var player2;
 var player2Name;
+
 export class LevelOnline extends Phaser.Scene {
     constructor() {
         super({key:'LevelOn'});
@@ -266,6 +267,7 @@ export class LevelOnline extends Phaser.Scene {
     finDelJuego(){
 		connection.close()
 		this.scene.stop();
+		updateUser(usuarioLogin);
         if (this.playerObject1.playerScore > this.playerObject2.playerScore){
             this.scene.start('results1');
             this.music.stop();
@@ -299,5 +301,19 @@ function loadUserName(callback) {
     }).done(function (messages) {
         //console.log(JSON.stringify(messages));
 		callback(messages);
+    })
+}
+
+function updateUser(user) {
+    $.ajax({
+        method: 'PUT',
+        url: 'http://'+location.host+'/users/' + user.id,
+        data: JSON.stringify(user),
+        processData: false,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).done(function (user) {
+        console.log("Updated user: " + JSON.stringify(user))
     })
 }

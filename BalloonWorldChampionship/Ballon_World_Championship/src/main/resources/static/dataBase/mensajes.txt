@@ -1,6 +1,126 @@
-1	El usuario Real se ha desconectado.
-2	El usuario Madrid se ha desconectado.
-3	User Madrid has connected.
-4	User Real has connected.
-5	User Real has disconnected.
-6	User Madrid has disconnected.
+1	User noe has connected.
+2	User lia has connected.
+3	User noe has disconnected.
+4	User lia has disconnected.
+5	El usuario lia se ha desconectado.
+6	El usuario noe se ha desconectado.
+1	User noe has connected.
+2	User lia has connected.
+3	User noe has disconnected.
+4	User lia has disconnected.
+5	El usuario lia se ha desconectado.
+1	El usuario noe se ha desconectado.
+2	User lia has connected.
+3	User noe has connected.
+4	User noe has disconnected.
+5	User lia has disconnected.
+6	El usuario lia se ha desconectado.
+7	El usuario noe se ha desconectado.
+1	El usuario noe se ha desconectado.
+2	User noe has connected.
+3	User lia has connected.
+4	User noe has disconnected.
+5	User lia has disconnected.
+6	El usuario lia se ha desconectado.
+1	User noe has connected.
+2	User lia has connected.
+3	User noe has disconnected.
+4	User lia has disconnected.
+5	El usuario lia se ha desconectado.
+6	El usuario noe se ha desconectado.
+7	El usuario noe se ha desconectado.
+1	User noe has connected.
+2	User noe has disconnected.
+3	User noe has connected.
+4	El usuario noe se ha desconectado.
+5	El usuario noe se ha desconectado.
+1	User noe has connected.
+2	User lia has connected.
+3	User noe has disconnected.
+4	User lia has disconnected.
+5	El usuario lia se ha desconectado.
+1	El usuario noe se ha desconectado.
+2	User noe has connected.
+3	User lia has connected.
+4	User noe has disconnected.
+5	User lia has disconnected.
+6	El usuario lia se ha desconectado.
+1	El usuario noe se ha desconectado.
+2	User noe has connected.
+3	User lia has connected.
+4	User noe has disconnected.
+5	User lia has disconnected.
+6	El usuario lia se ha desconectado.
+1	El usuario noe se ha desconectado.
+2	User noe has connected.
+3	User lia has connected.
+4	User noe has disconnected.
+5	User lia has disconnected.
+6	El usuario lia se ha desconectado.
+1	El usuario noe se ha desconectado.
+2	User noe has connected.
+3	User lia has connected.
+4	User noe has disconnected.
+5	User lia has disconnected.
+6	El usuario lia se ha desconectado.
+1	El usuario noe se ha desconectado.
+2	User noe has connected.
+3	User lia has connected.
+4	User noe has disconnected.
+5	User lia has disconnected.
+6	El usuario lia se ha desconectado.
+1	El usuario noe se ha desconectado.
+2	User noe has connected.
+3	User lia has connected.
+4	User noe has disconnected.
+5	User lia has disconnected.
+6	El usuario lia se ha desconectado.
+1	El usuario noe se ha desconectado.
+2	User bobo has connected.
+3	User lala has connected.
+4	User bobo has disconnected.
+5	User lala has disconnected.
+6	El usuario bobo se ha desconectado.
+7	El usuario lala se ha desconectado.
+8	User dani has connected.
+9	User junko has connected.
+10	User dani has disconnected.
+11	User junko has disconnected.
+12	El usuario dani se ha desconectado.
+1	El usuario junko se ha desconectado.
+2	User asmo has connected.
+3	User deus has connected.
+4	User asmo has disconnected.
+5	User deus has disconnected.
+6	El usuario asmo se ha desconectado.
+1	El usuario deus se ha desconectado.
+2	User levi has connected.
+3	User mammon has connected.
+4	User levi has disconnected.
+5	User mammon has disconnected.
+6	El usuario levi se ha desconectado.
+7	El usuario mammon se ha desconectado.
+1	User mammon has connected.
+2	User levi has connected.
+3	User mammon has disconnected.
+4	User levi has disconnected.
+5	El usuario mammon se ha desconectado.
+1	El usuario levi se ha desconectado.
+2	User asmo has connected.
+3	User satan has connected.
+4	User asmo has disconnected.
+5	User satan has disconnected.
+6	El usuario asmo se ha desconectado.
+7	El usuario satan se ha desconectado.
+1	User momo has connected.
+2	User lala has connected.
+3	User momo has disconnected.
+4	User lala has disconnected.
+1	El usuario momo se ha desconectado.
+2	El usuario lala se ha desconectado.
+3	User nana has connected.
+4	User nono has connected.
+5	User nana has disconnected.
+6	User nono has disconnected.
+7	El usuario nana se ha desconectado.
+8	El usuario nono se ha desconectado.

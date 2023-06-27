@@ -29,13 +29,17 @@ export class ResultsPlayerCursorsWins extends Phaser.Scene{
         continuar = this.add.image(250, 250, 'Continue').setScale(0.75);
         ranking = this.add.image(650, 250, 'Ranking').setScale(0.75);
         this.add.image(480, 485, 'playerArrows').setScale(2);
-        //this.add.image(500, 560, 'playerWASD');
 
         continuar.setInteractive();
+        ranking.setInteractive();
         
         continuar.on("pointerdown", ()=>{
 			this.scene.start("mainMenu");
             this.music.stop();
+		})
+		
+		ranking.on("pointerdown", ()=>{
+			this.scene.start("rank");
 		})
 
         this.music = this.sound.add('result_theme');

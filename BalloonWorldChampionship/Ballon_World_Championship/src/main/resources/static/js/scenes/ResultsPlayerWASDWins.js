@@ -1,6 +1,7 @@
 
 // Teclas especiales implementadas en esta escena
 var continuar;
+var ranking;
 
 export class ResultsPlayerWASDWins extends Phaser.Scene{
 
@@ -31,10 +32,15 @@ export class ResultsPlayerWASDWins extends Phaser.Scene{
         this.add.image(480, 485, 'playerWASD').setScale(2);
 
         continuar.setInteractive();
+        ranking.setInteractive();
         
         continuar.on("pointerdown", ()=>{
 			this.scene.start("mainMenu");
             this.music.stop();
+		})
+		
+		ranking.on("pointerdown", ()=>{
+			this.scene.start("rank");
 		})
 
         this.music = this.sound.add('result_theme');
