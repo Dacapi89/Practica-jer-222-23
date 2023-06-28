@@ -350,3 +350,38 @@
 2	El usuario w4rfwf se ha desconectado.
 3	User fsvfs has connected.
 4	El usuario fsvfs se ha desconectado.
+1	El usuario fsvfs se ha desconectado.
+2	El usuario fsvfs se ha desconectado.
+3	User dsdff has connected.
+4	El usuario dsdff se ha desconectado.
+1	El usuario dsdff se ha desconectado.
+2	User ddfdf has connected.
+3	El usuario ddfdf se ha desconectado.
+1	El usuario grtvtt se ha desconectado.
+2	User fdrf has connected.
+3	El usuario fdrf se ha desconectado.
+1	User gege has connected.
+2	El usuario gege se ha desconectado.
+3	User drgd has connected.
+1	El usuario drgd se ha desconectado.
+2	El usuario drgd se ha desconectado.
+3	User gdgf has connected.
+4	El usuario gdgf se ha desconectado.
+5	User dfd has connected.
+1	El usuario dfd se ha desconectado.
+2	El usuario dfd se ha desconectado.
+3	User fdvf has connected.
+4	El usuario fdvf se ha desconectado.
+1	El usuario fdvf se ha desconectado.
+2	User gerge has connected.
+3	El usuario gerge se ha desconectado.
+4	El usuario gerge se ha desconectado.
+5	El usuario gerge se ha desconectado.
+1	User efef has connected.
+2	El usuario efef se ha desconectado.
+1	User erfe has connected.
+2	El usuario erfe se ha desconectado.
+1	El usuario erfe se ha desconectado.
+2	User yhth has connected.
+3	El usuario yhth se ha desconectado.
+4	El usuario yhth se ha desconectado.

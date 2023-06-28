@@ -81,8 +81,8 @@ export class MainMenu extends Phaser.Scene{
         dUser.setInteractive();
         
         dUser.on("pointerdown", ()=>{
-			$('#cp').show(0);
-            this.scene.start("login");
+			//$('#cp').show(0);
+            this.scene.start("delUser");
             $('#chatWrapper').hide(0);
 			deleteUser(usuarioLogin.id);
 			console.log("Delete user en cliente...")
