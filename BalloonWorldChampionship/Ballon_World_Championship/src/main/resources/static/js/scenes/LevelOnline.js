@@ -21,8 +21,8 @@ export class LevelOnline extends Phaser.Scene {
         this.text;
         this.scoreWASD;
         this.scoreCursors;
-        this.minutos = 1;
-        this.segundos = 0;
+        this.minutos = 0;
+        this.segundos = 10;
     }
     preload() {
         this.globo = new Bola("ball", 'assets/images/sprites/ball2.png', -180);
@@ -252,6 +252,8 @@ export class LevelOnline extends Phaser.Scene {
         this.text.setText('Time ' + this.minutos + ':' + this.segundos);
         this.scoreCursors.setText(player2Name +': ' + this.playerObject2.playerScore.toString());
         this.scoreWASD.setText(usuarioLogin.user+': ' + this.playerObject1.playerScore.toString());
+        usuarioLogin.score = this.playerObject1.playerScore;
+        console.log(usuarioLogin.score);
         //background    
         //this.bg3.tilePositionX -= 0.05;
         //this.bg2.tilePositionX -= 0.2;
