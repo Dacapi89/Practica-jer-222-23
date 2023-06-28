@@ -21,8 +21,8 @@ export class LevelOnline extends Phaser.Scene {
         this.text;
         this.scoreWASD;
         this.scoreCursors;
-        this.minutos = 0;
-        this.segundos = 10;
+        this.minutos = 1;
+        this.segundos = 0;
     }
     preload() {
         this.globo = new Bola("ball", 'assets/images/sprites/ball2.png', -180);

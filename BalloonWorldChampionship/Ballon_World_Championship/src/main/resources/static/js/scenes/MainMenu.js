@@ -163,7 +163,6 @@ export class MainMenu extends Phaser.Scene{
     }
 }
  function deleteUser(userId) {
-	// Poner feedback
     $.ajax({
         method: 'DELETE',
         url: 'http://'+location.host+'/users/' + userId

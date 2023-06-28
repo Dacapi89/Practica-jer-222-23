@@ -346,3 +346,7 @@
 4	User wegfw has connected.
 5	User w4rfwf has disconnected.
 6	User wegfw has disconnected.
+1	El usuario wegfw se ha desconectado.
+2	El usuario w4rfwf se ha desconectado.
+3	User fsvfs has connected.
+4	El usuario fsvfs se ha desconectado.
