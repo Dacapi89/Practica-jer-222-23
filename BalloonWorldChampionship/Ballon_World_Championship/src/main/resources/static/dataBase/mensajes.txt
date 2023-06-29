@@ -391,3 +391,29 @@
 4	User svdv has disconnected.
 5	El usuario svdsv se ha desconectado.
 6	El usuario svdv se ha desconectado.
+1	User sfsfdf has connected.
+2	User vdd has connected.
+3	User sfsfdf has disconnected.
+4	User vdd has disconnected.
+5	User vdd has connected.
+6	User sfsfdf has connected.
+7	El usuario sfsfdf se ha desconectado.
+8	El usuario vdd se ha desconectado.
+9	El usuario vdd se ha desconectado.
+1	El usuario sfsfdf se ha desconectado.
+2	El usuario sfsfdf se ha desconectado.
+3	User dani has connected.
+4	User noe has connected.
+5	El usuario dani se ha desconectado.
+6	User dani has connected.
+7	El usuario dani se ha desconectado.
+8	El usuario dani se ha desconectado.
+9	User eduardo has connected.
+10	hola
+11	User eduardo has disconnected.
+12	User noe has disconnected.
+13	User noe has connected.
+14	User noe has disconnected.
+15	El usuario noe se ha desconectado.
+16	El usuario noe se ha desconectado.
+17	El usuario eduardo se ha desconectado.
