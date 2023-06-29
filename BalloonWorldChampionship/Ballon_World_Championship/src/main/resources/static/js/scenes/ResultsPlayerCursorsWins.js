@@ -7,6 +7,11 @@ var puesto1;
 var puesto2;
 var puesto3;
 
+// donde se guardan los rankings
+var UserPuesto1;
+var UserPuesto2;
+var UserPuesto3;
+
 // mensajes que muestran el ranking
 var score1; 
 var score2;
@@ -61,12 +66,15 @@ export class ResultsPlayerCursorsWins extends Phaser.Scene{
 			puesto1 = messages[0].score;
 			puesto2 = messages[1].score;
 			puesto3 = messages[2].score;
+			UserPuesto1 = messages[0].user;
+			UserPuesto2 = messages[1].user;
+			UserPuesto3 = messages[2].user;
 			console.log(puesto1);
 			
 			console.log(puesto1);
-        	score1.setText('1º SCORE: ' + puesto1);
-        	score2.setText('2º SCORE: ' + puesto2);
-        	score3.setText('3º SCORE: ' + puesto3);
+        	score1.setText(UserPuesto1 + ': ' + puesto1);
+        	score2.setText(UserPuesto2 + ': ' + puesto2);
+        	score3.setText(UserPuesto3 + ': ' + puesto3);
 		}) 
     }
 

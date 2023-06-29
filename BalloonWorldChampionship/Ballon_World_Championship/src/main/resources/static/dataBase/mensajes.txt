@@ -385,3 +385,9 @@
 2	User yhth has connected.
 3	El usuario yhth se ha desconectado.
 4	El usuario yhth se ha desconectado.
+1	User svdsv has connected.
+2	User svdv has connected.
+3	User svdsv has disconnected.
+4	User svdv has disconnected.
+5	El usuario svdsv se ha desconectado.
+6	El usuario svdv se ha desconectado.
