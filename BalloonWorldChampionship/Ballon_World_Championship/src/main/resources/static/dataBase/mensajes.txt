@@ -878,3 +878,191 @@
 10	El usuario sef se ha desconectado.
 11	El usuario fds se ha desconectado.
 12	El usuario fds se ha desconectado.
+1	User federer has connected.
+2	El usuario federer se ha desconectado.
+1	El usuario federer se ha desconectado.
+2	User Federer has connected.
+3	User Nadal has connected.
+4	User Federer has disconnected.
+5	User Nadal has disconnected.
+6	El usuario Nadal se ha desconectado.
+7	El usuario Federer se ha desconectado.
+1	User Asterix has connected.
+2	User Obelix has connected.
+3	Hola
+4	Que tal
+5	Gua
+6	User Asterix has disconnected.
+7	User Obelix has disconnected.
+8	El usuario Asterix se ha desconectado.
+9	El usuario Obelix se ha desconectado.
+1	User Ale has connected.
+2	User Jandro has connected.
+3	User Ale has disconnected.
+4	User Jandro has disconnected.
+5	User Ale has connected.
+6	User Jandro has connected.
+7	El usuario Ale se ha desconectado.
+8	User Jandro has disconnected.
+9	User Jandro has connected.
+10	User Jandro has disconnected.
+11	User Jandro has connected.
+12	El usuario Jandro se ha desconectado.
+2	El usuario Ale se ha desconectado.
+1	El usuario Ale se ha desconectado.
+3	El usuario Jandro se ha desconectado.
+4	El usuario Jandro se ha desconectado.
+5	El usuario Jandro se ha desconectado.
+6	El usuario Jandro se ha desconectado.
+7	User Isa has connected.
+8	User Abel has connected.
+9	User Isa has disconnected.
+10	User Abel has disconnected.
+11	El usuario Isa se ha desconectado.
+12	El usuario Abel se ha desconectado.
+1	User Fede has connected.
+2	User Rico has connected.
+3	User Fede has disconnected.
+4	User Rico has disconnected.
+5	User Fede has connected.
+6	User Rico has connected.
+7	El usuario Rico se ha desconectado.
+8	El usuario Fede se ha desconectado.
+2	El usuario Fede se ha desconectado.
+1	El usuario Fede se ha desconectado.
+3	El usuario Rico se ha desconectado.
+4	El usuario Rico se ha desconectado.
+5	User Anas has connected.
+6	User Tasiya has connected.
+7	User Anas has disconnected.
+8	User Tasiya has disconnected.
+9	El usuario Anas se ha desconectado.
+10	El usuario Tasiya se ha desconectado.
+1	User El has connected.
+2	User Putas has connected.
+3	User El has disconnected.
+4	User Putas has disconnected.
+5	El usuario El se ha desconectado.
+6	El usuario Putas se ha desconectado.
+1	User Khelaifi has connected.
+2	User Al has connected.
+3	User Al has disconnected.
+4	User Khelaifi has disconnected.
+5	El usuario Al se ha desconectado.
+6	El usuario Khelaifi se ha desconectado.
+1	User LaGuardia has connected.
+2	User Civil has connected.
+3	User LaGuardia has disconnected.
+4	User Civil has disconnected.
+5	El usuario Civil se ha desconectado.
+6	El usuario LaGuardia se ha desconectado.
+1	User Al has connected.
+2	User Geciras has connected.
+3	User Al has disconnected.
+4	User Geciras has disconnected.
+5	El usuario Al se ha desconectado.
+6	El usuario Geciras se ha desconectado.
+1	User Jesus has connected.
+2	User Vallejo has connected.
+3	User Jesus has disconnected.
+4	User Vallejo has disconnected.
+5	El usuario Jesus se ha desconectado.
+6	El usuario Vallejo se ha desconectado.
+7	User Vallejo has connected.
+8	User Jesus  has connected.
+9	User Jesus  has disconnected.
+10	User Vallejo has disconnected.
+11	El usuario Jesus  se ha desconectado.
+12	El usuario Vallejo se ha desconectado.
+1	User Silva has connected.
+2	User Bernardo has connected.
+3	User Bernardo has disconnected.
+4	User Silva has disconnected.
+5	El usuario Bernardo se ha desconectado.
+6	El usuario Silva se ha desconectado.
+1	User Jefe has connected.
+2	User Alfa has connected.
+3	User Jefe has disconnected.
+4	User Alfa has disconnected.
+5	El usuario Jefe se ha desconectado.
+6	El usuario Alfa se ha desconectado.
+1	User Perez has connected.
+2	User Heas has connected.
+3	User Heas has disconnected.
+4	User Perez has disconnected.
+5	El usuario Heas se ha desconectado.
+6	El usuario Perez se ha desconectado.
+1	User Alfa has connected.
+2	User Macho has connected.
+3	User Alfa has disconnected.
+4	User Macho has disconnected.
+5	El usuario Alfa se ha desconectado.
+6	El usuario Macho se ha desconectado.
+1	User Omega has connected.
+2	User Alfa has connected.
+3	User Alfa has disconnected.
+4	User Omega has disconnected.
+5	El usuario Omega se ha desconectado.
+6	El usuario Alfa se ha desconectado.
+1	User Pescao has connected.
+2	User Salao has connected.
+3	User Pescao has disconnected.
+4	User Salao has disconnected.
+5	El usuario Salao se ha desconectado.
+6	El usuario Pescao se ha desconectado.
+1	User Anans has connected.
+2	User Trans has connected.
+3	User Anans has disconnected.
+4	User Trans has disconnected.
+5	El usuario Anans se ha desconectado.
+6	El usuario Trans se ha desconectado.
+1	User asdasd has connected.
+2	User asdasd has disconnected.
+3	User ewewe has connected.
+4	User ewewe has disconnected.
+5	El usuario ewewe se ha desconectado.
+6	El usuario asdasd se ha desconectado.
+1	User ama has connected.
+2	User ama has disconnected.
+3	User kakeru has connected.
+4	User kakeru has disconnected.
+5	User ama has connected.
+6	User kakeru has connected.
+7	User ama has disconnected.
+8	User kakeru has disconnected.
+9	El usuario ama se ha desconectado.
+10	El usuario ama se ha desconectado.
+11	El usuario kakeru se ha desconectado.
+12	El usuario kakeru se ha desconectado.
+1	User Sup has connected.
+2	User Jefe has connected.
+3	User Jefe has disconnected.
+4	User Sup has disconnected.
+5	User Jefe has connected.
+6	User Sup has connected.
+7	User Jefe has disconnected.
+8	User Sup has disconnected.
+9	User Jefe has connected.
+10	User Sup has connected.
+11	Hola
+12	Pa ti mi cola
+13	User Jefe has disconnected.
+14	User Sup has disconnected.
+15	El usuario Jefe se ha desconectado.
+16	El usuario Jefe se ha desconectado.
+17	El usuario Jefe se ha desconectado.
+18	El usuario Sup se ha desconectado.
+19	El usuario Sup se ha desconectado.
+20	El usuario Sup se ha desconectado.
+21	User asdf has connected.
+22	User ffff has connected.
+23	User asdf has disconnected.
+24	User ffff has disconnected.
+25	El usuario ffff se ha desconectado.
+26	El usuario asdf se ha desconectado.
+1	User ddd has connected.
+2	User ddd has disconnected.
+3	User aaa has connected.
+4	User aaa has disconnected.
+5	User ddd has connected.
+6	User aaa has connected.

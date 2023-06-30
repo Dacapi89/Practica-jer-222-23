@@ -56,6 +56,7 @@ export class WaitingRoom extends Phaser.Scene{
 		})
 				msg = {
 			count: 0,
+			time: 0,
 			x:0,
 			y:0,
 			velx:0,

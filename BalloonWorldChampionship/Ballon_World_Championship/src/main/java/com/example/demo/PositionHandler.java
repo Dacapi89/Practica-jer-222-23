@@ -1,8 +1,12 @@
 package com.example.demo;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import javax.swing.Timer;
 
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -18,6 +22,8 @@ public class PositionHandler extends TextWebSocketHandler {
 	private ObjectMapper mapper = new ObjectMapper();
 	boolean usuarios = false;
 	int count = 0;
+	Timer timer;
+	int seconds = 60;
 	
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
@@ -55,6 +61,8 @@ public class PositionHandler extends TextWebSocketHandler {
 		{
 			usuarios = false;
 		}
+		timer.stop();
+		seconds = 60;
 		ObjectNode newNode = mapper.createObjectNode();
 		//newNode.put("sessions", usuarios);
 		newNode.put("sessions", usuarios);
@@ -76,14 +84,16 @@ public class PositionHandler extends TextWebSocketHandler {
 	@Override
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
 		
-		System.out.println("Message received: " + message.getPayload());
+		//System.out.println("Message received: " + message.getPayload());
 		JsonNode node = mapper.readTree(message.getPayload());
 		count += node.get("count").asInt();
-		System.out.println("Count: " + count);
+		//System.out.println("Count: " + count);
 		if(count == 2)
 		{
 			sendReady(session);
 			count = 0;
+			simpleTimer();
+			timer.start();
 		}
 		sendOtherParticipants(session, node);
 
@@ -98,18 +108,33 @@ public class PositionHandler extends TextWebSocketHandler {
 			
 		}
 	}
+	private void simpleTimer() 
+	{
+		timer = new Timer(1000, new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				seconds--;
+				//System.out.println("Segundos"+seconds);
+				
+			}
+		});
+	}
+
 	private void sendOtherParticipants(WebSocketSession session, JsonNode node) throws IOException {
 		
 		ObjectNode newNode = mapper.createObjectNode();
 		newNode.put("sessions", usuarios);
 		newNode.put("count", count);
+		newNode.put("time", seconds);
 		newNode.put("x", node.get("x").asText());
 		newNode.put("y", node.get("y").asText());
 		newNode.put("velx", node.get("velx").asText());
 		newNode.put("vely", node.get("vely").asText());
 		newNode.put("ballx", node.get("ballx").asText());
 		newNode.put("bally", node.get("bally").asText());
-		System.out.println("Message sent: " + newNode.toString());
+		//System.out.println("Message sent: " + newNode.toString());
 		
 		for(WebSocketSession participant : sessions.values()) {
 			if(!participant.getId().equals(session.getId())) {

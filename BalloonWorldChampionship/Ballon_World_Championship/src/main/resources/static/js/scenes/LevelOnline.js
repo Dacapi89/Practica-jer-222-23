@@ -25,8 +25,8 @@ export class LevelOnline extends Phaser.Scene {
         this.text;
         this.scoreWASD;
         this.scoreCursors;
-        this.minutos = 1;
-        this.segundos = 0;
+        this.minutos = 0;
+        this.segundos = 60;
         this.receivedX = -1;
         this.receivedY = -1
     }
@@ -250,13 +250,16 @@ export class LevelOnline extends Phaser.Scene {
 		var message = JSON.parse(msg.data)
 		//no funciona por alguna magia arcana desconocida hasta la fecha
 		//player2.setPosition(message.x,message.y);
+
 		rrx = Math.round(message.x);
 		rry = Math.round(message.y);
 		bx = Math.round(message.ballx);
 		by = Math.round(message.bally);
+		this.segundos = message.time;
+		console.log("El tiempo es: "+ message.time);
 		//ball.setPosition(message.ballx,message.bally)
 		player2.setVelocity(message.velx, message.vely);
-		console.log(message);
+		//console.log(message);
 	}
 	connection.onclose = function() {
 		console.log("Closing socket");
