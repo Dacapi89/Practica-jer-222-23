@@ -23,7 +23,7 @@ public class PositionHandler extends TextWebSocketHandler {
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
 		System.out.println("New user: " + session.getId());
 		sessions.put(session.getId(), session);
-		//Hay actualmente os jugadores en la sala de espera
+		//Hay actualmente dos jugadores en la sala de espera
 		if (sessions.size() == 2)
 		{
 			usuarios = true;
@@ -36,6 +36,8 @@ public class PositionHandler extends TextWebSocketHandler {
 		newNode.put("y", 0);
 		newNode.put("velx", 0);
 		newNode.put("vely", 0);
+		newNode.put("ballx", 0);
+		newNode.put("bally", 0);
 		for(WebSocketSession participant : sessions.values()) {
 			
 			participant.sendMessage(new TextMessage(newNode.toString()));
@@ -60,6 +62,9 @@ public class PositionHandler extends TextWebSocketHandler {
 		newNode.put("x", 0);
 		newNode.put("y", 0);
 		newNode.put("velx", 0);
+		newNode.put("vely", 0);
+		newNode.put("ballx", 0);
+		newNode.put("bally", 0);
 		for(WebSocketSession participant : sessions.values()) {
 			
 			participant.sendMessage(new TextMessage(newNode.toString()));
@@ -102,6 +107,8 @@ public class PositionHandler extends TextWebSocketHandler {
 		newNode.put("y", node.get("y").asText());
 		newNode.put("velx", node.get("velx").asText());
 		newNode.put("vely", node.get("vely").asText());
+		newNode.put("ballx", node.get("ballx").asText());
+		newNode.put("bally", node.get("bally").asText());
 		System.out.println("Message sent: " + newNode.toString());
 		
 		for(WebSocketSession participant : sessions.values()) {

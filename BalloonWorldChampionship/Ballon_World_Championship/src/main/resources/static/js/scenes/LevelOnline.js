@@ -7,8 +7,12 @@ var msg;
 //var connection;
 var player1;
 var player2;
+var ball;
 var player2Name;
-
+var rrx;
+var rry;
+var bx = -1;
+var by = -1;
 export class LevelOnline extends Phaser.Scene {
     constructor() {
         super({key:'LevelOn'});
@@ -23,8 +27,11 @@ export class LevelOnline extends Phaser.Scene {
         this.scoreCursors;
         this.minutos = 1;
         this.segundos = 0;
+        this.receivedX = -1;
+        this.receivedY = -1
     }
     preload() {
+		
         this.globo = new Bola("ball", 'assets/images/sprites/ball2.png', -180);
         this.playerObject1 = new playerObject("playerWASD", "assets/images/sprites/player_spain.png", 600, 400, "D", "A", "W", 0);
         this.playerObject2 = new playerObject("playerArrows", "assets/images/sprites/player_blank.png", 600, 400, "NONE", "NONE", "NONE", 0);
@@ -72,11 +79,14 @@ export class LevelOnline extends Phaser.Scene {
         //Asignación de las variables globales a unas específicas
         this.playerObject1.create(this, 200, 500);
         player1 = this.playerObject1.player;
+        rrx = this.receivedX;
+        rry = this.receivedY;
         this.playerObject2.create(this, 200, 500);
         player2 = this.playerObject2.player;
         //ball 
         this.globo.create(this, 585, 0);
         this.bola = this.globo.ball;
+        ball = this.bola
 
         //tiles
         this.map = this.make.tilemap({ key: "leveln1" });
@@ -175,6 +185,13 @@ export class LevelOnline extends Phaser.Scene {
                 this.actualizarTiempo()
             }
         })
+        this.time.addEvent({  //Cada segundo llama a la función actualizarTiempo REFERENCIAS: https://www.youtube.com/watch?v=2esow22Z0fc
+            delay: 17,//mas bajo imposible
+            loop: true,
+            callback: () => {
+                connection.send(JSON.stringify(msg));
+            }
+        })
         this.text = this.add.text(40, 32, 'Time ' + this.minutos + ':' + this.segundos ,  {fontSize: '32px', fill: '#000000'});
 
         //creation of the score
@@ -192,7 +209,8 @@ export class LevelOnline extends Phaser.Scene {
 		console.log("Opening socket");
 	}*/
 	
-    document.addEventListener("keypress", event => {
+    /*document.addEventListener("keypress", event => {
+
 			if(event.key == 'd') {	
 				msg.velx = 60 //velocidad del jugador entre 10 por que le da la gana al programa
 				connection.send(JSON.stringify(msg));
@@ -221,7 +239,7 @@ export class LevelOnline extends Phaser.Scene {
 			connection.send(JSON.stringify(msg));
 			console.log("Mandando posición..")
 		}	
-		});
+		});*/
 	$(document).ready(function() {
 
 	connection.onerror = function(e) {
@@ -230,7 +248,13 @@ export class LevelOnline extends Phaser.Scene {
 	connection.onmessage = function(msg) {
 		console.log("WS message: " + msg.data);
 		var message = JSON.parse(msg.data)
+		//no funciona por alguna magia arcana desconocida hasta la fecha
 		//player2.setPosition(message.x,message.y);
+		rrx = Math.round(message.x);
+		rry = Math.round(message.y);
+		bx = Math.round(message.ballx);
+		by = Math.round(message.bally);
+		//ball.setPosition(message.ballx,message.bally)
 		player2.setVelocity(message.velx, message.vely);
 		console.log(message);
 	}
@@ -244,11 +268,14 @@ export class LevelOnline extends Phaser.Scene {
     update() {
 		msg = {
 			count: 0,
-			x: player1.body.x,
-			y: player1.body.y,
+			x: player1.x,
+			y: player1.y,
 			velx: player1.body.velocity.x /10,
-			vely: player1.body.velocity.y /10
+			vely: player1.body.velocity.y /10,
+			ballx: ball.x,
+			bally: ball.y			
 		}
+		
         this.text.setText('Time ' + this.minutos + ':' + this.segundos);
         this.scoreCursors.setText(player2Name +': ' + this.playerObject2.playerScore.toString());
         this.scoreWASD.setText(usuarioLogin.user+': ' + this.playerObject1.playerScore.toString());
@@ -261,6 +288,25 @@ export class LevelOnline extends Phaser.Scene {
         //this.bg0.tilePositionX -= 1;
         //player
         this.playerObject1.update(this)
+        if (rrx >= 0 && rry >= 0)
+        {
+			player2.setPosition((rrx+player2.x)/2,(rry+player2.y)/2)
+			rrx = -1;
+			rry = -1;
+		}
+		if (bx >= 0 && by >= 0){
+			if (ball.y > by){//politicas de la bola para que se sincronice con uno solo
+				this.bola.setPosition(bx * 1/2 +ball.x * 1/2 ,by * 1/2 + ball.y * 1/2 );
+				bx = -1
+				by = -1
+			}
+			else if(ball.y == by && ball.x > bx){
+				this.bola.setPosition(bx * 1/2 +ball.x * 1/2 ,by * 1/2 + ball.y * 1/2 );
+				bx = -1
+				by = -1
+			}		
+		}
+		
         this.playerObject2.update(this)
         
 

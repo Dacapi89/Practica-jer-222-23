@@ -59,7 +59,9 @@ export class WaitingRoom extends Phaser.Scene{
 			x:0,
 			y:0,
 			velx:0,
-			vely:0
+			vely:0,
+			ballx:0,
+			bally: 0
 
 		}
 		start.on("pointerdown", ()=>{
