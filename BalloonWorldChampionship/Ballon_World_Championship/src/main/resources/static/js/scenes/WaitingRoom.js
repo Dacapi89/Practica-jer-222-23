@@ -5,6 +5,7 @@ var sessions = false;
 var empezar = false;
 var msg;
 var start;
+var aux;
 import { usuarioLogin } from "./Login.js";
 
 export var connection;
@@ -39,7 +40,7 @@ export class WaitingRoom extends Phaser.Scene{
         this.add.image(270, 330, 'UserBackground');
         this.add.image(700, 330, 'Matching');
         start = this.add.image(780, 530, 'UserContinue');
-
+		aux = true;
         back.setInteractive();
         start.setInteractive();
         start.setActive(false);
@@ -71,8 +72,7 @@ export class WaitingRoom extends Phaser.Scene{
 			msg.count = 1;
 			connection.send(JSON.stringify(msg));
 			this.add.image(780, 530, 'UserContinueDark');
-			start.setActive(false);
-        	start.setVisible(false);
+        	aux = false;
 			console.log("Mandando respuesta...")
 		})		
 		connection = new WebSocket('ws://'+location.host+'/pos');    
@@ -107,7 +107,7 @@ export class WaitingRoom extends Phaser.Scene{
 	update()
 	{
 
-		if (sessions == true)
+		if (sessions == true && aux == true)
 		{
 			//this.scene.start("LevelOn");
 			start.setActive(true);
