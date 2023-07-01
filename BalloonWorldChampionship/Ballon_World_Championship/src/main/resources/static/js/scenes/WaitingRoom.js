@@ -23,6 +23,7 @@ export class WaitingRoom extends Phaser.Scene{
         this.load.image('Matching', 'assets/images/UI/Titles/MATCHING.png');
         //Hacer texto de Hay un rival esperando cuando sessions sea True
 		this.load.image('UserContinue', 'assets/images/UI/Buttons/BUTTON_CONTINUE.png');
+		this.load.image('UserContinueDark', 'assets/images/UI/Buttons/BUTTON_CONTINUE_DARK.png');
         this.load.audio('menu_theme', [ //Añadimos música al juego REFERENCIA: https://phaser.io/examples/v2/audio/play-music
             'assets/music/title/title_music.ogg',  // Música utilizada para la partida: https://www.youtube.com/watch?v=QG6STlj-d7w
             'assets/music/title/title_music.mp3'
@@ -69,7 +70,9 @@ export class WaitingRoom extends Phaser.Scene{
 
 			msg.count = 1;
 			connection.send(JSON.stringify(msg));
-
+			this.add.image(780, 530, 'UserContinueDark');
+			start.setActive(false);
+        	start.setVisible(false);
 			console.log("Mandando respuesta...")
 		})		
 		connection = new WebSocket('ws://'+location.host+'/pos');    
