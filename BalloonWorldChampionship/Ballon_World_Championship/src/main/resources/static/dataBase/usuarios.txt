@@ -1,3 +1,8 @@
 1	AAA	20
 2	ACC	10
 3	BBB	0
+5	thrf	3
+5	eses	0
+5	dgf	2
+5	fdg	3
+5	waaw	2

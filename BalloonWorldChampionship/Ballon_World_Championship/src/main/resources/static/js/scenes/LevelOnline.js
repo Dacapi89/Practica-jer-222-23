@@ -11,8 +11,8 @@ var ball;
 var player2Name;
 var rrx;
 var rry;
-var bx = -1;
-var by = -1;
+var bx = 585;
+var by = 0;
 var host;
 var score1 = 0;
 var score2 = 0;
@@ -304,8 +304,8 @@ export class LevelOnline extends Phaser.Scene {
         	this.scoreWASD.setText(usuarioLogin.user+': ' + this.playerObject1.playerScore.toString());
 		}
 		else{
-			    this.scoreCursors.setText(player2Name +': ' + score1.toString());
-        		this.scoreWASD.setText(usuarioLogin.user+': ' + score2.toString());
+			    this.scoreCursors.setText(player2Name +': ' + score1);
+        		this.scoreWASD.setText(usuarioLogin.user+': ' + score2);
 		}
         usuarioLogin.score = this.playerObject1.playerScore;
         console.log(usuarioLogin.score);

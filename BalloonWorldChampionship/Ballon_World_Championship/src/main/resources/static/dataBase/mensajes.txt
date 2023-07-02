@@ -1226,3 +1226,60 @@
 10	El usuario Real se ha desconectado.
 11	El usuario Madrid se ha desconectado.
 12	El usuario Madrid se ha desconectado.
+1	User hgf has connected.
+2	User zzz has connected.
+3	User hgf has disconnected.
+4	User zzz has disconnected.
+5	El usuario hgf se ha desconectado.
+6	El usuario zzz se ha desconectado.
+7	User hgfh has connected.
+8	User thrf has connected.
+9	User hgfh has disconnected.
+10	User thrf has disconnected.
+11	User thrf has connected.
+12	El usuario hgfh se ha desconectado.
+13	User fsdfds has connected.
+1	El usuario fsdfds se ha desconectado.
+2	El usuario thrf se ha desconectado.
+3	El usuario thrf se ha desconectado.
+4	User eses has connected.
+5	User fgdf has connected.
+6	User eses has disconnected.
+7	User fgdf has disconnected.
+1	El usuario eses se ha desconectado.
+2	El usuario fgdf se ha desconectado.
+3	User red has connected.
+4	User dgf has connected.
+5	User red has disconnected.
+6	User dgf has disconnected.
+7	User dgf has connected.
+8	User red has connected.
+2	El usuario dgf se ha desconectado.
+1	El usuario dgf se ha desconectado.
+2	El usuario red se ha desconectado.
+1	El usuario red se ha desconectado.
+3	User fdg has connected.
+4	User qw has connected.
+5	User fdg has disconnected.
+6	User qw has disconnected.
+7	User qw has connected.
+8	User fdg has connected.
+9	User qw has disconnected.
+10	User fdg has disconnected.
+1	El usuario fdg se ha desconectado.
+2	El usuario fdg se ha desconectado.
+3	El usuario qw se ha desconectado.
+4	El usuario qw se ha desconectado.
+5	User fds has connected.
+6	User waaw has connected.
+7	User fds has disconnected.
+8	User waaw has disconnected.
+9	User waaw has connected.
+10	User fds has connected.
+11	User fds has disconnected.
+12	User waaw has disconnected.
+13	User fds has connected.
+14	User waaw has connected.
+15	El usuario waaw se ha desconectado.
+16	El usuario waaw se ha desconectado.
+17	El usuario waaw se ha desconectado.
