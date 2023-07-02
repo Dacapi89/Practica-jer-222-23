@@ -64,7 +64,10 @@ export class WaitingRoom extends Phaser.Scene{
 			velx:0,
 			vely:0,
 			ballx:0,
-			bally: 0
+			bally: 0,
+			host: usuarioLogin.user,
+			score1: 0,
+			score2: 0
 
 		}
 		start.on("pointerdown", ()=>{

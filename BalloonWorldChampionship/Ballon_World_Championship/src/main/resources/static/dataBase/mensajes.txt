@@ -1066,3 +1066,163 @@
 4	User aaa has disconnected.
 5	User ddd has connected.
 6	User aaa has connected.
+1	User Daniel has connected.
+2	User Capilla has connected.
+3	User Daniel has disconnected.
+4	User Capilla has disconnected.
+5	El usuario Daniel se ha desconectado.
+6	El usuario Capilla se ha desconectado.
+1	User Real has connected.
+2	User Madrid has connected.
+3	User Real has disconnected.
+4	User Madrid has disconnected.
+5	El usuario Real se ha desconectado.
+6	El usuario Madrid se ha desconectado.
+1	User Real has connected.
+3	User Betis has connected.
+2	User Real has disconnected.
+4	User Betis has disconnected.
+5	El usuario Real se ha desconectado.
+6	El usuario Betis se ha desconectado.
+1	User Real  has connected.
+2	User Madrid has connected.
+3	User Real  has disconnected.
+4	User Madrid has disconnected.
+5	El usuario Real  se ha desconectado.
+6	El usuario Madrid se ha desconectado.
+1	User Real has connected.
+2	User Madrid has connected.
+3	User Real has disconnected.
+4	User Madrid has disconnected.
+5	User Real has connected.
+6	User Madrid has connected.
+7	El usuario Real se ha desconectado.
+8	El usuario Madrid se ha desconectado.
+2	El usuario Real se ha desconectado.
+1	El usuario Real se ha desconectado.
+3	El usuario Madrid se ha desconectado.
+4	El usuario Madrid se ha desconectado.
+5	User Madrid has connected.
+6	User Real has connected.
+7	User Real has disconnected.
+8	User Madrid has disconnected.
+9	User Real has connected.
+10	User Madrid has connected.
+11	El usuario Real se ha desconectado.
+12	El usuario Madrid se ha desconectado.
+1	El usuario Real se ha desconectado.
+2	El usuario Real se ha desconectado.
+3	El usuario Madrid se ha desconectado.
+4	El usuario Madrid se ha desconectado.
+5	User Madrid has connected.
+6	User Real has connected.
+7	User Real has disconnected.
+8	User Madrid has disconnected.
+9	El usuario Real se ha desconectado.
+10	El usuario Madrid se ha desconectado.
+11	User Real has connected.
+12	User Betis has connected.
+13	User Real has disconnected.
+14	User Betis has disconnected.
+15	El usuario Real se ha desconectado.
+16	El usuario Betis se ha desconectado.
+1	User Madrid has connected.
+2	User Real has connected.
+3	User Real has disconnected.
+4	User Madrid has disconnected.
+5	El usuario Real se ha desconectado.
+6	El usuario Madrid se ha desconectado.
+1	User Vazquez has connected.
+2	User Javier has connected.
+3	User Javier has disconnected.
+4	User Vazquez has disconnected.
+5	El usuario Javier se ha desconectado.
+6	El usuario Vazquez se ha desconectado.
+1	User Real has connected.
+2	User Real has disconnected.
+3	User Madrid has connected.
+4	User Madrid has disconnected.
+5	El usuario Real se ha desconectado.
+6	El usuario Madrid se ha desconectado.
+1	User rEAL has connected.
+2	User Madrid has connected.
+3	User rEAL has disconnected.
+4	User Madrid has disconnected.
+5	El usuario rEAL se ha desconectado.
+6	El usuario Madrid se ha desconectado.
+1	User Real has connected.
+2	User Madrid has connected.
+3	User Real has disconnected.
+4	User Madrid has disconnected.
+5	El usuario Real se ha desconectado.
+6	El usuario Madrid se ha desconectado.
+1	User Real has connected.
+2	User Madrid has connected.
+3	User Real has disconnected.
+4	User Madrid has disconnected.
+1	User Real has connected.
+2	User Real has disconnected.
+3	User Madrid has connected.
+4	User Madrid has disconnected.
+5	El usuario Real se ha desconectado.
+6	El usuario Madrid se ha desconectado.
+1	User Real has connected.
+2	User Madrid has connected.
+3	User Real has disconnected.
+4	User Madrid has disconnected.
+5	El usuario Real se ha desconectado.
+6	El usuario Madrid se ha desconectado.
+1	User Real has connected.
+2	User Madrid has connected.
+3	User Real has disconnected.
+4	User Madrid has disconnected.
+5	User Real has connected.
+6	User Madrid has connected.
+7	El usuario Real se ha desconectado.
+8	El usuario Madrid se ha desconectado.
+9	User Server has connected.
+10	User Host has connected.
+11	User Server has disconnected.
+12	User Host has disconnected.
+13	El usuario Server se ha desconectado.
+14	El usuario Server se ha desconectado.
+15	El usuario Server se ha desconectado.
+16	El usuario Host se ha desconectado.
+17	El usuario Host se ha desconectado.
+18	El usuario Host se ha desconectado.
+1	User Real has connected.
+2	User Madrid has connected.
+3	User Real has disconnected.
+4	User Madrid has disconnected.
+5	User Real has connected.
+6	User Madrid has connected.
+7	El usuario Real se ha desconectado.
+8	El usuario Madrid se ha desconectado.
+1	El usuario Real se ha desconectado.
+2	El usuario Real se ha desconectado.
+3	El usuario Madrid se ha desconectado.
+4	El usuario Madrid se ha desconectado.
+5	User Real has connected.
+6	User Real has disconnected.
+7	User Madrid has connected.
+8	User Madrid has disconnected.
+9	El usuario Madrid se ha desconectado.
+10	El usuario Real se ha desconectado.
+1	User Real has connected.
+2	User Madrid has connected.
+3	User Real has disconnected.
+4	User Madrid has disconnected.
+5	El usuario Real se ha desconectado.
+6	El usuario Madrid se ha desconectado.
+1	User Real has connected.
+2	User Madrid has connected.
+3	User Real has disconnected.
+4	User Madrid has disconnected.
+5	User Real has connected.
+6	User Madrid has connected.
+7	User Real has disconnected.
+8	User Madrid has disconnected.
+9	El usuario Real se ha desconectado.
+10	El usuario Real se ha desconectado.
+11	El usuario Madrid se ha desconectado.
+12	El usuario Madrid se ha desconectado.

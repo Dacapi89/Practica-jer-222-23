@@ -24,6 +24,9 @@ public class PositionHandler extends TextWebSocketHandler {
 	int count = 0;
 	Timer timer;
 	int seconds = 60;
+	String host = "";
+	int score1;
+	int score2;
 	
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
@@ -90,6 +93,7 @@ public class PositionHandler extends TextWebSocketHandler {
 		//System.out.println("Count: " + count);
 		if(count == 2)
 		{
+			host = node.get("host").asText();
 			sendReady(session);
 			count = 0;
 			simpleTimer();
@@ -134,6 +138,9 @@ public class PositionHandler extends TextWebSocketHandler {
 		newNode.put("vely", node.get("vely").asText());
 		newNode.put("ballx", node.get("ballx").asText());
 		newNode.put("bally", node.get("bally").asText());
+		newNode.put("host", host);
+		newNode.put("score1", node.get("score1").asText());
+		newNode.put("score2", node.get("score2").asText());
 		//System.out.println("Message sent: " + newNode.toString());
 		
 		for(WebSocketSession participant : sessions.values()) {

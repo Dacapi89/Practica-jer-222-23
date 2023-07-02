@@ -13,6 +13,9 @@ var rrx;
 var rry;
 var bx = -1;
 var by = -1;
+var host;
+var score1 = 0;
+var score2 = 0;
 export class LevelOnline extends Phaser.Scene {
     constructor() {
         super({key:'LevelOn'});
@@ -258,9 +261,17 @@ export class LevelOnline extends Phaser.Scene {
 
 		rrx = Math.round(message.x);
 		rry = Math.round(message.y);
-		bx = Math.round(message.ballx);
-		by = Math.round(message.bally);
+		if(message.host !== usuarioLogin.user)
+		{
+			bx = Math.round(message.ballx);
+			by = Math.round(message.bally);
+			score1 = message.score1;
+			score2 = message.score2;
+		}
+
 		this.segundos = message.time;
+		host = message.host;
+
 		console.log("El tiempo es: "+ message.time);
 		//ball.setPosition(message.ballx,message.bally)
 		player2.setVelocity(message.velx, message.vely);
@@ -281,12 +292,21 @@ export class LevelOnline extends Phaser.Scene {
 			velx: player1.body.velocity.x /10,
 			vely: player1.body.velocity.y /10,
 			ballx: ball.x,
-			bally: ball.y			
+			bally: ball.y,
+			score1: this.playerObject1.playerScore,
+			score2: this.playerObject2.playerScore			
 		}
 		
         this.text.setText('Time ' + this.minutos + ':' + this.segundos);
-        this.scoreCursors.setText(player2Name +': ' + this.playerObject2.playerScore.toString());
-        this.scoreWASD.setText(usuarioLogin.user+': ' + this.playerObject1.playerScore.toString());
+        if(host === usuarioLogin.user)
+        {
+			this.scoreCursors.setText(player2Name +': ' + this.playerObject2.playerScore.toString());
+        	this.scoreWASD.setText(usuarioLogin.user+': ' + this.playerObject1.playerScore.toString());
+		}
+		else{
+			    this.scoreCursors.setText(player2Name +': ' + score1.toString());
+        		this.scoreWASD.setText(usuarioLogin.user+': ' + score2.toString());
+		}
         usuarioLogin.score = this.playerObject1.playerScore;
         console.log(usuarioLogin.score);
         //background    
@@ -304,19 +324,23 @@ export class LevelOnline extends Phaser.Scene {
 		}
 		if (bx >= 0 && by >= 0){
 			if (ball.y > by){//politicas de la bola para que se sincronice con uno solo
-				this.bola.setPosition(bx * 1/2 +ball.x * 1/2 ,by * 1/2 + ball.y * 1/2 );
+				//this.bola.setPosition(bx * 1/2 +ball.x * 1/2 ,by * 1/2 + ball.y * 1/2 );
 				//this.bola.setVelocity(player2.body.velocity.x, -200);
-				bx = -1
-				by = -1
+				//bx = -1
+				//by = -1
 			}
 			else if(ball.y == by && ball.x > bx){
-				this.bola.setPosition(bx * 1/2 +ball.x * 1/2 ,by * 1/2 + ball.y * 1/2 );
+				//this.bola.setPosition(bx * 1/2 +ball.x * 1/2 ,by * 1/2 + ball.y * 1/2 );
 				//this.bola.setVelocity(player2.body.velocity.x, -200);
-				bx = -1
-				by = -1
+				//bx = -1
+				//by = -1
 			}		
 		}
-		
+		if(host !== usuarioLogin.user)
+		{
+			console.log("PEPE CALVO");
+			this.bola.setPosition(bx  ,by );
+		}
         this.playerObject2.update(this)
         
 
