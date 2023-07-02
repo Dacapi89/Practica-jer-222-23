@@ -150,10 +150,12 @@ public class BDController {
 		System.out.println(savedUser);
 
 		if (savedUser != null) {
-
+			if(savedUser.getScore() < userActualizado.getScore())
+			{
 			baseDeDatos.put(userActualizado.getId(), userActualizado);
 			System.out.println(baseDeDatos);
 			modificarScore(buscarUsuario(userActualizado.getUser()), userActualizado);
+			}
 			return new ResponseEntity<>(userActualizado, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

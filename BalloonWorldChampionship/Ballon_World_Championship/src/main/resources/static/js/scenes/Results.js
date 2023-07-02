@@ -3,14 +3,13 @@
 var continuar;
 
 // donde se guardan los rankings
-var puesto1;
-var puesto2;
-var puesto3;
-
+var puesto1 = 0;
+var puesto2= 0;
+var puesto3= 0;
 // donde se guardan los rankings
-var UserPuesto1;
-var UserPuesto2;
-var UserPuesto3;
+var UserPuesto1 = "NoPlayer";
+var UserPuesto2 = "NoPlayer";
+var UserPuesto3  = "NoPlayer";
 
 // mensajes que muestran el ranking
 var score1; 
@@ -65,16 +64,19 @@ export class Results extends Phaser.Scene{
         this.music.play();
         
         loadRanking(function(messages) {
-			console.log(messages);
-			puesto1 = messages[0].score;
-			puesto2 = messages[1].score;
-			puesto3 = messages[2].score;
-			UserPuesto1 = messages[0].user;
-			UserPuesto2 = messages[1].user;
-			UserPuesto3 = messages[2].user;
-			console.log(puesto1);
-			
-			console.log(puesto1);
+			if(messages[0].score != null)
+				puesto1 = messages[0].score;
+			if(messages[1].score != null)
+				puesto2 = messages[1].score;
+			if(messages[2].score != null)
+				puesto3 = messages[2].score;
+			if(messages[0].user != null)	
+				UserPuesto1 = messages[0].user;
+			if(messages[1].user != null)	
+				UserPuesto2 = messages[1].user;
+			if(messages[2].user != null)
+				UserPuesto3 = messages[2].user;
+
         	score1.setText(UserPuesto1 + ': ' + puesto1);
         	score2.setText(UserPuesto2 + ': ' + puesto2);
         	score3.setText(UserPuesto3 + ': ' + puesto3);

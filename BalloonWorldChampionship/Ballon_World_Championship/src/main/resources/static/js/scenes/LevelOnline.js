@@ -60,13 +60,18 @@ export class LevelOnline extends Phaser.Scene {
     create() {
 
         	loadUserName(function(messages) {
-			if (usuarioLogin.user == messages[messages.length-1].user)
+			for (var i = 0; i < messages.length; i++)
 			{
-				player2Name = messages[messages.length-2].user
-			}
-			else
-			{
-				player2Name = messages[messages.length-1].user
+				console.log(messages[i].user);
+				console.log(usuarioLogin.user);
+				if (usuarioLogin.user === messages[i].user && (i + 1 == messages.length))
+				{
+					player2Name = messages[i-1].user;
+				}
+				else if (usuarioLogin.user === messages[i].user && (i + 2 == messages.length))
+				{
+					player2Name = messages[i+1].user;
+				}
 			}
 		})
 
@@ -300,11 +305,13 @@ export class LevelOnline extends Phaser.Scene {
 		if (bx >= 0 && by >= 0){
 			if (ball.y > by){//politicas de la bola para que se sincronice con uno solo
 				this.bola.setPosition(bx * 1/2 +ball.x * 1/2 ,by * 1/2 + ball.y * 1/2 );
+				//this.bola.setVelocity(player2.body.velocity.x, -200);
 				bx = -1
 				by = -1
 			}
 			else if(ball.y == by && ball.x > bx){
 				this.bola.setPosition(bx * 1/2 +ball.x * 1/2 ,by * 1/2 + ball.y * 1/2 );
+				//this.bola.setVelocity(player2.body.velocity.x, -200);
 				bx = -1
 				by = -1
 			}		
