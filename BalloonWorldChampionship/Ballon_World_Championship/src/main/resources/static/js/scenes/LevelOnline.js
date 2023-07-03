@@ -353,6 +353,7 @@ export class LevelOnline extends Phaser.Scene {
     }
 
     finDelJuego(){
+		connection.send(JSON.stringify(msg));
 		connection.close()
 		this.scene.stop();
 		if(host !== usuarioLogin.user)

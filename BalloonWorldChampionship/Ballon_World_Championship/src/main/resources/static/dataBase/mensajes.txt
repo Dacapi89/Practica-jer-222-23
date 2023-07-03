@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 1	User noe has connected.
 2	User lia has connected.
 3	User noe has disconnected.
@@ -1370,3 +1371,5 @@
 6	User hgf has connected.
 7	User mgghj has disconnected.
 8	User hgf has disconnected.
+=======
+>>>>>>> Stashed changes
