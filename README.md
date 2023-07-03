@@ -290,3 +290,22 @@ Se ha introducido como novedad el botón "DELETE USER", que realiza un DELETE bo
 La **escena de victoria** aparte de mostrar al jugador que ha obtenido más puntos en la partida, ahora muestra un ranking con los jugadores con las puntuaciones más altas. La puntuación se actualiza si esta supera a la anterior con un método PUT al finalizar la partida.
 
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/VictoryV2.png?raw=true)
+
+## ACTUALIZACIÓN FASE 4 EXTRAORDINARIA
+###### 
+Ahora en esta fase se establece una comunicación bidireccional entre los clientes y el servidor, en la que se intercambia información como puede ser el tiempo, las posiciones de los jugadores y el globo, y las puntuaciones.
+
+######
+PositionHandler sigue siendo nuestra clase en java que maneja todo el intercambio al igual que las conexiones de los distintos WebSockets. Todo se realiza en un mismo documento JSON el cual tiene información como puede ser la posicion de los jugadores o sus puntuaciones.
+
+Para la sincronización se ha seguido un modelo parecido a un Listen Server. En la partida hay un "host" (no es el server sino que goza de privilegios) que se decide según el orden de elección en la sala de espera. Ese "host" manda las posiciones del globo y de las puntuaciones para que el otro cliente que no es el "host" las actualice si su simulación del juego no es parecida al "host". En las posiciones de los jugadores y del globo pude producirse un pequeño lag en el que no es "host".
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/PartidaV2.png?raw=true)
+
+Para que ambos jugadores entren al mismo tiempo en la partida, se ha hecho una sala de espera que hasta que no salga un botón de "continue" no podrán jugar (tiene que haber dos jugadores en la misma pantalla). Cuando sale, los jugadores tendran que darle al botón y en el momento que ambos pulsen el suyo el servidor les da paso para que generen la siguiente escena.
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Waiting.png?raw=true)
+
+Para la comunicación se ha seguido los siguientes pasos: cuando un jugador entra al modo Online, se crea un Socket y se establece una comunicación(onopen), por el contrario si se sale de la escena se cierra el puerto (onclose). En el servidor en el momento que registra dos conexiones, manda un mensaje a los clientes para que rendericen el botón de continuar, botón que al pulsarle, los clientes mandan al servidor información (send()) para que este pueda volver a mandarles el Ok cuando ambos le hayan dado a continuar.
+En la partida, se están mandado constantemente información al servidor (posiciones y puntuaciones) y recibiendo información de parte del servidor (onmessage) como puede ser el tiempo de la partida (es calculado en el servidor para que ambos jugadores tengan el mismo).
+Al terminar la partida se cierra la conexión.
