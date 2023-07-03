@@ -3,3 +3,5 @@
 3	BBB	0
 5	sfe	0
 4	gfd	10
+7	hgf	0
+6	mgghj	7

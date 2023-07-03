@@ -344,7 +344,6 @@ export class LevelOnline extends Phaser.Scene {
 		}
 		if(host !== usuarioLogin.user)
 		{
-			console.log("PEPE CALVO");
 			this.bola.setPosition(bx  ,by );
 			this.bola.setVelocity(bvx  ,bvy );
 		}
