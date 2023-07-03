@@ -291,6 +291,10 @@ La **escena de victoria** aparte de mostrar al jugador que ha obtenido más punt
 
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/VictoryV2.png?raw=true)
 
+El diagrama de clases de API REST es el siguiente:
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/FlujoV2.png?raw=true)
+
 ## ACTUALIZACIÓN FASE 4 EXTRAORDINARIA
 ###### 
 Ahora, en esta fase se establece una comunicación bidireccional entre los clientes y el servidor, en la que se intercambia información como puede ser el tiempo, las posiciones de los jugadores y el globo, y las puntuaciones.
