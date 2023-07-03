@@ -266,3 +266,27 @@ Aplication, ahora nombrado BallonWorldChampionshipAplication, define la interfaz
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F4_Javascript.png?raw=true)
 
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/F4_JavaServ.png?raw=true)
+
+## ACTUALIZACIÓN FASE 3 EXTRAORDINARIA
+###### 
+La fase se ha mejorado introduciendo cambios estéticos y funcionales. 
+### ESCENAS
+###### 
+La **primera escena** el login ahora muestra mensajes para ayudar al usuario a saber donde se encuentra, además se da a entender que no es un login como tal sino un "introduce un nombre para jugar".
+En esta escena se hace un método POST a un archivo de texto para guardar a los jugadores.
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/LoginV2.png?raw=true)
+
+###### 
+La **escena del menu principal** ahora tiene un chat totalmente en inglés que utiliza los métodos POST y GET para poder entablar conversaciones con otros usuarios. El chat solo está disponible en esta escena. También avisa al resto de jugadores si un usuario ha abandonado la sala.
+Se ha introducido como novedad el botón "DELETE USER", que realiza un DELETE borrando el nickname que el jugador ha introducido. Cuando se pulsa el botón manda al usuario un mensaje de retroalimentación.
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/InicioV2.png?raw=true)
+
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Delete.png?raw=true)
+
+###### 
+La **escena de victoria** aparte de mostrar al jugador que ha obtenido más puntos en la partida, ahora muestra un ranking con los jugadores con las puntuaciones más altas. La puntuación se actualiza si esta supera a la anterior con un método PUT al finalizar la partida.
+
+![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/VictoryV2.png?raw=true)
