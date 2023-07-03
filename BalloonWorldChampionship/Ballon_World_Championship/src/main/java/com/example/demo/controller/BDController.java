@@ -51,7 +51,8 @@ public class BDController {
 	long id;
 	static final String ip = "http://192.168.68.108:8080";
 	String path = "src\\main\\resources\\static\\dataBase\\usuarios.txt";
-	@CrossOrigin(origins = ip)
+	//@CrossOrigin(origins = ip)
+	@CrossOrigin(origins = "*")
 	@GetMapping("/ranking")
 	public Object[] ranking() throws IOException {
 
@@ -60,7 +61,8 @@ public class BDController {
 		return usuariosOrdenados.toArray();
 		
 	}
-	@CrossOrigin(origins = ip)
+	
+	@CrossOrigin(origins = "*")
 	@GetMapping("/users")
 	public Collection<BD> users() throws IOException {
 		
@@ -70,7 +72,7 @@ public class BDController {
 		return baseDeDatos.values();
 		
 	}
-	@CrossOrigin(origins = ip)
+	@CrossOrigin(origins = "*")
 	@PostMapping("/users")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<BD> nuevoUser(@RequestBody BD user) {
@@ -126,7 +128,7 @@ public class BDController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	@CrossOrigin(origins = ip)
+	@CrossOrigin(origins = "*")
 	@DeleteMapping("/users/{id}")
 	public ResponseEntity<BD> borraItem(@PathVariable long id) throws IOException {
 		System.out.println("Estoy en borrado.");
@@ -141,7 +143,7 @@ public class BDController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	@CrossOrigin(origins = ip)
+	@CrossOrigin(origins = "*")
 	@PutMapping("/users/{id}")
 	public ResponseEntity<BD> actulizaScore(@RequestBody BD userActualizado) throws IOException {
 		

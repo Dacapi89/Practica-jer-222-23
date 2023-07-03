@@ -26,7 +26,8 @@ public class MessageController {
 	Map<Long, Message> messages = new ConcurrentHashMap<>(); 
 	AtomicLong nextId = new AtomicLong(0);
 	String path = "src\\main\\resources\\static\\dataBase\\mensajes.txt";
-	@CrossOrigin(origins = ip)
+	//@CrossOrigin(origins = ip)
+	@CrossOrigin(origins = "*")
 	@GetMapping
 	public Collection<Message> getMSGs() {
 		return messages.values();
@@ -42,7 +43,7 @@ public class MessageController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	@CrossOrigin(origins = ip)
+	@CrossOrigin(origins = "*")
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Message postMSG(@RequestBody Message message) {
@@ -66,7 +67,7 @@ public class MessageController {
 
 		return message;
 	}
-	@CrossOrigin(origins = ip)
+	@CrossOrigin(origins = "*")
 	@PutMapping("/{id}")
 	public ResponseEntity<Message> updateMSG(@PathVariable long id, @RequestBody Message updatedMSG) {
 
@@ -81,7 +82,7 @@ public class MessageController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	@CrossOrigin(origins = ip)
+	@CrossOrigin(origins = "*")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Message> deleteMSG(@PathVariable long id) {
 
