@@ -1349,3 +1349,16 @@
 10	El usuario Daniel se ha desconectado.
 11	El usuario Capilla se ha desconectado.
 12	El usuario Capilla se ha desconectado.
+1	El usuario swe se ha desconectado.
+2	El usuario swe se ha desconectado.
+3	El usuario swe se ha desconectado.
+4	El usuario waqw se ha desconectado.
+5	El usuario waqw se ha desconectado.
+6	El usuario waqw se ha desconectado.
+7	User gfd has connected.
+8	User sfe has connected.
+9	User gfd has disconnected.
+10	User sfe has disconnected.
+11	User gfd has connected.
+12	User sfe has connected.
+13	User gfd has disconnected.
