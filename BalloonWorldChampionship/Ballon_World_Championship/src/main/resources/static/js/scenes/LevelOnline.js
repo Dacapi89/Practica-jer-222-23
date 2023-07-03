@@ -349,12 +349,30 @@ export class LevelOnline extends Phaser.Scene {
     finDelJuego(){
 		connection.close()
 		this.scene.stop();
+		if(host !== usuarioLogin.user)
+			usuarioLogin.score = score2;
 		updateUser(usuarioLogin);
-        if (this.playerObject1.playerScore > this.playerObject2.playerScore){
+		if(usuarioLogin.user === host)
+		{
+			if (this.playerObject1.playerScore > this.playerObject2.playerScore){
+            	this.scene.start('results1');
+            	this.music.stop();
+        	}
+        	else if (this.playerObject1.playerScore < this.playerObject2.playerScore){
+            	this.scene.start('results2');
+            	this.music.stop();
+        	}
+        	else {
+            	this.scene.start('results');
+            	this.music.stop();
+        	}
+		}
+		else{
+			        if (score2 > score1){
             this.scene.start('results1');
             this.music.stop();
         }
-        else if (this.playerObject1.playerScore < this.playerObject2.playerScore){
+        else if (score2 < score1){
             this.scene.start('results2');
             this.music.stop();
         }
@@ -362,6 +380,8 @@ export class LevelOnline extends Phaser.Scene {
             this.scene.start('results');
             this.music.stop();
         }
+		}
+
         
     }
     actualizarTiempo() {

@@ -1283,3 +1283,69 @@
 15	El usuario waaw se ha desconectado.
 16	El usuario waaw se ha desconectado.
 17	El usuario waaw se ha desconectado.
+1	User Madrid has connected.
+2	User Real has connected.
+3	User Real has disconnected.
+4	User Madrid has disconnected.
+5	User Real has connected.
+6	User Madrid has connected.
+7	User Real has disconnected.
+8	User Madrid has disconnected.
+9	User Real has connected.
+10	User Madrid has connected.
+11	User Real has disconnected.
+12	User Madrid has disconnected.
+13	User Real has connected.
+14	User Madrid has connected.
+15	Hola
+16	Buenas
+1	User Real has connected.
+2	User Betis has connected.
+3	Hola
+4	Que tal
+5	User Real has disconnected.
+6	User Betis has disconnected.
+7	User Real has connected.
+8	User Betis has connected.
+9	User Betis has disconnected.
+10	User Real has disconnected.
+11	El usuario Real se ha desconectado.
+12	El usuario Real se ha desconectado.
+14	El usuario Betis se ha desconectado.
+13	El usuario Betis se ha desconectado.
+15	User Ter has connected.
+16	User Stegen has connected.
+17	User Ter has disconnected.
+18	User Stegen has disconnected.
+19	El usuario Ter se ha desconectado.
+20	El usuario Stegen se ha desconectado.
+1	User DAniel has connected.
+2	User Capilla has connected.
+3	User DAniel has disconnected.
+4	User Capilla has disconnected.
+5	El usuario DAniel se ha desconectado.
+6	El usuario Capilla se ha desconectado.
+1	User Daniel has connected.
+2	User Daniel has disconnected.
+3	User Sanchez has connected.
+4	User Sanchez has disconnected.
+5	User Daniel has connected.
+6	User Sanchez has connected.
+7	User Daniel has disconnected.
+8	User Sanchez has disconnected.
+9	El usuario Daniel se ha desconectado.
+10	El usuario Daniel se ha desconectado.
+11	El usuario Sanchez se ha desconectado.
+12	El usuario Sanchez se ha desconectado.
+1	User Daniel has connected.
+2	User Capilla has connected.
+3	User Daniel has disconnected.
+4	User Capilla has disconnected.
+5	User Daniel has connected.
+6	User Capilla has connected.
+7	User Daniel has disconnected.
+8	User Capilla has disconnected.
+9	El usuario Daniel se ha desconectado.
+10	El usuario Daniel se ha desconectado.
+11	El usuario Capilla se ha desconectado.
+12	El usuario Capilla se ha desconectado.
