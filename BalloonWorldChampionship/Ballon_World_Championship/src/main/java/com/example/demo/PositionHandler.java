@@ -47,6 +47,8 @@ public class PositionHandler extends TextWebSocketHandler {
 		newNode.put("vely", 0);
 		newNode.put("ballx", 0);
 		newNode.put("bally", 0);
+		newNode.put("ballvelx", 0);
+		newNode.put("ballvely", 0);
 		for(WebSocketSession participant : sessions.values()) {
 			
 			participant.sendMessage(new TextMessage(newNode.toString()));
@@ -76,6 +78,8 @@ public class PositionHandler extends TextWebSocketHandler {
 		newNode.put("vely", 0);
 		newNode.put("ballx", 0);
 		newNode.put("bally", 0);
+		newNode.put("ballvelx", 0);
+		newNode.put("ballvely", 0);
 		for(WebSocketSession participant : sessions.values()) {
 			
 			participant.sendMessage(new TextMessage(newNode.toString()));
@@ -138,6 +142,8 @@ public class PositionHandler extends TextWebSocketHandler {
 		newNode.put("vely", node.get("vely").asText());
 		newNode.put("ballx", node.get("ballx").asText());
 		newNode.put("bally", node.get("bally").asText());
+		newNode.put("ballvelx", node.get("ballvelx").asText());
+		newNode.put("ballvely", node.get("ballvely").asText());
 		newNode.put("host", host);
 		newNode.put("score1", node.get("score1").asText());
 		newNode.put("score2", node.get("score2").asText());

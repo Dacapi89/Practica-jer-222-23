@@ -13,6 +13,8 @@ var rrx;
 var rry;
 var bx = 585;
 var by = 0;
+var bvx = 0;
+var bvy = 0;
 var host;
 var score1 = 0;
 var score2 = 0;
@@ -265,6 +267,8 @@ export class LevelOnline extends Phaser.Scene {
 		{
 			bx = Math.round(message.ballx);
 			by = Math.round(message.bally);
+			bvx = Math.round(message.ballvelx);
+			bvy = Math.round(message.ballvely);
 			score1 = message.score1;
 			score2 = message.score2;
 		}
@@ -293,6 +297,8 @@ export class LevelOnline extends Phaser.Scene {
 			vely: player1.body.velocity.y /10,
 			ballx: ball.x,
 			bally: ball.y,
+			ballvelx: ball.body.velocity.x,
+			ballvely: ball.body.velocity.y,
 			score1: this.playerObject1.playerScore,
 			score2: this.playerObject2.playerScore			
 		}
@@ -340,6 +346,7 @@ export class LevelOnline extends Phaser.Scene {
 		{
 			console.log("PEPE CALVO");
 			this.bola.setPosition(bx  ,by );
+			this.bola.setVelocity(bvx  ,bvy );
 		}
         this.playerObject2.update(this)
         

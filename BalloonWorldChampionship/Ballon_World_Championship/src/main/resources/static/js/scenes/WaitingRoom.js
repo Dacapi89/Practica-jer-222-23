@@ -63,8 +63,10 @@ export class WaitingRoom extends Phaser.Scene{
 			y:0,
 			velx:0,
 			vely:0,
-			ballx:0,
+			ballx:585,
 			bally: 0,
+			ballvelx:0,
+			ballvely: 0,
 			host: usuarioLogin.user,
 			score1: 0,
 			score2: 0
