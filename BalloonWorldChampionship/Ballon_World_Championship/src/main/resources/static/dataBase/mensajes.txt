@@ -1370,3 +1370,15 @@
 34	El usuario dxx se ha desconectado.
 31	El usuario dxx se ha desconectado.
 35	El usuario dxx se ha desconectado.
+1	User swe has connected.
+2	User swe has disconnected.
+3	User waqw has connected.
+4	User waqw has disconnected.
+5	User swe has connected.
+6	User waqw has connected.
+7	User swe has disconnected.
+8	User waqw has disconnected.
+9	User swe has connected.
+10	User waqw has connected.
+11	User swe has disconnected.
+12	User waqw has disconnected.
