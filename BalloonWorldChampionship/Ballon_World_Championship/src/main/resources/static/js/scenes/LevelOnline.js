@@ -347,12 +347,16 @@ export class LevelOnline extends Phaser.Scene {
 		{
 			this.bola.setPosition(bx  ,by );
 			this.bola.setVelocity(bvx  ,bvy );
-			this.playerObject1.playerScore = score1;
-			this.playerObject2.playerScore = score2;
+			if(typeof score1 !== "undefined")
+			{
+  				this.playerObject1.playerScore = score1;
+			} 
+			if(typeof score2 !== "undefined")
+			{
+  				this.playerObject2.playerScore = score2;
+			} 			
 		}
-        this.playerObject2.update(this)
-        
-
+        this.playerObject2.update(this)    
     }
 
     finDelJuego(){

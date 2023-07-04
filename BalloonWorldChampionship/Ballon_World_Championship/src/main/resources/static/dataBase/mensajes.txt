@@ -113,3 +113,7 @@
 14	El usuario kiwi se ha desconectado.
 15	El usuario kiwi se ha desconectado.
 16	El usuario kiwi se ha desconectado.
+17	El usuario tpm se ha desconectado.
+18	El usuario tpm se ha desconectado.
+19	El usuario tpm se ha desconectado.
+20	El usuario tpm se ha desconectado.
