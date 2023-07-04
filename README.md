@@ -10,7 +10,7 @@
 #### Juegos en Red 04/07/2023
 
 
-[![IMAGE ALT TEXT](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/[youtube.png?raw=true")](https://www.youtube.com/watch?v=nmIc5BYNxwg)
+[![IMAGE ALT TEXT](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/youtube.png?raw=true")](https://www.youtube.com/watch?v=nmIc5BYNxwg)
 
 
 
