@@ -7,6 +7,12 @@
 
 [![IMAGE ALT TEXT](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/youtube.png?raw=true")](https://www.youtube.com/watch?v=upU5jlswTfo)
 
+#### Juegos en Red 04/07/2023
+
+
+[![IMAGE ALT TEXT](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/[youtube.png?raw=true")](https://www.youtube.com/watch?v=nmIc5BYNxwg)
+
+
 
 ###### Juego de Deportes
 <img src= "https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/Astar%20chiquito.jpeg?raw=true" width = "200">
