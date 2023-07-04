@@ -295,6 +295,9 @@ El diagrama de clases de API REST es el siguiente:
 
 ![](https://github.com/Dacapi89/Practica-jer-222-23/blob/main/img/FlujoV2.png?raw=true)
 
+###### 
+**Instrucciones:** para poder ejecutar el videojuego se tiene que descargar el .zip y la carpeta Ballon World Championship se tiene que agregar al Spring Tool Suit. En principio, no hay que cambiar ninguna dirección ip ya que la coge automáticamente del propio ordenador (location.host), también pasa con el CORS que está puesto para que cualquiera poda acceder a los datos (@CrossMapping origins = "*"). Lanzar en el servidor y abrir una pestaña con la dirección ip de tu ordenador (para verla, poner en el cmd ipconfig) y el puerto :8080.
+
 ## ACTUALIZACIÓN FASE 4 EXTRAORDINARIA
 ###### 
 Ahora, en esta fase se establece una comunicación bidireccional entre los clientes y el servidor, en la que se intercambia información como puede ser el tiempo, las posiciones de los jugadores y el globo, y las puntuaciones.
