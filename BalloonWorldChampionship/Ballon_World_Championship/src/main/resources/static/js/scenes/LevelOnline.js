@@ -67,8 +67,6 @@ export class LevelOnline extends Phaser.Scene {
         	loadUserName(function(messages) {
 			for (var i = 0; i < messages.length; i++)
 			{
-				console.log(messages[i].user);
-				console.log(usuarioLogin.user);
 				if (usuarioLogin.user === messages[i].user && (i + 1 == messages.length))
 				{
 					player2Name = messages[i-1].user;
@@ -186,7 +184,7 @@ export class LevelOnline extends Phaser.Scene {
                 }
             });  
 
-
+		
         //Cronometro
         this.time.addEvent({  //Cada segundo llama a la función actualizarTiempo REFERENCIAS: https://www.youtube.com/watch?v=2esow22Z0fc
             delay: 1000,
