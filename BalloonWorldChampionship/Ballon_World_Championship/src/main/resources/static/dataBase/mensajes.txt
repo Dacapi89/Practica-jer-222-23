@@ -1,0 +1,115 @@
+1	User fgdredhd has connected.
+2	User fgdredhd has disconnected.
+3	User ikui has connected.
+4	User ikui has disconnected.
+5	User fgdredhd has connected.
+6	User ikui has connected.
+7	User fgdredhd has disconnected.
+8	User ikui has disconnected.
+9	User fgdredhd has connected.
+10	User ikui has connected.
+11	El usuario fgdredhd se ha desconectado.
+12	El usuario fgdredhd se ha desconectado.
+13	El usuario fgdredhd se ha desconectado.
+14	El usuario ikui se ha desconectado.
+15	El usuario ikui se ha desconectado.
+16	El usuario ikui se ha desconectado.
+1	User aa has connected.
+2	User wd has connected.
+3	User aa has disconnected.
+4	User wd has disconnected.
+5	El usuario wd se ha desconectado.
+6	El usuario aa se ha desconectado.
+7	User gfd has connected.
+8	User rgd has connected.
+9	User gfd has disconnected.
+10	User rgd has disconnected.
+11	User gfd has connected.
+12	User rgd has connected.
+13	User gfd has disconnected.
+14	User rgd has disconnected.
+1	El usuario gfd se ha desconectado.
+2	El usuario gfd se ha desconectado.
+3	El usuario rgd se ha desconectado.
+4	El usuario rgd se ha desconectado.
+5	User gfdgfd has connected.
+6	User gfd has connected.
+7	User gfdgfd has disconnected.
+8	User gfd has disconnected.
+9	El usuario gfdgfd se ha desconectado.
+10	El usuario gfd se ha desconectado.
+1	User gfd has connected.
+2	User yyy has connected.
+3	User gfd has disconnected.
+4	User yyy has disconnected.
+5	El usuario gfd se ha desconectado.
+1	El usuario yyy se ha desconectado.
+2	User wa has connected.
+3	User ds has connected.
+4	User wa has disconnected.
+5	User ds has disconnected.
+1	El usuario wa se ha desconectado.
+2	El usuario wa se ha desconectado.
+3	El usuario ds se ha desconectado.
+4	User fds has connected.
+5	User eee has connected.
+6	User fds has disconnected.
+7	User eee has disconnected.
+1	User sad has connected.
+2	User es has connected.
+3	User sad has disconnected.
+4	User es has disconnected.
+1	El usuario sad se ha desconectado.
+2	El usuario es se ha desconectado.
+3	User daws has connected.
+4	User aw has connected.
+5	User daws has disconnected.
+6	User aw has disconnected.
+7	User daws has connected.
+8	User aw has connected.
+9	User daws has disconnected.
+10	User aw has disconnected.
+2	El usuario daws se ha desconectado.
+1	El usuario daws se ha desconectado.
+3	El usuario aw se ha desconectado.
+4	El usuario aw se ha desconectado.
+5	User ds has connected.
+6	User 3ds has connected.
+7	User ds has disconnected.
+8	User 3ds has disconnected.
+9	User ds has connected.
+10	User 3ds has connected.
+11	User ds has disconnected.
+12	User 3ds has disconnected.
+13	User ds has connected.
+14	User 3ds has connected.
+15	User ds has disconnected.
+16	User 3ds has disconnected.
+3	El usuario ds se ha desconectado.
+1	El usuario ds se ha desconectado.
+2	El usuario ds se ha desconectado.
+4	El usuario 3ds se ha desconectado.
+5	El usuario 3ds se ha desconectado.
+6	El usuario 3ds se ha desconectado.
+7	User uwu has connected.
+8	User uwu has disconnected.
+9	User owo has connected.
+10	User owo has disconnected.
+1	El usuario uwu se ha desconectado.
+2	El usuario owo se ha desconectado.
+1	User tpm has connected.
+2	User kiwi has connected.
+3	User tpm has disconnected.
+4	User kiwi has disconnected.
+5	User tpm has connected.
+6	User kiwi has connected.
+7	User tpm has disconnected.
+8	User kiwi has disconnected.
+9	User tpm has connected.
+10	User kiwi has connected.
+11	User tpm has disconnected.
+12	User kiwi has disconnected.
+13	User tpm has connected.
+14	El usuario kiwi se ha desconectado.
+15	El usuario kiwi se ha desconectado.
+16	El usuario kiwi se ha desconectado.

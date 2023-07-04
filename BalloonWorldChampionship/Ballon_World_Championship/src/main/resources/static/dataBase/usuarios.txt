@@ -1,3 +1,4 @@
-1	AAA	20
-2	ACC	10
-3	BBB	0
+1	3ds	20
+2	ds	10
+3	ggy	0
+4	tpm	4

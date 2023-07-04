@@ -196,7 +196,7 @@ export class LevelOnline extends Phaser.Scene {
             }
         })
         this.time.addEvent({  //Cada segundo llama a la función actualizarTiempo REFERENCIAS: https://www.youtube.com/watch?v=2esow22Z0fc
-            delay: 17,//mas bajo imposible
+            delay: 20,//mas bajo imposible
             loop: true,
             callback: () => {
                 connection.send(JSON.stringify(msg));
@@ -310,6 +310,7 @@ export class LevelOnline extends Phaser.Scene {
         	this.scoreWASD.setText(usuarioLogin.user+': ' + this.playerObject1.playerScore.toString());
 		}
 		else{
+				
 			    this.scoreCursors.setText(player2Name +': ' + score1);
         		this.scoreWASD.setText(usuarioLogin.user+': ' + score2);
 		}
@@ -346,6 +347,8 @@ export class LevelOnline extends Phaser.Scene {
 		{
 			this.bola.setPosition(bx  ,by );
 			this.bola.setVelocity(bvx  ,bvy );
+			this.playerObject1.playerScore = score1;
+			this.playerObject2.playerScore = score2;
 		}
         this.playerObject2.update(this)
         
@@ -354,7 +357,7 @@ export class LevelOnline extends Phaser.Scene {
 
     finDelJuego(){
 		connection.send(JSON.stringify(msg));
-		connection.close()
+		
 		this.scene.stop();
 		if(host !== usuarioLogin.user)
 			usuarioLogin.score = score2;
@@ -375,11 +378,11 @@ export class LevelOnline extends Phaser.Scene {
         	}
 		}
 		else{
-			        if (score2 > score1){
+			if (this.playerObject2.playerScore > this.playerObject1.playerScore){
             this.scene.start('results1');
             this.music.stop();
         }
-        else if (score2 < score1){
+        else if (this.playerObject2.playerScore < this.playerObject1.playerScore){
             this.scene.start('results2');
             this.music.stop();
         }
@@ -388,7 +391,7 @@ export class LevelOnline extends Phaser.Scene {
             this.music.stop();
         }
 		}
-
+		connection.close()
         
     }
     actualizarTiempo() {
