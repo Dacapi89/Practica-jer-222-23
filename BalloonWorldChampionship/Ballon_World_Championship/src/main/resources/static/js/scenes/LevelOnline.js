@@ -63,7 +63,7 @@ export class LevelOnline extends Phaser.Scene {
     }
     
     create() {
-
+		
         	loadUserName(function(messages) {
 			for (var i = 0; i < messages.length; i++)
 			{
@@ -284,23 +284,42 @@ export class LevelOnline extends Phaser.Scene {
 	}					
 		
 })  
+msg = {
+			count: 0,
+			time: 0,
+			x:player1.x,
+			y:player1.y,
+			velx:player1.body.velocity.x /10,
+			vely:player1.body.velocity.y /10,
+			ballx:ball.x,
+			bally: ball.y,
+			ballvelx:ball.body.velocity.x,
+			ballvely: ball.body.velocity.y,
+			host: usuarioLogin.user,
+			score1: this.playerObject1.playerScore,
+			score2: this.playerObject2.playerScore
+
+		}
     }
 
     update() {
-		msg = {
+
+	msg = {
 			count: 0,
-			x: player1.x,
-			y: player1.y,
-			velx: player1.body.velocity.x /10,
-			vely: player1.body.velocity.y /10,
-			ballx: ball.x,
+			time: 0,
+			x:player1.x,
+			y:player1.y,
+			velx:player1.body.velocity.x /10,
+			vely:player1.body.velocity.y /10,
+			ballx:ball.x,
 			bally: ball.y,
-			ballvelx: ball.body.velocity.x,
-			ballvely: ball.body.velocity.y,		
+			ballvelx:ball.body.velocity.x,
+			ballvely: ball.body.velocity.y,
+			host: usuarioLogin.user,
 			score1: this.playerObject1.playerScore,
-			score2: this.playerObject2.playerScore			
+			score2: this.playerObject2.playerScore
+
 		}
-		
         this.text.setText('Time ' + this.minutos + ':' + this.segundos);
         if(host === usuarioLogin.user)
         {

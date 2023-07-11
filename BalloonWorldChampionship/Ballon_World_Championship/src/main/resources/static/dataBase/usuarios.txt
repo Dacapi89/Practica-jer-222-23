@@ -1,3 +1,11 @@
-1	3ds	20
-2	ds	10
-3	ggy	0
+1	ASD	0
+3	vbf	0
+7	as	0
+4	dadw	0
+5	c	0
+6	dgfsd	0
+7	fasdf	0
+8	dawe	1
+8	ewe	1
+8	sadf	0
+2	adsf	0

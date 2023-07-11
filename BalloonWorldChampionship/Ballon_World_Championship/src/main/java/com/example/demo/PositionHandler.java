@@ -49,6 +49,7 @@ public class PositionHandler extends TextWebSocketHandler {
 		newNode.put("bally", 0);
 		newNode.put("ballvelx", 0);
 		newNode.put("ballvely", 0);
+		newNode.put("host", host);
 		for(WebSocketSession participant : sessions.values()) {
 			
 			participant.sendMessage(new TextMessage(newNode.toString()));
@@ -80,6 +81,7 @@ public class PositionHandler extends TextWebSocketHandler {
 		newNode.put("bally", 0);
 		newNode.put("ballvelx", 0);
 		newNode.put("ballvely", 0);
+		newNode.put("host", host);
 		for(WebSocketSession participant : sessions.values()) {
 			
 			participant.sendMessage(new TextMessage(newNode.toString()));
